@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ps.eachgold">
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 获取设备信息 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 网络通信 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 获取网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 获取MAC地址 -->
+    <uses-permission android:name="android.permission.READ_LOGS" />
+
+    <!-- 获取日志 -->
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppThemeQmNoBar">
+        <activity
+            android:name=".activity.MainActivity"
+            android:theme="@style/BaseTheme" />
+        <activity android:name=".activity.login.WelcomeActivity">
+
+        </activity>
+        <activity
+            android:name=".activity.login.LoginActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity
+            android:name=".activity.login.CodeLoginActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity
+            android:name=".activity.login.RegisterActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity
+            android:name=".activity.login.ForgotPswActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity
+            android:name=".activity.login.SetPswActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity android:name=".activity.person.SettingActivity" />
+        <activity android:name=".activity.person.ChangePswActivity" />
+        <activity android:name=".activity.person.FeedBackActivity" />
+        <activity android:name=".activity.person.MessageActivity" />
+        <activity android:name=".activity.person.MoreCustomActivity" />
+        <activity android:name=".activity.creditReport.CreditReportActivity" />
+        <activity android:name=".activity.creditReport.ExpandReportActivity" />
+        <activity android:name=".activity.creditReport.DefaultRecordActivity" />
+        <activity android:name=".activity.credit.BankCreditListActivity" />
+        <activity android:name=".activity.credit.BankHotListActivity" />
+        <activity android:name=".activity.loan.LoanListActivity" />
+        <activity android:name=".activity.loan.HandleCardActivity" />
+        <activity android:name=".activity.loan.RepayCardActivity" />
+        <activity
+            android:name=".activity.login.InfoStepOneActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+        <activity
+            android:name=".activity.login.InfoStepTwoActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity android:name=".activity.login.InfoStepThreeActivity" />
+        <activity android:name=".activity.credit.CardPregressActivity" />
+        <activity
+            android:name=".activity.loan.HotLoanActivity"
+            android:label="@string/title_activity_hot_loan" />
+        <activity android:name=".activity.login.GudieActivity" />
+        <activity android:name=".activity.login.AdActivity" />
+        <activity android:name=".activity.H5Activity" />
+        <activity android:name=".gate.Main2Activity" />
+        <activity android:name=".gate.NewActivity"></activity>
+    </application>
+
+</manifest>

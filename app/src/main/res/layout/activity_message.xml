@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_gradient"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/login_head" />
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <com.jude.easyrecyclerview.EasyRecyclerView
+            android:id="@+id/recycler_message"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ECEDF0"
+            app:layout_empty="@layout/view_empty"
+            app:layout_progress="@layout/view_progress" />
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+    <LinearLayout
+        android:id="@+id/lin_no_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/white"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/no_data_glide"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="暂时没有你的消息"
+            android:textColor="#DDDDDD" />
+
+    </LinearLayout>
+</LinearLayout>

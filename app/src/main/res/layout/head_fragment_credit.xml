@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/line_gray"
+    android:orientation="vertical">
+
+
+
+    <com.donkingliang.banner.CustomBanner
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="145dp"
+        app:indicatorStyle="ORDINARY"
+        app:indicatorGravity="CENTER"
+        app:indicatorInterval="5dp"
+        app:indicatorSelectRes="@drawable/banner_tips_select"
+        app:indicatorUnSelectRes="@drawable/banner_tips_unselect" />
+
+    <ImageView
+        android:id="@+id/iv_one_banner"
+        android:layout_width="match_parent"
+        android:layout_height="145dp"
+        android:visibility="gone"
+        android:scaleType="fitXY" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="9dp"
+        android:background="@color/white"
+        />
+    <com.jude.easyrecyclerview.EasyRecyclerView
+        android:id="@+id/recycler_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:focusableInTouchMode="false" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="9dp"
+        android:background="@color/white"
+        />
+    <LinearLayout
+        android:id="@+id/lin_more"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="3dp"
+            android:drawableRight="@mipmap/icon_next_xia"
+            android:text="查看所有银行"
+            android:textColor="@color/colorPrimary"
+            android:textSize="13sp" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_card_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:layout_marginTop="7dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/icon_bankajindu" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40dp"
+            android:drawablePadding="5dp"
+            android:drawableRight="@mipmap/icon_next_white"
+            android:gravity="center_vertical"
+            android:text="办卡进度查询"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:drawableLeft="@mipmap/icon_tite_left"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="热门卡片"
+        android:textSize="14sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/line_gray" />
+
+</LinearLayout>

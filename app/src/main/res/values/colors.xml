@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4681FF</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    //透明
+    <color name="transparent">#00000000</color>
+    <color name="transparent80">#33000000</color>
+    <color name="transparent30">#B2000000</color>
+    <color name="transparentwhite80">#4cffffff</color>
+    <color name="transparentwhite30">#CCffffff</color>
+    <color name="transparentwhite5">#F2ffffff</color>
+    <color name="transparentwhite50">#80ffffff</color>
+    <color name="half_transparent">#8f000000</color>
+
+    <color name="hint">#999999</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="view_color">#E6E7EA</color>
+    <color name="main_gray">#929292</color>
+    <color name="line_gray">#ECEDF0</color>
+    <color name="count_1">#F96D5A</color>
+    <color name="count_0">#C8C8C8</color>
+
+
+    <color name="gray">#808080</color>
+    <color name="gray1">#8B8A8A</color>
+    <color name="red">#FF0033</color>
+    <color name="red1">#FF5857</color>
+    <color name="red2">#F46650</color>
+    <color name="red3">#FF5933</color>
+    <color name="red4">#FF6935</color>
+    <color name="blue">#2f89dd </color>
+    <color name="blue2">#2d81db </color>
+    <color name="list_bgr">#f5f5f5</color>
+    <color name="dpgray">#e1e0e0</color>
+    <color name="line_bg">#f2f2f2</color>
+    <color name="popup_bg">#8f000000</color>
+    <color name="gray3">#6E6E6E</color>
+    <color name="gray2">#BABABA</color>
+    <color name="button_orange">#e56532</color>
+
+</resources>

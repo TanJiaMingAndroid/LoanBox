@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/rg_main"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="3dp"
+        android:paddingTop="3dp">
+
+        <RadioButton
+            android:id="@+id/rb_loan"
+            style="@style/main_radioButton_style"
+            android:checked="true"
+            android:text="新闻"
+            android:textColor="@drawable/rb_bottom_text_select"
+            android:drawableTop="@drawable/rb_loan_select" />
+
+        <RadioButton
+            android:id="@+id/rb_credit"
+            style="@style/main_radioButton_style"
+            android:text="经济"
+            android:textColor="@drawable/rb_bottom_text_select"
+            android:drawableTop="@drawable/rb_credit_card_select" />
+
+        <RadioButton
+            android:id="@+id/rb_instead"
+            style="@style/main_radioButton_style"
+            android:text="财经 "
+            android:textColor="@drawable/rb_bottom_text_select"
+            android:drawableTop="@drawable/rb_instead_select" />
+
+    </RadioGroup>
+    <FrameLayout
+        android:id="@+id/mainFragmentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/line"
+        android:layout_weight="1">
+    </FrameLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_above="@id/rg_main"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_gray"
+        />
+</RelativeLayout>
+
+
