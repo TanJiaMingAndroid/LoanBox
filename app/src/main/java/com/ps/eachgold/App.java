@@ -36,6 +36,7 @@ public class App extends MultiDexApplication {
         super.onCreate();
        // LeakCanary.install(this);
         instance = this;
+        //instance.getResources().getSystem().flushLayoutCache();
 
     }
 

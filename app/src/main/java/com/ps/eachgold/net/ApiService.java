@@ -50,7 +50,7 @@ public interface ApiService {
 
 
     /**
-     * 发送验证码  注册-登录 -忘记面膜
+     * 发送验证码  注册-登录 -忘记密码
      */
     @POST("/hjApi/doCall")
     Observable<BaseHeaderBean<String>> sendCode(@Body RequestBody requestBody);

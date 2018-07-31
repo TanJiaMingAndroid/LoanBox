@@ -10,4 +10,5 @@ public class MyAppConfig {
 
     //登录时间
     public static final int MAX_LOGIN_TIME = 3000; //
+
 }
