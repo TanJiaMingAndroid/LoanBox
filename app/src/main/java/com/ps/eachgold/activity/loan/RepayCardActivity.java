@@ -50,6 +50,7 @@ public class  RepayCardActivity extends BaseActivity implements RepayCardContrac
     EasyRecyclerView recyclerRepayCard;
     @BindView(R.id.swipe_repay_card)
     SwipeRefreshLayout swipeRepayCard;
+
     //list适配器
     private RecyclerArrayAdapter<LoanBean> adapter;
     //登录状态
