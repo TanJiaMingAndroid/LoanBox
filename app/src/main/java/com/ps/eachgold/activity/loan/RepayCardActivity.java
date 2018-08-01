@@ -53,6 +53,7 @@ public class  RepayCardActivity extends BaseActivity implements RepayCardContrac
 
     //list适配器
     private RecyclerArrayAdapter<LoanBean> adapter;
+
     //登录状态
     private Boolean loginFlag;
     //资料填写状态
