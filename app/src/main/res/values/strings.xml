@@ -1,4 +1,55 @@
 <resources>
-    <string name="app_name">散金侠</string>
     <string name="title_activity_hot_loan">HotLoanActivity</string>
+    <!--app名称-->
+    <string name="app_name">Loan Box</string>
+    <!--app模块-->
+    <string name="app_index">首页</string>
+    <string name="app_loan_market">贷款超市</string>
+    <string name="app_person">我的</string>
+    <!--首页-->
+    <string name="inde_recommend">产品推荐</string>
+    <string name="index_more">查看更多</string>
+    <!--item-->
+    <string name="loan_market_item_money">Rp</string>
+    <string name="loan_market_item_dayRate">日利率</string>
+    <string name="loan_market_item_duration">期限</string>
+    <string name="loan_market_item_apply">立即申请</string>
+
+    <!--贷款超市-->
+    <string name="loan_market_title">贷款超市</string>
+    <string name="loan_market_default">默认</string>
+    <string name="loan_market_limit">额度高</string>
+    <string name="loan_market_rate">利率低</string>
+    <string name="loan_market_duration">期限长</string>
+    <!--贷款超市详情页面-->
+    <string name="loan_market_detail_loan_questions">常见问题</string>
+    <string name="loan_market_detail_loan_collection">点击收藏</string>
+    <string name="loan_market_detail_loan_sum">借款金额(Rp)</string>
+    <string name="loan_market_detail_loan_duration">借款期限(天)</string>
+    <string name="loan_market_detail_loan_sum_limit">最高金额</string>
+    <string name="loan_market_detail_loan_duration_limit">最大期限</string>
+    <string name="loan_market_detail_repay_sum">应还金额</string>
+    <string name="loan_market_detail_repay_interest">利息</string>
+    <string name="loan_market_detail_loan_condition">申请条件</string>
+    <string name="loan_market_detail_loan_flow">申请流程</string>
+    <string name="loan_market_detail_repay_way">还款方式</string>
+    <string name="loan_market_detail_loan_apply">立即申请</string>
+
+
+    <!--我的-->
+    <string name="person_title">个人中心</string>
+    <string name="person_collection">我的收藏</string>
+    <string name="person_message">消息中心</string>
+    <string name="person_help">帮助中心</string>
+    <string name="person_feedback">意见反馈</string>
+    <string name="person_setting">设置</string>
+    <!--我的 二级页面-->
+    <string name="person_message_inform">消息通知</string>
+    <string name="person_help_service_tel">平台客服电话:020-XXXXXX</string>
+    <string name="person_help_service_time">服务时间:每日8:00-17:00</string>
+    <string name="person_feedback_hint">请消息描述您的问题，我们能更快的为您解决</string>
+    <string name="person_feedback_submit">提交反馈</string>
+    <string name="person_setting_check_update">检查更新</string>
+    <string name="person_setting_version">Version:</string>
+
 </resources>

@@ -76,4 +76,8 @@ dependencies {
     implementation 'com.alibaba:fastjson:1.2.44'
     implementation 'org.apache.commons:commons-lang3:3.4'
 
+    //8657 autolayout
+    implementation 'com.zhy:autolayout:1.4.5'
+    // supertextview
+    compile 'com.github.lygttpod:SuperTextView:2.0.1'
 }

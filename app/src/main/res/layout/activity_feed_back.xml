@@ -2,15 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_gradient"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
-
     <include layout="@layout/login_head" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
         android:background="#F3F3F7"
         android:orientation="vertical"
         >
@@ -18,11 +17,11 @@
         <EditText
             android:id="@+id/et_text"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="150dp"
             android:layout_marginLeft="1dp"
             android:layout_marginRight="1dp"
             android:gravity="top"
-            android:hint="请输入你的建议"
+            android:hint="@string/person_feedback_hint"
             android:inputType="textMultiLine"
             android:minLines="8"
             android:maxLines="10"
@@ -32,21 +31,60 @@
             android:background="@color/white"
             android:textSize="13sp"
              />
+        <FrameLayout
+
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp">
+            <ImageView
+                android:id="@+id/ib_feed_back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:src="@mipmap/feedback_pic"/>
+            <FrameLayout
+                android:id="@+id/fl_feedback_delete"
+                android:layout_gravity="right"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:visibility="invisible">
+                <ImageView
+
+                    android:layout_gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_feedback_image_delete"
+                    android:scaleType="fitCenter"
+                    />
+            </FrameLayout>
+
+        </FrameLayout>
 
 
-        <TextView
-            android:id="@+id/tv_sure"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="120dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/login_button"
-            android:gravity="center"
-            android:text="提交"
-            android:textColor="@color/white"
-            android:textSize="15sp" />
 
     </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:text="@string/person_help_service_tel"
+        android:textColor="@color/gray"
+        android:gravity="center"
+        android:background="#F3F3F7"
+        android:textSize="12sp"
+        android:layout_marginBottom="10dp"/>
+    <TextView
+        android:id="@+id/tv_sure"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="bottom"
+        android:background="@drawable/login_button"
+        android:gravity="center"
+        android:text="@string/person_feedback_submit"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:layout_marginBottom="3dp"/>
 
 </LinearLayout>

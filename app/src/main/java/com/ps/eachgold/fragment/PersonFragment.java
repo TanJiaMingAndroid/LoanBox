@@ -9,11 +9,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+import com.allen.library.SuperTextView;
 import com.ps.eachgold.R;
 import com.ps.eachgold.activity.H5Activity;
 import com.ps.eachgold.activity.credit.CardPregressActivity;
-import com.ps.eachgold.activity.loan.LoanListActivity;
 import com.ps.eachgold.activity.login.InfoStepOneActivity;
 import com.ps.eachgold.activity.login.LoginActivity;
 import com.ps.eachgold.activity.person.FeedBackActivity;
@@ -38,7 +37,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
-import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 
@@ -108,6 +106,17 @@ public class PersonFragment extends BaseFragment implements PersonContract.View 
     @BindView(R.id.tv_exclusive_money_3)
     TextView tvExclusiveMoney3;
     Unbinder unbinder;
+    @BindView(R.id.st_person_collection)
+    SuperTextView stPersonCollection;
+    @BindView(R.id.st_person_message)
+    SuperTextView stPersonMessage;
+    @BindView(R.id.st_person_help)
+    SuperTextView stPersonHelp;
+    @BindView(R.id.st_person_feedback)
+    SuperTextView stPersonFeedback;
+    @BindView(R.id.st_person_setting)
+    SuperTextView stPersonSetting;
+    Unbinder unbinder1;
 
     //
     private String phone;
@@ -181,6 +190,7 @@ public class PersonFragment extends BaseFragment implements PersonContract.View 
 
         initRx();
     }
+
     //RxBus 事件  总线
     private void initRx() {
         disposable =
@@ -469,4 +479,17 @@ public class PersonFragment extends BaseFragment implements PersonContract.View 
     }
 
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        unbinder1 = ButterKnife.bind(this, rootView);
+        return rootView;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder1.unbind();
+    }
 }

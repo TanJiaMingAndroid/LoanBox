@@ -18,14 +18,14 @@
             android:id="@+id/rb_loan"
             style="@style/main_radioButton_style"
             android:checked="true"
-            android:text="贷款"
+            android:text="首页"
             android:textColor="@drawable/rb_bottom_text_select"
             android:drawableTop="@drawable/rb_loan_select" />
 
         <RadioButton
             android:id="@+id/rb_credit"
             style="@style/main_radioButton_style"
-            android:text="信用卡"
+            android:text="@string/app_loan_market"
             android:textColor="@drawable/rb_bottom_text_select"
             android:drawableTop="@drawable/rb_credit_card_select" />
 
@@ -34,7 +34,8 @@
             style="@style/main_radioButton_style"
             android:text="信用卡代还"
             android:textColor="@drawable/rb_bottom_text_select"
-            android:drawableTop="@drawable/rb_instead_select" />
+            android:drawableTop="@drawable/rb_instead_select"
+            android:visibility="gone"/>
 
         <RadioButton
             android:id="@+id/rb_person"
