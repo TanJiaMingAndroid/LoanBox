@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_gradient"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/person_bg"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
@@ -16,7 +17,7 @@
         >
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="90px"
             android:orientation="horizontal"
             android:background="@color/white"
             >
@@ -24,19 +25,18 @@
                 android:id="@+id/tv_change_psw"
                 android:layout_width="0dp"
                 android:layout_weight="8"
-                android:layout_height="50dp"
-                android:drawableLeft="@mipmap/icon_setting_psw"
-                android:drawablePadding="5dp"
-                android:gravity="center_vertical"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:layout_height="match_parent"
+                android:gravity="left|center_vertical"
                 android:text="@string/person_setting_check_update"
-                android:textSize="13sp" />
+                android:textSize="@dimen/text_size_30"
+                android:layout_marginLeft="53px"/>
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="3"
                 android:layout_height="match_parent"
-                android:text="Version:1.0.0"
+                android:text="1.0.0"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size_30"
                 android:gravity="center"/>
 
 
@@ -46,17 +46,19 @@
         <TextView
             android:id="@+id/tv_exit"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="90px"
             android:layout_weight="1"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/login_button"
             android:gravity="center"
-            android:text="退出登录"
+            android:text="@string/person_setting_logout"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="100dp"
+            android:layout_marginBottom="70px"
             android:textColor="@color/white"
-            android:textSize="15sp" />
+            android:textSize="@dimen/text_size_30" />
+
+
 
     </RelativeLayout>
 

@@ -57,7 +57,7 @@ public class PersonFragment extends BaseFragment implements PersonContract.View 
     ImageView ivPersonHead;
     @BindView(R.id.tv_person_id)
     TextView tvPersonId;
-    @BindView(R.id.tv_person_login_type)
+    /*@BindView(R.id.tv_person_login_type)
     TextView tvPersonLoginType;
     @BindView(R.id.tv_person_more)
     TextView tvPersonMore;
@@ -84,10 +84,10 @@ public class PersonFragment extends BaseFragment implements PersonContract.View 
     @BindView(R.id.lin_no_custom)
     LinearLayout linNoCustom;
     @BindView(R.id.lin_custom)
-    LinearLayout linCustom;
+    LinearLayout linCustom;*/
     @BindView(R.id.status_bar)
     LinearLayout statusBar;
-    @BindView(R.id.iv_exclusive_1)
+    /*@BindView(R.id.iv_exclusive_1)
     ImageView ivExclusive1;
     @BindView(R.id.tv_exclusive_name_1)
     TextView tvExclusiveName1;
@@ -104,7 +104,7 @@ public class PersonFragment extends BaseFragment implements PersonContract.View 
     @BindView(R.id.tv_exclusive_name_3)
     TextView tvExclusiveName3;
     @BindView(R.id.tv_exclusive_money_3)
-    TextView tvExclusiveMoney3;
+    TextView tvExclusiveMoney3;*/
     Unbinder unbinder;
     @BindView(R.id.st_person_collection)
     SuperTextView stPersonCollection;
@@ -142,6 +142,7 @@ public class PersonFragment extends BaseFragment implements PersonContract.View 
     public static PersonFragment newInstance() {
         PersonFragment fragment = new PersonFragment();
         return fragment;
+
     }
 
     @Override
@@ -166,7 +167,7 @@ public class PersonFragment extends BaseFragment implements PersonContract.View 
         loginFlag = (boolean) SPutils.get(getActivity(), "login", false);
         //资料完善状态
         infoFlag = (boolean) SPutils.get(getActivity(), "info", false);
-        if (loginFlag) {
+        /*if (loginFlag) {
             tvPersonId.setText("ID:" + phone);
             if (infoFlag) {
                 tvPersonMore.setVisibility(View.VISIBLE);
@@ -186,7 +187,7 @@ public class PersonFragment extends BaseFragment implements PersonContract.View 
             linNoCustom.setVisibility(View.VISIBLE);
             linCustom.setVisibility(View.GONE);
 
-        }
+        }*/
 
         initRx();
     }
@@ -205,7 +206,7 @@ public class PersonFragment extends BaseFragment implements PersonContract.View 
                                             infoFlag = (boolean) SPutils.get(getActivity(), "info", false);
                                             if (loginFlag) {
                                                 tvPersonId.setText("ID:" + phone);
-                                                if (infoFlag) {
+                                                /*if (infoFlag) {
                                                     tvPersonMore.setVisibility(View.VISIBLE);
                                                     linNoCustom.setVisibility(View.GONE);
                                                     linCustom.setVisibility(View.VISIBLE);
@@ -214,14 +215,14 @@ public class PersonFragment extends BaseFragment implements PersonContract.View 
                                                     linNoCustom.setVisibility(View.VISIBLE);
                                                     linCustom.setVisibility(View.GONE);
                                                 }
-                                                tvPersonLoginType.setText("已登录");
-                                                ;
+                                                tvPersonLoginType.setText("已登录");*/
+
                                             } else {
                                                 tvPersonId.setText("");
-                                                tvPersonMore.setVisibility(View.GONE);
+                                                /*tvPersonMore.setVisibility(View.GONE);
                                                 tvPersonLoginType.setText("前去登录");
                                                 linNoCustom.setVisibility(View.VISIBLE);
-                                                linCustom.setVisibility(View.GONE);
+                                                linCustom.setVisibility(View.GONE);*/
 
                                             }
                                         }
@@ -256,7 +257,7 @@ public class PersonFragment extends BaseFragment implements PersonContract.View 
         return true;
     }
 
-    @OnClick({R.id.right_icon, R.id.iv_person_head, R.id.tv_person_login_type, R.id.tv_person_more, R.id.tv_person_custom, R.id.lin_person_exclusive_1, R.id.lin_person_exclusive_2, R.id.lin_person_exclusive_3, R.id.lin_person_report, R.id.lin_person_credit, R.id.lin_person_social, R.id.lin_person_fund, R.id.tv_feedback, R.id.tv_message})
+    @OnClick({R.id.right_icon, R.id.iv_person_head})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.right_icon:
@@ -266,7 +267,7 @@ public class PersonFragment extends BaseFragment implements PersonContract.View 
             case R.id.iv_person_head:
                 //头像
                 break;
-            case R.id.tv_person_login_type:
+            /*case R.id.tv_person_login_type:
                 loginFlag = (boolean) SPutils.get(getActivity(), "login", false);
                 infoFlag = (boolean) SPutils.get(getActivity(), "info", false);
                 //登录
@@ -371,7 +372,7 @@ public class PersonFragment extends BaseFragment implements PersonContract.View 
                 } else {
                     LoginActivity.createActivity(getActivity(), "");
                 }
-                break;
+                break;*/
         }
     }
 
@@ -410,39 +411,39 @@ public class PersonFragment extends BaseFragment implements PersonContract.View 
         String baseUrl = (String) SPutils.get(getContext(), "baseImgUrl", "");
 
         if (list.size() >= 1) {
-            GlideApp.with(getContext()).load("http:" + baseUrl + list.get(0).getPic())
+           /* GlideApp.with(getContext()).load("http:" + baseUrl + list.get(0).getPic())
                     .into(ivExclusive1);
-            tvExclusiveName1.setText(list.get(0).getName());
+            tvExclusiveName1.setText(list.get(0).getName());*/
             String min = String.valueOf(list.get(0).getMinMoney());
             String max = String.valueOf(list.get(0).getMaxMoney());
 
-            tvExclusiveMoney1.setText(getMinMax(MyUtil.formatToseparano0(min)) + "-" + getMinMax(MyUtil.formatToseparano0(max)));
+           // tvExclusiveMoney1.setText(getMinMax(MyUtil.formatToseparano0(min)) + "-" + getMinMax(MyUtil.formatToseparano0(max)));
 
             clickUrl1 = list.get(0).getUrl();
         }
         if (list.size() >= 2) {
-            GlideApp.with(getContext()).load("http:" + baseUrl + list.get(1).getPic())
+           /* GlideApp.with(getContext()).load("http:" + baseUrl + list.get(1).getPic())
                     .into(ivExclusive2);
 
-            tvExclusiveName2.setText(list.get(1).getName());
+            tvExclusiveName2.setText(list.get(1).getName());*/
             String min2 = String.valueOf(list.get(1).getMinMoney());
             String max2 = String.valueOf(list.get(1).getMaxMoney());
-            tvExclusiveMoney2.setText(getMinMax(MyUtil.formatToseparano0(min2)) + "-" + getMinMax(MyUtil.formatToseparano0(max2)));
+            //tvExclusiveMoney2.setText(getMinMax(MyUtil.formatToseparano0(min2)) + "-" + getMinMax(MyUtil.formatToseparano0(max2)));
             clickUrl2 = list.get(1).getUrl();
 
         }
 
         if (list.size() >= 3) {
 
-            GlideApp.with(getContext()).load("http:" + baseUrl + list.get(2).getPic())
-                    .into(ivExclusive3);
+           /* GlideApp.with(getContext()).load("http:" + baseUrl + list.get(2).getPic())
+                    .into(ivExclusive3);*/
 
 
-            tvExclusiveName3.setText(list.get(2).getName());
+            //tvExclusiveName3.setText(list.get(2).getName());
             String min3 = String.valueOf(list.get(2).getMinMoney());
             String max3 = String.valueOf(list.get(2).getMaxMoney());
 
-            tvExclusiveMoney3.setText(getMinMax(MyUtil.formatToseparano0(min3)) + "-" + getMinMax(MyUtil.formatToseparano0(max3)));
+            //tvExclusiveMoney3.setText(getMinMax(MyUtil.formatToseparano0(min3)) + "-" + getMinMax(MyUtil.formatToseparano0(max3)));
 
 
             clickUrl3 = list.get(2).getUrl();

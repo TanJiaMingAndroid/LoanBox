@@ -32,8 +32,7 @@ public class SettingActivity extends BaseActivity {
     ImageView rightIcon;
     @BindView(R.id.tv_change_psw)
     TextView tvChangePsw;
-    @BindView(R.id.tv_about_us)
-    TextView tvAboutUs;
+
     @BindView(R.id.tv_exit)
     TextView tvExit;
 
@@ -108,7 +107,7 @@ public class SettingActivity extends BaseActivity {
         return false;
     }
 
-    @OnClick({R.id.left_icon, R.id.tv_change_psw, R.id.tv_about_us, R.id.tv_exit})
+    @OnClick({R.id.left_icon, R.id.tv_change_psw, R.id.tv_exit})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.left_icon:
@@ -121,9 +120,7 @@ public class SettingActivity extends BaseActivity {
                 mtype = (int) SPutils.get(this, "havePsw", 1);
                 ChangePswActivity.createActivity(this, mtype);
                 break;
-            case R.id.tv_about_us:
-                //关于我们
-                break;
+
             case R.id.tv_exit:
                 //退出
                 SPutils.deleteButPhone(this);

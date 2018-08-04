@@ -18,7 +18,7 @@
             android:id="@+id/rb_loan"
             style="@style/main_radioButton_style"
             android:checked="true"
-            android:text="首页"
+            android:text="@string/app_index"
             android:textColor="@drawable/rb_bottom_text_select"
             android:drawableTop="@drawable/rb_loan_select" />
 
@@ -29,13 +29,13 @@
             android:textColor="@drawable/rb_bottom_text_select"
             android:drawableTop="@drawable/rb_credit_card_select" />
 
-        <RadioButton
+        <!--<RadioButton
             android:id="@+id/rb_instead"
             style="@style/main_radioButton_style"
             android:text="信用卡代还"
             android:textColor="@drawable/rb_bottom_text_select"
             android:drawableTop="@drawable/rb_instead_select"
-            android:visibility="gone"/>
+            android:visibility="gone"/>-->
 
         <RadioButton
             android:id="@+id/rb_person"

@@ -1,56 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/person_bg"
     android:orientation="vertical">
 
     <include layout="@layout/login_head" />
 
-    <LinearLayout
+    <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/ll_help_num"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="250px"
         android:background="@color/white"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp">
-
-        <ImageView
+        >
+        <TextView
+            android:id="@+id/tv_help_phone_tip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/my_help" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:orientation="vertical"
-            android:paddingLeft="10dp">
-
-            <TextView
-                android:id="@+id/tv_help_phone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/person_help_service_tel"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
+            android:text="@string/person_help_service_tel"
+            android:textColor="#FF797979"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_28"
+            android:layout_marginLeft="48px"
+            android:layout_marginTop="20px"/>
+        <TextView
+            android:id="@+id/tv_help_phone_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_help_phone_tip"
+            android:text="021-1346007"
+            android:textSize="@dimen/text_size_36"
+            android:layout_marginLeft="48px"
+            android:layout_marginTop="10px"
+            />
+        <TextView
+            android:id="@+id/tv_help_work_time_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/person_help_service_time"
+            android:textColor="#FF797979"
+            android:layout_below="@id/tv_help_phone_num"
+            android:layout_marginLeft="48px"
+            android:layout_marginTop="15px"
+            android:textSize="@dimen/text_size_28"
+            />
 
             <TextView
                 android:id="@+id/tv_help_work_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#949494"
-                android:text="@string/person_help_service_time"
-                android:textSize="12sp" />
-        </LinearLayout>
-
+                android:text="@string/person_help_service_time_duration"
+                android:textSize="@dimen/text_size_36"
+                android:layout_marginLeft="48px"
+                android:layout_marginTop="10px"
+                android:layout_below="@id/tv_help_work_time_tip"
+                />
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:src="@mipmap/icon_next_gray" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_help"
+            android:layout_toRightOf="@id/tv_help_phone_tip"
+            android:layout_marginLeft="50px"
+            android:layout_alignBaseline="@id/tv_help_phone_tip"/>
 
-</LinearLayout>
+
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+
+</com.zhy.autolayout.AutoLinearLayout>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@mipmap/icon_rb_credit_1"
+    <item android:drawable="@drawable/pinjaman"
         android:state_checked="true"></item>
-    <item android:drawable="@mipmap/icon_rb_credit_0"
+    <item android:drawable="@drawable/pinjaman_grey"
         android:state_checked="false"></item>
 </selector>

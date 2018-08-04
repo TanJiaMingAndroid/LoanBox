@@ -41,4 +41,12 @@
     <color name="gray2">#BABABA</color>
     <color name="button_orange">#e56532</color>
 
+    <!--个人中心-->
+    <color name="person_bg">#F4F4F4</color>
+    <color name="person_login">#FF7A3F</color>
+
+
+
+
+
 </resources>

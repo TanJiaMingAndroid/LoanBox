@@ -1,55 +1,79 @@
 <resources>
     <string name="title_activity_hot_loan">HotLoanActivity</string>
     <!--app名称-->
-    <string name="app_name">Loan Box</string>
+    <string name="app_name">Loan Box</string><!---->
     <!--app模块-->
-    <string name="app_index">首页</string>
-    <string name="app_loan_market">贷款超市</string>
-    <string name="app_person">我的</string>
+    <string name="app_index">Home</string><!--首页-->
+    <string name="app_loan_market">Pinjaman</string><!--贷款超市-->
+    <string name="app_person">Akun saya</string><!--我的-->
     <!--首页-->
-    <string name="inde_recommend">产品推荐</string>
-    <string name="index_more">查看更多</string>
+    <string name="inde_recommend"></string><!--产品推荐-->
+    <string name="index_more"></string><!--查看更多-->
     <!--item-->
-    <string name="loan_market_item_money">Rp</string>
-    <string name="loan_market_item_dayRate">日利率</string>
-    <string name="loan_market_item_duration">期限</string>
-    <string name="loan_market_item_apply">立即申请</string>
+    <string name="loan_market_item_money">Rp</string><!---->
+    <string name="loan_market_item_dayRate"></string><!--日利率-->
+    <string name="loan_market_item_duration"></string><!--期限-->
+    <string name="loan_market_item_apply"></string><!--立即申请-->
 
     <!--贷款超市-->
-    <string name="loan_market_title">贷款超市</string>
-    <string name="loan_market_default">默认</string>
-    <string name="loan_market_limit">额度高</string>
-    <string name="loan_market_rate">利率低</string>
-    <string name="loan_market_duration">期限长</string>
+    <string name="loan_market_title"></string><!--贷款超市-->
+    <string name="loan_market_default"></string><!--默认-->
+    <string name="loan_market_limit"></string><!--额度高-->
+    <string name="loan_market_rate"></string><!--利率低-->
+    <string name="loan_market_duration"></string><!--期限长-->
     <!--贷款超市详情页面-->
-    <string name="loan_market_detail_loan_questions">常见问题</string>
-    <string name="loan_market_detail_loan_collection">点击收藏</string>
-    <string name="loan_market_detail_loan_sum">借款金额(Rp)</string>
-    <string name="loan_market_detail_loan_duration">借款期限(天)</string>
-    <string name="loan_market_detail_loan_sum_limit">最高金额</string>
-    <string name="loan_market_detail_loan_duration_limit">最大期限</string>
-    <string name="loan_market_detail_repay_sum">应还金额</string>
-    <string name="loan_market_detail_repay_interest">利息</string>
-    <string name="loan_market_detail_loan_condition">申请条件</string>
-    <string name="loan_market_detail_loan_flow">申请流程</string>
-    <string name="loan_market_detail_repay_way">还款方式</string>
-    <string name="loan_market_detail_loan_apply">立即申请</string>
+    <string name="loan_market_detail_loan_questions"></string><!--常见问题-->
+    <string name="loan_market_detail_loan_collection"></string><!--点击收藏-->
+    <string name="loan_market_detail_loan_sum"></string><!--借款金额(Rp)-->
+    <string name="loan_market_detail_loan_duration"></string><!--借款期限(天)-->
+    <string name="loan_market_detail_loan_sum_limit"></string><!--最高金额-->
+    <string name="loan_market_detail_loan_duration_limit"></string><!--最大期限-->
+    <string name="loan_market_detail_repay_sum"></string><!--应还金额-->
+    <string name="loan_market_detail_repay_interest"></string><!--利息-->
+    <string name="loan_market_detail_loan_condition"></string><!--申请条件-->
+    <string name="loan_market_detail_loan_flow"></string><!--申请流程-->
+    <string name="loan_market_detail_repay_way"></string><!--还款方式-->
+    <string name="loan_market_detail_loan_apply"></string><!--立即申请-->
 
 
     <!--我的-->
-    <string name="person_title">个人中心</string>
-    <string name="person_collection">我的收藏</string>
-    <string name="person_message">消息中心</string>
-    <string name="person_help">帮助中心</string>
-    <string name="person_feedback">意见反馈</string>
-    <string name="person_setting">设置</string>
+    <string name="person_title">Saya</string><!--个人中心-->
+    <string name="person_ID">ID:</string><!--ID:-->
+    <string name="person_info_write">Informasi pribadi</string><!--资料填写-->
+    <string name="person_collection">Koleksi saya</string><!--我的收藏-->
+    <string name="person_message">Pusat pesan</string><!--消息中心-->
+    <string name="person_help">Pusat bantuan</string><!--帮助中心-->
+    <string name="person_feedback">Umpan balik</string><!--意见反馈-->
+    <string name="person_setting">Pengaturan</string><!--设置-->
     <!--我的 二级页面-->
-    <string name="person_message_inform">消息通知</string>
-    <string name="person_help_service_tel">平台客服电话:020-XXXXXX</string>
-    <string name="person_help_service_time">服务时间:每日8:00-17:00</string>
-    <string name="person_feedback_hint">请消息描述您的问题，我们能更快的为您解决</string>
-    <string name="person_feedback_submit">提交反馈</string>
-    <string name="person_setting_check_update">检查更新</string>
-    <string name="person_setting_version">Version:</string>
+    <string name="person_login_info">Informasi pribadi</string><!--我的资料-->
+    <string name="person_login_name">Nama</string><!--姓名-->
+    <string name="person_login_name_hint">Silakan masukkan nama</string><!--请输入姓名-->
+    <string name="person_login_birthday">Ulang tahun</string><!--生日-->
+    <string name="person_login_birthday_hint">Harap pilih tanggal lahir</string><!--请输入生日-->
+    <string name="person_login_sex"></string><!--性别-->
+    <string name="person_login_sex_hint"></string><!--请输入性别-->
+    <string name="person_login_city"></string><!--所在城市-->
+    <string name="person_login_city_hint"></string><!--请输入所在城市-->
+    <string name="person_login_education"></string><!--文化程度-->
+    <string name="person_login_education_hint"></string><!--请输入文化程度-->
+    <string name="person_login_job"></string><!--职业身份-->
+    <string name="person_login_job_hint"></string><!--请输入职业身份-->
+    <string name="person_login_income"></string><!--月收入-->
+    <string name="person_login_income_hint"></string><!--请输入月收入-->
+    <string name="person_login_common">select</string><!--请选择-->
+    <string name="person_login_money_type">IDR</string><!--IDR-->
+    <string name="person_login_save">Selesai</string><!--保存-->
+
+    <string name="person_message_inform">消息通知</string><!---->
+    <string name="person_help_service_tel">Telepon layanan pelanggan platform:</string><!--平台客服电话:020-XXXXXX-->
+    <string name="person_help_service_time">Jam layanan: </string><!--服务时间:-->
+    <string name="person_help_service_time_duration">8:00-17:00 setiap hari</string><!--每日8:00-17:00-->
+    <string name="person_feedback_hint">Silakan tinggalkan komentar atau saran Anda yang berharga, kami akan bekerja keras untuk meningkatkan</string><!--请消息描述您的问题，我们能更快的为您解决-->
+    <string name="person_feedback_submit">Kirim</string><!--提交反馈-->
+    <string name="person_feedback_upload_pic">Harap unggah gambar (maksimal satu)</string><!--提交反馈-->
+    <string name="person_setting_check_update">Periksa pembaruan</string><!--检查更新-->
+    <string name="person_setting_version">Version:</string><!--Version-->
+    <string name="person_setting_logout">Logout</string><!--Logout-->
 
 </resources>
