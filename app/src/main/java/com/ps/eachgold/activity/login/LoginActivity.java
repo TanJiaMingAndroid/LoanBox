@@ -38,20 +38,18 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     ImageView leftIcon;
     @BindView(R.id.title)
     TextView title;
-    @BindView(R.id.iv_icon)
+    /*@BindView(R.id.iv_icon)
     ImageView ivIcon;
     @BindView(R.id.et_phone)
     EditText etPhone;
     @BindView(R.id.et_psw)
     EditText etPsw;
-    @BindView(R.id.tv_forget)
-    TextView tvForget;
+
     @BindView(R.id.tv_login)
     TextView tvLogin;
-    @BindView(R.id.tv_code_login)
-    TextView tvCodeLogin;
+
     @BindView(R.id.tv_register)
-    TextView tvRegister;
+    TextView tvRegister;*/
     @BindView(R.id.tv_login_agreement)
     TextView tvLoginAgreement;
 
@@ -92,8 +90,9 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
         QMUIStatusBarHelper.translucent(this); // 沉浸式状态栏
         leftIcon.setVisibility(View.INVISIBLE);
         title.setText(R.string.login_title);
+        title.setTextColor(Color.parseColor("#FF000000"));
         SpannableString spannableString = new SpannableString("Masuk untuk setuju  《***** Perjanjian Layanan》");
-        spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#FF292929")), 20, spannableString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#FFFF7A3F")), 20, spannableString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         tvLoginAgreement.setText(spannableString);
     }
 
@@ -109,7 +108,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
     @Override
     public void getError(Throwable e) {
-        tvLogin.setClickable(true);
+        //tvLogin.setClickable(true);
     }
 
     @Override
@@ -124,12 +123,14 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
     @Override
     public String getPhone() {
-        return etPhone.getText().toString().trim();
+        return null;
+        //return etPhone.getText().toString().trim();
     }
 
     @Override
     public String getPsw() {
-        return etPsw.getText().toString().trim();
+        return null;
+        //return etPsw.getText().toString().trim();
     }
 
     @Override
@@ -157,7 +158,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     }
 
     //点击事件
-    @OnClick({R.id.left_icon, R.id.tv_forget, R.id.tv_login, R.id.tv_code_login, R.id.tv_register})
+    @OnClick({R.id.left_icon})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.left_icon:
@@ -165,23 +166,23 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
                 finish();
                 overridePendingTransition(R.anim.slide_still, R.anim.slide_out_right);
                 break;
-            case R.id.tv_forget:
+            /*case R.id.tv_forget:
                 //忘记密码
                 ForgotPswActivity.createActivity(this);
-                break;
-            case R.id.tv_login:
+                break;*/
+            /*case R.id.tv_login:
                 //登录
                 mPresenter.login();
-                break;
-            case R.id.tv_code_login:
+                break;*/
+           /* case R.id.tv_code_login:
                 //验证码登录
                 CodeLoginActivity.createActivity(this, getPhone());
                 finish();
-                break;
-            case R.id.tv_register:
+                break;*/
+            /*case R.id.tv_register:
                 //注册
                 RegisterActivity.createActivity(this);
-                break;
+                break;*/
         }
     }
 

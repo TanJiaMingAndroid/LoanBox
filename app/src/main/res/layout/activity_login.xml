@@ -29,6 +29,7 @@
             android:textColor="#FF575757"
             android:textSize="@dimen/text_size_28"
             android:gravity="center_horizontal"
+            android:paddingTop="42px"
             android:text="Login dengan facebook"/>
         <TextView
             android:id="@+id/tv_login_agreement"
