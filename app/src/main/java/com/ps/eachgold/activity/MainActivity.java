@@ -30,8 +30,8 @@ public class  MainActivity extends BaseActivity implements MainContract.View, Ra
     RadioButton rbLoan;
     @BindView(R.id.rb_credit)
     RadioButton rbCredit;
-    @BindView(R.id.rb_instead)
-    RadioButton rbInstead;
+//    @BindView(R.id.rb_instead)
+//    RadioButton rbInstead;
     @BindView(R.id.rb_person)
     RadioButton rbPerson;
     @BindView(R.id.rg_main)
@@ -84,9 +84,9 @@ public class  MainActivity extends BaseActivity implements MainContract.View, Ra
             case 1:
                 rbCredit.setChecked(true);
                 break;
-            case 2:
+            /*case 2:
                 rbInstead.setChecked(true);
-                break;
+                break;*/
             case 3:
                 rbPerson.setChecked(true);
                 break;

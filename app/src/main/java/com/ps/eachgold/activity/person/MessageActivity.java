@@ -59,9 +59,9 @@ public class MessageActivity extends BaseActivity implements MessageContract.Vie
     private int num;
 
     //跳转
-    public static void createActivity(Context context, int count) {
+    public static void createActivity(Context context) {
         Intent intent = new Intent(context, MessageActivity.class);
-        intent.putExtra("count", count);
+        //intent.putExtra("count", count);
         context.startActivity(intent);
     }
 

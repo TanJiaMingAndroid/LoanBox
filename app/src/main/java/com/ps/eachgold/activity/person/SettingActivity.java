@@ -17,6 +17,7 @@ import com.ps.eachgold.util.T;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
@@ -30,11 +31,11 @@ public class SettingActivity extends BaseActivity {
     TextView title;
     @BindView(R.id.right_icon)
     ImageView rightIcon;
-    @BindView(R.id.tv_change_psw)
-    TextView tvChangePsw;
+
 
     @BindView(R.id.tv_exit)
     TextView tvExit;
+
 
     //Rxbus  使用完解绑
     private Disposable disposable;
@@ -63,20 +64,19 @@ public class SettingActivity extends BaseActivity {
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-        // 沉浸式状态栏
-        QMUIStatusBarHelper.translucent(this);
+        QMUIStatusBarHelper.translucent(this); // 沉浸式状态栏
         //标题
         title.setText("设置");
         //判断类型
-        if (mtype == 1) {
+       /* if (mtype == 1) {
             tvChangePsw.setText("密码修改");
         } else if (mtype == 0) {
             tvChangePsw.setText("设置密码");
-        }
-        initRx();
+        }*/
+        //initRx();839529193
     }
 
-    private void initRx() {
+    /*private void initRx() {
         disposable =
                 RxBus.getInstance()
                         .toObservable(
@@ -95,7 +95,7 @@ public class SettingActivity extends BaseActivity {
                                     }
                                 });
 
-    }
+    }*/
 
     @Override
     public boolean isUseButterKnife() {
@@ -107,7 +107,7 @@ public class SettingActivity extends BaseActivity {
         return false;
     }
 
-    @OnClick({R.id.left_icon, R.id.tv_change_psw, R.id.tv_exit})
+    /*@OnClick({R.id.left_icon, R.id.tv_change_psw, R.id.tv_exit})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.left_icon:
@@ -115,11 +115,11 @@ public class SettingActivity extends BaseActivity {
                 finish();
                 overridePendingTransition(R.anim.slide_still, R.anim.slide_out_right);
                 break;
-            case R.id.tv_change_psw:
+            *//*case R.id.tv_change_psw:
                 //密码修改 1/密码设置0
                 mtype = (int) SPutils.get(this, "havePsw", 1);
                 ChangePswActivity.createActivity(this, mtype);
-                break;
+                break;*//*
 
             case R.id.tv_exit:
                 //退出
@@ -128,15 +128,21 @@ public class SettingActivity extends BaseActivity {
                 MainActivity.createActivity(this, 0);
                 break;
         }
-    }
-
+    }*/
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
+    }
+   /* @Override
     public void onDestroy() {
         super.onDestroy();
         if (RxBus.getInstance().isObserver()) {
             RxBus.getInstance().unregister(disposable);
         }
-    }
+    }*/
+
 
 }

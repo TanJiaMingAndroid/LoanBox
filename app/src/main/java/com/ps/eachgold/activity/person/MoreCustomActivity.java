@@ -49,13 +49,18 @@ public class MoreCustomActivity extends BaseActivity implements RadioGroup.OnChe
     private String laber1, laber2;
 
 
-    public static void createActivity(Context context, String laber1, String laber2) {
+    /*public static void createActivity(Context context, String laber1, String laber2) {
         Intent intent = new Intent(context, MoreCustomActivity.class);
         intent.putExtra("laber1", laber1);
         intent.putExtra("laber2", laber2);
         context.startActivity(intent);
+    }*/
+    public static void createActivity(Context context) {
+        Intent intent = new Intent(context, MoreCustomActivity.class);
+        /*intent.putExtra("laber1", laber1);
+        intent.putExtra("laber2", laber2);*/
+        context.startActivity(intent);
     }
-
     @Override
     protected void initVariables() {
         Intent intent = getIntent();

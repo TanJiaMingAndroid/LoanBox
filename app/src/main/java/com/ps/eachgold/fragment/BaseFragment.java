@@ -27,7 +27,7 @@ public abstract class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        initVariables();
+        //initVariables();
         if (getLayout() == 0) {
             throw new IllegalArgumentException("请指定fragment布局文件");
 

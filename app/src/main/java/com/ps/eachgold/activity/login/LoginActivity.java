@@ -2,7 +2,11 @@ package com.ps.eachgold.activity.login;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -19,6 +23,7 @@ import com.ps.eachgold.util.SPutils;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
@@ -47,6 +52,8 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     TextView tvCodeLogin;
     @BindView(R.id.tv_register)
     TextView tvRegister;
+    @BindView(R.id.tv_login_agreement)
+    TextView tvLoginAgreement;
 
 
     private LoginPresenter mPresenter;
@@ -83,8 +90,11 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     protected void initView(Bundle savedInstanceState) {
 
         QMUIStatusBarHelper.translucent(this); // 沉浸式状态栏
-
-        title.setText("登录");
+        leftIcon.setVisibility(View.INVISIBLE);
+        title.setText(R.string.login_title);
+        SpannableString spannableString = new SpannableString("Masuk untuk setuju  《***** Perjanjian Layanan》");
+        spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#FF292929")), 20, spannableString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        tvLoginAgreement.setText(spannableString);
     }
 
     @Override
@@ -128,23 +138,24 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
         SPutils.put(this, "login", true);
         SPutils.put(this, "phone", getPhone());
         SPutils.put(this, "sessionid", bean.getSessionid());
-        String psw=bean.getUserinfo().getPasswordSign();
-        if(psw!=null&&!"".equals(psw)){
-            SPutils.put(this,"havePsw",1);
-        }else {
-            SPutils.put(this,"havePsw",0);
+        String psw = bean.getUserinfo().getPasswordSign();
+        if (psw != null && !"".equals(psw)) {
+            SPutils.put(this, "havePsw", 1);
+        } else {
+            SPutils.put(this, "havePsw", 0);
         }
         //是否有认证 完善信息
-        if(bean.getUserinfo().getIsAuth()==-1){
+        if (bean.getUserinfo().getIsAuth() == -1) {
             //未认证
             InfoStepOneActivity.createActivity(this);
             finish();
-        }else {
+        } else {
             SPutils.put(this, "info", true);
             //已填写
             MainActivity.createActivity(this, 0);
         }
     }
+
     //点击事件
     @OnClick({R.id.left_icon, R.id.tv_forget, R.id.tv_login, R.id.tv_code_login, R.id.tv_register})
     public void onViewClicked(View view) {
@@ -180,5 +191,12 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
         if (mPresenter != null) {
             mPresenter.onDetach();
         }
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
     }
 }

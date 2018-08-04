@@ -13,7 +13,7 @@
         android:orientation="vertical"
         android:visibility="gone">
     </LinearLayout>
-    <include layout="@layout/login_head" />
+    <include layout="@layout/activity_head" />
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_loan"

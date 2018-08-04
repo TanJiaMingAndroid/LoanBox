@@ -2,10 +2,11 @@
 <com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/person_bg"
+    android:background="@drawable/login_gradient"
+    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <include layout="@layout/login_head" />
+    <include layout="@layout/activity_head" />
 
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/ll_help_num"
@@ -66,6 +67,13 @@
 
 
     </com.zhy.autolayout.AutoRelativeLayout>
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F3F3F7"
+        >
+
+    </com.zhy.autolayout.AutoLinearLayout>
 
 
 </com.zhy.autolayout.AutoLinearLayout>

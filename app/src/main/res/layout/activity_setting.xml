@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/person_bg"
+    android:background="@drawable/login_gradient"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <include layout="@layout/login_head" />
 
 
-    <RelativeLayout
+    <include layout="@layout/activity_head" />
+
+
+    <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#F3F3F7"
         >
-        <LinearLayout
+        <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
             android:layout_height="90px"
             android:orientation="horizontal"
@@ -40,13 +41,13 @@
                 android:gravity="center"/>
 
 
-        </LinearLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
 
 
         <TextView
             android:id="@+id/tv_exit"
             android:layout_width="match_parent"
-            android:layout_height="90px"
+            android:layout_height="80px"
             android:layout_weight="1"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
@@ -60,7 +61,7 @@
 
 
 
-    </RelativeLayout>
+    </com.zhy.autolayout.AutoRelativeLayout>
 
 
-</LinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>

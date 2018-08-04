@@ -44,6 +44,7 @@
     <!--个人中心-->
     <color name="person_bg">#F4F4F4</color>
     <color name="person_login">#FF7A3F</color>
+    <color name="login_head">#FFF6F6F6</color>
 
 
 

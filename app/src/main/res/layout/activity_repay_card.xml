@@ -7,7 +7,7 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <include layout="@layout/login_head" />
+    <include layout="@layout/activity_head" />
 
 
     <android.support.v4.widget.SwipeRefreshLayout

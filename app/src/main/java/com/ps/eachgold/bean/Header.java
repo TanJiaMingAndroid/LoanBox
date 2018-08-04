@@ -6,7 +6,7 @@ import com.ps.eachgold.util.DateUtil;
 import java.util.Date;
 
 /**
- * Created by 8146 on 2018/1/31.
+ * Created by 8657 on 2018/8/4.
  * 请求头-模型类
  */
 
@@ -30,7 +30,7 @@ public class Header {
     /**
      * 设备类型，必填 web, wx, ios, android  -- 4
      */
-    private String deviceType;
+    private int deviceType;
     /**
      * 区分请求/应答类型，必填
      */
@@ -68,7 +68,7 @@ public class Header {
 
     public  Header() {
         this.code = ResultCode.OK.getCode();
-        this.deviceType="4";
+        this.deviceType=4;
         this.sendingtime = getDateTime();
         this.version = "1.0.01";
     }
@@ -140,11 +140,11 @@ public class Header {
         this.code = code;
     }
 
-    public String getDeviceType() {
+    public int getDeviceType() {
         return deviceType;
     }
 
-    public void setDeviceType(String deviceType) {
+    public void setDeviceType(int deviceType) {
         this.deviceType = deviceType;
     }
 

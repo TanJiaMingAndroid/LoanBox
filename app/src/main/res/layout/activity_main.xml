@@ -40,7 +40,7 @@
         <RadioButton
             android:id="@+id/rb_person"
             style="@style/main_radioButton_style"
-            android:text="我的"
+            android:text="@string/app_person"
             android:textColor="@drawable/rb_bottom_text_select"
             android:drawableTop="@drawable/rb_person_select" />
     </RadioGroup>
