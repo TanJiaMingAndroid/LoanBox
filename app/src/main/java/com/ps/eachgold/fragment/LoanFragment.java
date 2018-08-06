@@ -59,10 +59,10 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
     SwipeRefreshLayout swipeLoan;
     @BindView(R.id.status_bar)
     LinearLayout statusBar;
-    @BindView(R.id.left_icon)
+    /*@BindView(R.id.left_icon)
     ImageView leftIcon;
     @BindView(R.id.title)
-    TextView title;
+    TextView title;*/
 
     //P层
     private LoanPresenter mPresenter;
@@ -118,8 +118,8 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
     protected void initView(Bundle savedInstanceState) {
         // ViewPager+Fragment沉浸式状态栏
         StatBarCpmpart.init(getActivity(), statusBar);
-        leftIcon.setVisibility(View.GONE);
-        title.setText("index");
+        /*leftIcon.setVisibility(View.GONE);
+        title.setText("index");*/
         //初始化列表
         initRecycler();
         //添加头部
@@ -331,7 +331,7 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
             }
         });
         //为空点击
-        //recyclerLoan.getEmptyView().findViewById()
+       // recyclerLoan.getEmptyView().findViewById();
     }
 
     //点击事件

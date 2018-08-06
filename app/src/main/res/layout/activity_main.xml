@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
     <RadioGroup
         android:id="@+id/rg_main"
         android:layout_width="match_parent"
@@ -29,13 +30,13 @@
             android:textColor="@drawable/rb_bottom_text_select"
             android:drawableTop="@drawable/rb_credit_card_select" />
 
-        <!--<RadioButton
+        <RadioButton
             android:id="@+id/rb_instead"
             style="@style/main_radioButton_style"
             android:text="信用卡代还"
             android:textColor="@drawable/rb_bottom_text_select"
             android:drawableTop="@drawable/rb_instead_select"
-            android:visibility="gone"/>-->
+            android:visibility="gone"/>
 
         <RadioButton
             android:id="@+id/rb_person"

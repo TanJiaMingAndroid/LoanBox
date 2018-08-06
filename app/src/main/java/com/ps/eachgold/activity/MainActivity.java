@@ -16,6 +16,7 @@ import com.ps.eachgold.contract.main.MainContract;
 import com.ps.eachgold.presenter.MainPresenter;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 
 /**
@@ -109,10 +110,10 @@ public class  MainActivity extends BaseActivity implements MainContract.View, Ra
                 pagePos = 1;
                 mPresenter.showCurrenterFragment("FRAGMENT_CREDIT");
                 break;
-            case R.id.rb_instead:
+            /*case R.id.rb_instead:
                 pagePos = 2;
                 mPresenter.showCurrenterFragment("FRAGMENT_INSTEAD");
-                break;
+                break;*/
             case R.id.rb_person:
                 pagePos = 3;
                 mPresenter.showCurrenterFragment("FRAGMENT_PERSON");
@@ -166,5 +167,11 @@ public class  MainActivity extends BaseActivity implements MainContract.View, Ra
             }
         }
         return true;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        ButterKnife.bind(this);
     }
 }

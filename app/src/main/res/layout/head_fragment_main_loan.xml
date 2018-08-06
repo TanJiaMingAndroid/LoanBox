@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,12 +9,74 @@
     <com.donkingliang.banner.CustomBanner
         android:id="@+id/banner"
         android:layout_width="match_parent"
-        android:layout_height="145dp"
+        android:layout_height="400px"
         app:indicatorStyle="ORDINARY"
         app:indicatorGravity="CENTER"
         app:indicatorInterval="5dp"
+        android:background="@drawable/banner"
         app:indicatorSelectRes="@drawable/banner_tips_select"
         app:indicatorUnSelectRes="@drawable/banner_tips_unselect"/>
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="72px"
+        android:orientation="horizontal"
+        android:background="@color/white">
+
+        <ImageView
+            android:layout_width="0px"
+            android:layout_height="37px"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10px"
+            android:layout_weight="1"
+            android:src="@drawable/bell" />
+
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="9"
+            android:gravity="center_vertical"
+            android:text="177****3302 buy licai chanpin $5000"
+            android:textColor="@color/index_tip_message"
+            android:textSize="@dimen/text_size_26" />
+
+    </com.zhy.autolayout.AutoLinearLayout>
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:orientation="horizontal"
+        android:layout_marginTop="20px"
+        android:background="@color/white">
+        <ImageView
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:layout_height="40px"
+            android:layout_gravity="right|center"
+            android:src="@drawable/recomm"
+            android:layout_marginLeft="10px"/>
+        <TextView
+            android:layout_width="0px"
+            android:layout_weight="3"
+            android:layout_height="35px"
+            android:layout_gravity="left|center_vertical"
+            android:text="@string/index_recommend"
+            android:gravity="left"
+            android:textColor="@color/index_product_hot"/>
+        <TextView
+            android:layout_width="0px"
+            android:layout_weight="5"
+            android:layout_height="35px"
+            android:layout_gravity="right|center_vertical"
+            android:gravity="right"
+            android:text="Lihat lebih banyak"
+            />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="26px"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_more"/>
+
+    </com.zhy.autolayout.AutoLinearLayout>
 
     <!--app:indicatorSelectRes="@drawable/banner_tips_oval_select"-->
     <!--app:indicatorUnSelectRes="@drawable/banner_tips_oval_unselect"-->
@@ -30,7 +92,8 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@color/white"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
 
 
         <LinearLayout
@@ -60,7 +123,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical"
-            >
+            android:visibility="gone">
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="45dp"
@@ -80,7 +143,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical"
-            >
+            android:visibility="gone">
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="45dp"
@@ -106,7 +169,8 @@
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingLeft="10dp"
-        android:paddingRight="10dp">
+        android:paddingRight="10dp"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/tv_handle_card"
@@ -148,7 +212,8 @@
         android:gravity="center_vertical"
         android:paddingLeft="10dp"
         android:text="热门推荐"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:visibility="gone"/>
 
     <View
         android:layout_width="match_parent"
@@ -156,4 +221,4 @@
         android:background="@color/line_gray"
         />
 
-</LinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>
