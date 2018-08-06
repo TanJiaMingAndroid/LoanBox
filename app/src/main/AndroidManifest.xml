@@ -33,29 +33,26 @@
 
         <activity
             android:name=".activity.MainActivity"
-            android:theme="@style/BaseTheme">
-
-        </activity>
-        <activity android:name=".activity.login.WelcomeActivity"></activity>
+            android:theme="@style/BaseTheme" />
+        <activity android:name=".activity.login.WelcomeActivity" />
         <activity
             android:name=".activity.login.LoginActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden" >
+            android:windowSoftInputMode="adjustUnspecified|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".activity.login.CodeLoginActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden"></activity>
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
         <activity
             android:name=".activity.login.RegisterActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden"></activity>
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
         <activity
             android:name=".activity.login.ForgotPswActivity"
             android:configChanges="orientation|keyboardHidden"
@@ -80,7 +77,7 @@
         <activity
             android:name=".activity.login.InfoStepOneActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden"></activity>
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
         <activity
             android:name=".activity.login.InfoStepTwoActivity"
             android:configChanges="orientation|keyboardHidden"
@@ -96,7 +93,9 @@
         <activity android:name=".gate.Main2Activity" />
         <activity android:name=".gate.NewActivity" />
         <activity android:name=".activity.person.HelpActivity" />
-        <activity android:name=".activity.person.CollectionActivity"></activity>
+        <activity android:name=".activity.person.CollectionActivity" />
+        <activity android:name=".activity.login.BindTelActivity" />
+        <activity android:name=".activity.login.AutoCodeActivity"></activity>
     </application>
 
 </manifest>

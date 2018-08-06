@@ -19,6 +19,7 @@
             android:layout_weight="1"
             android:src="@drawable/login_logo"/>
         <ImageView
+            android:id="@+id/iv_facebook_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/facebook_logo"/>

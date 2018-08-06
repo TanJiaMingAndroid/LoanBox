@@ -45,6 +45,12 @@
     <color name="person_bg">#F4F4F4</color>
     <color name="person_login">#FF7A3F</color>
     <color name="login_head">#FFF6F6F6</color>
+    <!--绑定手机号-->
+    <color name="login_bind_tel_content1">#FF000000</color>
+    <color name="login_bind_tel_line">#FF909090</color>
+    <!--获取验证码-->
+    <color name="login_bind_tel_code_content1">#FF272727</color>
+    <color name="login_bind_tel_code_content2">#FF868686</color>
 
 
 

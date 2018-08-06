@@ -10,6 +10,15 @@
     <string name="login_title">Login</string>
     <string name="login_facebook">Login dengan facebook</string><!--通过facebook登录-->
     <string name="login_agreement">Masuk untuk setuju  《***** Perjanjian Layanan》</string><!--同意协议-->
+    <!--绑定手机号-->
+    <string name="login_bind_tel_content1">Ikat nomor telepon</string>
+    <string name="login_bind_tel_content2">Anda harus mengikat dan memverifikasi nomor</string>
+    <string name="login_bind_tel_content3">ponsel Anda untuk masuk.</string>
+    <!--获取验证码-->
+    <string name="login_bind_tel_code_content1">Masukkan kode verifikasi</string>
+    <string name="login_bind_tel_code_content2">Silakan masukkan kode verifikasi 4-digit yang</string>
+    <string name="login_bind_tel_code_content3">Anda terima di ponsel Anda.</string>
+    <string name="login_bind_tel_code_submit">Langkah selanjutnya</string>
     <!--首页-->
     <string name="inde_recommend"></string><!--产品推荐-->
     <string name="index_more"></string><!--查看更多-->

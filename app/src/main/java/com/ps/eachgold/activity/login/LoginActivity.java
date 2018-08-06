@@ -8,7 +8,6 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,6 +19,7 @@ import com.ps.eachgold.bean.LoginBean;
 import com.ps.eachgold.contract.login.LoginContract;
 import com.ps.eachgold.presenter.LoginPresenter;
 import com.ps.eachgold.util.SPutils;
+import com.ps.eachgold.util.T;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
 import butterknife.BindView;
@@ -50,6 +50,9 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
     @BindView(R.id.tv_register)
     TextView tvRegister;*/
+
+    @BindView(R.id.iv_facebook_login)
+    ImageView ivFacebookLogin;
     @BindView(R.id.tv_login_agreement)
     TextView tvLoginAgreement;
 
@@ -158,14 +161,23 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     }
 
     //点击事件
-    @OnClick({R.id.left_icon})
+    @OnClick({R.id.left_icon,R.id.iv_facebook_login,R.id.tv_login_agreement})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.left_icon:
                 //返回
                 finish();
-                overridePendingTransition(R.anim.slide_still, R.anim.slide_out_right);
+                //overridePendingTransition(R.anim.slide_still, R.anim.slide_out_right);
                 break;
+            case R.id.iv_facebook_login:
+                //请绑定手机号
+                BindTelActivity.createActivity(this);
+                break;
+            case R.id.tv_login_agreement:
+                //show agreement
+                T.showShort("agreement");
+                break;
+
             /*case R.id.tv_forget:
                 //忘记密码
                 ForgotPswActivity.createActivity(this);
@@ -197,7 +209,6 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
     }
 }

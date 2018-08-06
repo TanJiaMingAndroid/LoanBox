@@ -5,6 +5,8 @@
     <dimen name="divider_height">5dp</dimen>
 
     <!--文字大小-->
+    <dimen name="text_size_60">60px</dimen>
+    <dimen name="text_size_40">40px</dimen>
     <dimen name="text_size_36">36px</dimen>
     <dimen name="text_size_30">30px</dimen>
     <dimen name="text_size_28">28px</dimen>
@@ -18,4 +20,11 @@
     <dimen name="text_size_12">12px</dimen>
     <dimen name="text_size_10">10px</dimen>
     <dimen name="text_size_8">8px</dimen>
+    <!--距离-->
+    <dimen name="margin_32">32px</dimen>
+    <dimen name="margin_50">50px</dimen>
+    <dimen name="margin_100">100px</dimen>
+    <dimen name="margin_150">150px</dimen>
+    <dimen name="margin_200">200px</dimen>
+
 </resources>

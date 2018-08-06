@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ps.eachgold.activity.login.BindTelActivity"
+    android:orientation="vertical">
+    <include layout="@layout/login_head"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="80px"
+        android:text="@string/login_bind_tel_content1"
+        android:textSize="@dimen/text_size_60"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/margin_150"
+        android:textColor="@color/login_bind_tel_content1"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="55px"
+        android:text="@string/login_bind_tel_content2"
+        android:textSize="@dimen/text_size_30"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/margin_32"
+        android:textColor="@color/login_bind_tel_content1"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="55px"
+        android:text="@string/login_bind_tel_content3"
+        android:textSize="@dimen/text_size_30"
+        android:gravity="center"
+        android:textColor="@color/login_bind_tel_content1"/>
+   <com.zhy.autolayout.AutoLinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="100px"
+       android:layout_marginTop="113px"
+       android:layout_marginLeft="@dimen/margin_50"
+       android:layout_marginRight="@dimen/margin_50">
+       <TextView
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="1.5"
+           android:text="+62"
+           android:gravity="center"
+           android:textSize="@dimen/text_size_40"/>
+       <EditText
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="4"
+           android:maxLength="11"
+           android:text="177108533022"
+           android:background="@null"
+           android:textSize="@dimen/text_size_40"/>
+
+   </com.zhy.autolayout.AutoLinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/login_bind_tel_line"
+        android:layout_marginRight="@dimen/margin_50"
+        android:layout_marginLeft="@dimen/margin_50"/>
+    <ImageView
+        android:id="@+id/iv_bind_tel_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_next"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_100"/>
+
+
+</com.zhy.autolayout.AutoLinearLayout>
