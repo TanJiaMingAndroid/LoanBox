@@ -20,8 +20,8 @@
     <string name="login_bind_tel_code_content3">Anda terima di ponsel Anda.</string>
     <string name="login_bind_tel_code_submit">Langkah selanjutnya</string>
     <!--首页-->
-    <string name="inde_recommend"></string><!--产品推荐-->
-    <string name="index_more"></string><!--查看更多-->
+    <string name="index_recommend">Rekomendasi populer</string><!--产品推荐-->
+    <string name="index_more"></string>Lihat lebih banyak<!--查看更多-->
     <!--item-->
     <string name="loan_market_item_money">Rp</string><!---->
     <string name="loan_market_item_dayRate"></string><!--日利率-->

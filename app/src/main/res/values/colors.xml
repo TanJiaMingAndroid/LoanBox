@@ -51,6 +51,10 @@
     <!--获取验证码-->
     <color name="login_bind_tel_code_content1">#FF272727</color>
     <color name="login_bind_tel_code_content2">#FF868686</color>
+    <!--首页—滚动条-->
+    <color name="index_tip_message">#FF363636</color>
+    <color name="index_product_hot">#FFFF5144</color>
+
 
 
 

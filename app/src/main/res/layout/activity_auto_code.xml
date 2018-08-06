@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoLinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context="com.ps.eachgold.activity.login.AutoCodeActivity">
     <include layout="@layout/login_head"/>
@@ -30,6 +30,32 @@
         android:gravity="center"
         android:textSize="@dimen/text_size_30"
         android:textColor="@color/login_bind_tel_code_content2"/>
+
+    <com.jyn.vcview.VerificationCodeView
+        android:id="@+id/verificationcodeview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:vcv_et_bg="@drawable/et_login_code"
+        app:vcv_et_cursor="@drawable/et_cursor"
+        app:vcv_et_inputType="number"
+        app:vcv_et_number="4"
+        app:vcv_et_text_color="@android:color/black"
+        app:vcv_et_text_size="6sp"
+        />
+    <Button
+        android:id="@+id/bt_login_code_go"
+        android:layout_width="424px"
+        android:layout_height="86px"
+        android:layout_gravity="center"
+        android:layout_marginTop="86px"
+        android:background="@drawable/icon_confirm"
+        android:text="@string/login_bind_tel_code_submit"
+        android:textColor="@color/white"/>
+
+
 
 
 </com.zhy.autolayout.AutoLinearLayout>

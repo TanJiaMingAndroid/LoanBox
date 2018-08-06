@@ -119,7 +119,7 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
         // ViewPager+Fragment沉浸式状态栏
         StatBarCpmpart.init(getActivity(), statusBar);
         leftIcon.setVisibility(View.GONE);
-        title.setText("贷款");
+        title.setText("index");
         //初始化列表
         initRecycler();
         //添加头部

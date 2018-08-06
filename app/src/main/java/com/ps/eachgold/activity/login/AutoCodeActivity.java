@@ -2,15 +2,31 @@ package com.ps.eachgold.activity.login;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.jyn.vcview.VerificationCodeView;
 import com.ps.eachgold.R;
 import com.ps.eachgold.activity.BaseActivity;
+import com.ps.eachgold.activity.MainActivity;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class AutoCodeActivity extends BaseActivity {
+
+    @BindView(R.id.left_icon)
+    ImageView leftIcon;
+    @BindView(R.id.title)
+    TextView title;
+    @BindView(R.id.verificationcodeview)
+    VerificationCodeView verificationcodeview;
+    @BindView(R.id.bt_login_code_go)
+    Button btLoginCodeGo;
 
     //跳转
     public static void createActivity(Context context) {
@@ -37,6 +53,15 @@ public class AutoCodeActivity extends BaseActivity {
     @Override
     public int getLayout() {
         return R.layout.activity_auto_code;
+    }
+    @OnClick(R.id.bt_login_code_go)
+    public void onViewClicked(View view) {
+        switch (view.getId()){
+            case R.id.bt_login_code_go:
+                //跳转到验证码页面
+                MainActivity.createActivity(this,0);
+                break;
+        }
     }
 
     @Override
