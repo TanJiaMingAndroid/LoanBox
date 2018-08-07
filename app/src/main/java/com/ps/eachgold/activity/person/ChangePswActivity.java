@@ -4,7 +4,6 @@ package com.ps.eachgold.activity.person;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -12,7 +11,6 @@ import android.widget.TextView;
 
 import com.ps.eachgold.R;
 import com.ps.eachgold.activity.BaseActivity;
-import com.ps.eachgold.activity.MainActivity;
 import com.ps.eachgold.bean.RxMsgBean;
 import com.ps.eachgold.contract.person.ChangePswContract;
 import com.ps.eachgold.presenter.ChangePswPresenter;
@@ -22,7 +20,6 @@ import com.ps.eachgold.util.T;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 

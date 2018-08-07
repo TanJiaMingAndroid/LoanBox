@@ -1,6 +1,5 @@
 package com.ps.eachgold.net.headerRequset;
 
-import com.ps.eachgold.bean.Apii.HjAction;
 import com.ps.eachgold.net.ApiAction;
 
 /**

@@ -21,7 +21,6 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import com.ps.eachgold.App;
 
 import java.lang.ref.WeakReference;

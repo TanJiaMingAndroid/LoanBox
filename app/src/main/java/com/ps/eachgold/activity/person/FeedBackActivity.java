@@ -16,7 +16,6 @@ import com.ps.eachgold.util.T;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
 import butterknife.BindView;
-
 import butterknife.OnClick;
 
 /**

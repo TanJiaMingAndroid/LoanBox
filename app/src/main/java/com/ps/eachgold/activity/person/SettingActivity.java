@@ -3,24 +3,16 @@ package com.ps.eachgold.activity.person;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ps.eachgold.R;
 import com.ps.eachgold.activity.BaseActivity;
-import com.ps.eachgold.activity.MainActivity;
-import com.ps.eachgold.bean.RxMsgBean;
-import com.ps.eachgold.util.RxBus;
-import com.ps.eachgold.util.SPutils;
-import com.ps.eachgold.util.T;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 
 
 public class SettingActivity extends BaseActivity {

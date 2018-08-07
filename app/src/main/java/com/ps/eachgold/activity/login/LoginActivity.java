@@ -9,9 +9,12 @@ import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.facebook.CallbackManager;
 import com.ps.eachgold.R;
 import com.ps.eachgold.activity.BaseActivity;
 import com.ps.eachgold.activity.MainActivity;
@@ -55,20 +58,28 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
     @BindView(R.id.tv_login_agreement)
     TextView tvLoginAgreement;
-    @BindView(R.id.bt_facebook_login)
-    Button btFacebookLogin;
+    @BindView(R.id.bt_login_tel)
+    Button btLoginTel;
+    @BindView(R.id.et_login_tel)
+    EditText etLoginTel;
+    /*@BindView(R.id.bt_facebook_login)
+    Button btFacebookLogin;*/
 
 
     private LoginPresenter mPresenter;
 
 
     private String phone;
+    private CallbackManager callbackManager;
+    //private LoginButton btFacebookLogin;
 
     //跳转
     public static void createActivity(Context context, String phone) {
         Intent intent = new Intent(context, LoginActivity.class);
         intent.putExtra("phoneNumber", phone);
         context.startActivity(intent);
+
+
     }
 
     @Override
@@ -86,12 +97,12 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
     @Override
     public int getLayout() {
+
         return R.layout.activity_login;
     }
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-
         QMUIStatusBarHelper.translucent(this); // 沉浸式状态栏
         leftIcon.setVisibility(View.INVISIBLE);
         title.setText(R.string.app_name);
@@ -99,6 +110,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
         SpannableString spannableString = new SpannableString("Masuk untuk setuju  《***** Perjanjian Layanan》");
         spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#FFFF7A3F")), 20, spannableString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         tvLoginAgreement.setText(spannableString);
+
     }
 
     @Override
@@ -163,7 +175,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     }
 
     //点击事件
-    @OnClick({R.id.left_icon, R.id.bt_facebook_login, R.id.tv_login_agreement})
+    @OnClick({R.id.left_icon, R.id.tv_login_agreement, R.id.bt_login_tel})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.left_icon:
@@ -174,10 +186,18 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
             case R.id.bt_facebook_login:
                 //请绑定手机号
                 BindTelActivity.createActivity(this);
+                //facebookLogin();
                 break;
             case R.id.tv_login_agreement:
                 //show agreement
                 T.showShort("agreement");
+                break;
+            case R.id.bt_login_tel:
+                if ((etLoginTel.getText()) != null && (etLoginTel.getText().length() == 11)) {
+                    BindTelActivity.createActivity(this);
+                }else {
+                    Toast.makeText(this,"手机号为空或者输入不正确",Toast.LENGTH_SHORT).show();
+                }
                 break;
 
             /*case R.id.tv_forget:
@@ -208,9 +228,67 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
         }
     }
 
+    /*@SuppressLint("WrongViewCast")
+    public void facebookLogin(){
+        callbackManager = CallbackManager.Factory.create();
+        btFacebookLogin = findViewById(R.id.bt_facebook_login);
+        btFacebookLogin.setReadPermissions(Arrays.asList("public_profile", "email"));
+
+        btFacebookLogin.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                // App code
+                //Toast.makeText(MainActivity.this,"success",Toast.LENGTH_LONG).show();
+                //Toast.makeText(MainActivity.this,"token"+loginResult.getAccessToken(),Toast.LENGTH_LONG).show();
+                Log.e("userid", loginResult.getAccessToken().getUserId());
+                Log.e("token", loginResult.getAccessToken().getToken());
+                Log.e("Application", loginResult.getAccessToken().getApplicationId());
+                Log.e("getDeclinedPermissions", loginResult.getAccessToken().getDeclinedPermissions().toString());
+                Log.e("getExpires", loginResult.getAccessToken().getExpires().toString());
+                Log.e("getPermissions", loginResult.getAccessToken().getPermissions().toString());
+                Log.e("getSource", loginResult.getAccessToken().getSource().toString());
+
+                Log.e("RecentlyDenied", loginResult.getRecentlyDeniedPermissions().toString());
+                Log.e("getRecentlyGranted", loginResult.getRecentlyGrantedPermissions().toString());
+
+                final AccessToken token = loginResult.getAccessToken();
+                Log.e("accesstoken", loginResult.getAccessToken().toString());
+                Profile profile = Profile.getCurrentProfile();
+                profile.getName();
+                Log.e("getname", profile.getName());
+                Log.e("getFirst", profile.getFirstName());
+                Log.e("getLast", profile.getLastName());
+                Log.e("getMiddle", profile.getMiddleName());
+                Log.e("getpic", String.valueOf(profile.getProfilePictureUri(50, 50)));
+
+
+            }
+
+            @Override
+            public void onCancel() {
+                // App code
+            }
+
+            @Override
+            public void onError(FacebookException exception) {
+                // App code
+            }
+        });
+
+    }*/
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
+        //facebookLogin();
+
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        callbackManager.onActivityResult(requestCode, resultCode, data);
     }
 }

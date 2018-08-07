@@ -95,4 +95,11 @@
     <string name="person_setting_version">Version:</string><!--Version-->
     <string name="person_setting_logout">Logout</string><!--Logout-->
 
+
+
+    <!--facebook集成-->
+    <string name="facebook_app_id">1964375873582561</string>
+    <string name="fb_login_protocol_scheme">fb1964375873582561</string>
+
+
 </resources>

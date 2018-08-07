@@ -18,7 +18,6 @@ import com.ps.eachgold.bean.RegisterBean;
 import com.ps.eachgold.contract.login.RegisterContract;
 import com.ps.eachgold.presenter.RegisterPresenter;
 import com.ps.eachgold.util.SPutils;
-import com.ps.eachgold.util.T;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
 import butterknife.BindView;

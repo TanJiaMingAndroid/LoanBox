@@ -2,7 +2,6 @@ package com.ps.eachgold.presenter.credit;
 
 import android.content.Context;
 
-
 import com.alibaba.fastjson.JSON;
 import com.ps.eachgold.bean.BankBean;
 import com.ps.eachgold.bean.BankCardBean;
@@ -10,9 +9,7 @@ import com.ps.eachgold.bean.BannerBean;
 import com.ps.eachgold.bean.Header;
 import com.ps.eachgold.bean.Page;
 import com.ps.eachgold.contract.main.CreditContract;
-
 import com.ps.eachgold.net.ApiService;
-
 import com.ps.eachgold.net.MyObserver3;
 import com.ps.eachgold.net.NetClient;
 import com.ps.eachgold.net.headerRequset.BankCardlistRequest;
@@ -21,15 +18,15 @@ import com.ps.eachgold.net.headerRequset.BannerRequset;
 import com.ps.eachgold.net.headerRequset.CliclLogRequest;
 import com.ps.eachgold.util.SPutils;
 
-//import rx.android.schedulers.AndroidSchedulers;
-//import rx.schedulers.Schedulers;
-
 import java.util.List;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
+
+//import rx.android.schedulers.AndroidSchedulers;
+//import rx.schedulers.Schedulers;
 
 
 /**

@@ -9,11 +9,7 @@
 package com.ps.eachgold.util;
 
 
-
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.util.Base64;
-
 
 import java.security.Key;
 import java.security.KeyFactory;

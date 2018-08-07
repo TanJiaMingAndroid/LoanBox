@@ -23,14 +23,12 @@ import com.ps.eachgold.bean.MessageBean;
 import com.ps.eachgold.contract.person.MessageContract;
 import com.ps.eachgold.presenter.MessagePresenter;
 import com.ps.eachgold.util.DpPxUtil;
-import com.ps.eachgold.util.T;
 import com.ps.eachgold.viewHold.MessageViewHolder;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MessageActivity extends BaseActivity implements MessageContract.View, SwipeRefreshLayout.OnRefreshListener, RecyclerArrayAdapter.OnMoreListener {

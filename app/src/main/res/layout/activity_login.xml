@@ -39,14 +39,17 @@
             android:textColor="@color/login_bind_tel_code_content2"
             android:gravity="center"/>
         <EditText
+            android:id="@+id/et_login_tel"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.5"
             android:layout_marginLeft="90px"
             android:layout_marginRight="90px"
             android:background="@drawable/editext_border"
-            android:layout_marginTop="96px"/>
+            android:layout_marginTop="96px"
+            android:inputType="number"/>
         <Button
+            android:id="@+id/bt_login_tel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/login_bt"
@@ -91,6 +94,14 @@
             android:layout_marginTop="23px"
             android:layout_gravity="center"
             android:textColor="@color/white"/>
+
+        <!--<com.facebook.login.widget.LoginButton
+            android:id="@+id/bt_facebook_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp" />-->
 
         <TextView
             android:id="@+id/tv_login_agreement"

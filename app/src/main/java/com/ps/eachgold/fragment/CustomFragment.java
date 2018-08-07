@@ -12,24 +12,19 @@ import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.jude.easyrecyclerview.decoration.DividerDecoration;
 import com.ps.eachgold.R;
 import com.ps.eachgold.activity.H5Activity;
-import com.ps.eachgold.activity.loan.HotLoanActivity;
 import com.ps.eachgold.bean.BankCardBean;
-import com.ps.eachgold.bean.CustomBean;
 import com.ps.eachgold.bean.Header;
 import com.ps.eachgold.bean.LoanBean;
 import com.ps.eachgold.contract.person.CustomContract;
 import com.ps.eachgold.presenter.CustomPresenter;
 import com.ps.eachgold.util.DpPxUtil;
-import com.ps.eachgold.viewHold.CustomViewHolder;
 import com.ps.eachgold.viewHold.FragmentCreditViewHolder;
 import com.ps.eachgold.viewHold.FragmentInsteadViewHolder;
 import com.ps.eachgold.viewHold.FragmentLoanViewHolder;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.Unbinder;
 
 /**
  * Created by 8146 on 2018/1/16.

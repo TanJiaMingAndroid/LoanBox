@@ -18,7 +18,6 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.PopupWindow;
 
-
 import com.ps.eachgold.R;
 import com.ps.eachgold.util.InputMethodUtils;
 import com.ps.eachgold.util.SimpleAnimUtil;

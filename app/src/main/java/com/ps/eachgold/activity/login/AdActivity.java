@@ -14,7 +14,6 @@ import com.ps.eachgold.activity.BaseActivity;
 import com.ps.eachgold.activity.MainActivity;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class AdActivity extends BaseActivity {

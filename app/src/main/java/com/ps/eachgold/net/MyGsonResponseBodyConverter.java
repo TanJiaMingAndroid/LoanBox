@@ -4,7 +4,6 @@ package com.ps.eachgold.net;
 import com.google.gson.Gson;
 import com.ps.eachgold.util.L;
 
-
 import java.io.IOException;
 import java.lang.reflect.Type;
 

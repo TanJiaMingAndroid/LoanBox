@@ -9,13 +9,12 @@ import android.telephony.TelephonyManager;
 
 import com.ps.eachgold.R;
 import com.ps.eachgold.activity.BaseActivity;
-import com.ps.eachgold.gate.Main2Activity;
 import com.ps.eachgold.activity.MainActivity;
 import com.ps.eachgold.bean.BannerBean;
 import com.ps.eachgold.contract.login.WelcomeContract;
+import com.ps.eachgold.gate.Main2Activity;
 import com.ps.eachgold.presenter.WelcomePresenter;
 import com.ps.eachgold.util.SPutils;
-import com.ps.eachgold.util.T;
 import com.yanzhenjie.permission.AndPermission;
 import com.yanzhenjie.permission.PermissionListener;
 import com.yanzhenjie.permission.Rationale;

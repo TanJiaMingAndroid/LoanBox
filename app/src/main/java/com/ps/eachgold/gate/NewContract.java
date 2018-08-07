@@ -1,11 +1,8 @@
 package com.ps.eachgold.gate;
 
-import com.ps.eachgold.bean.BannerBean;
 import com.ps.eachgold.bean.Header;
-import com.ps.eachgold.bean.LoanBean;
 import com.ps.eachgold.contract.ImpBasePresenter;
 import com.ps.eachgold.contract.ImpBaseView;
-import com.ps.eachgold.gate.NewBean;
 
 import java.util.List;
 

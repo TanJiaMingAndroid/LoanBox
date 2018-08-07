@@ -1,6 +1,5 @@
 package com.ps.eachgold.viewHold;
 
-import android.content.Context;
 import android.support.v4.content.ContextCompat;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -8,8 +7,6 @@ import android.widget.TextView;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.ps.eachgold.R;
 import com.ps.eachgold.bean.BaseBean;
-
-import butterknife.BindView;
 
 /**
  * Created by 8146 on 2018/1/17.

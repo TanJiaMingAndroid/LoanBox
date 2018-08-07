@@ -4,7 +4,6 @@ import com.ps.eachgold.bean.BankBean;
 import com.ps.eachgold.bean.BankCardBean;
 import com.ps.eachgold.bean.BannerBean;
 import com.ps.eachgold.bean.BaseHeaderBean;
-import com.ps.eachgold.bean.CustomBean;
 import com.ps.eachgold.bean.LaberBean;
 import com.ps.eachgold.bean.LoanBean;
 import com.ps.eachgold.bean.LoginBean;
@@ -12,7 +11,6 @@ import com.ps.eachgold.bean.MessageBean;
 import com.ps.eachgold.bean.RegisterBean;
 import com.ps.eachgold.gate.NewBean;
 import com.ps.eachgold.gate.NewDetailBean;
-
 
 import java.util.List;
 

@@ -5,17 +5,13 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import com.alibaba.fastjson.JSON;
-
 import com.ps.eachgold.bean.Header;
 import com.ps.eachgold.bean.RegisterBean;
 import com.ps.eachgold.contract.login.RegisterContract;
 import com.ps.eachgold.net.ApiService;
-
 import com.ps.eachgold.net.MyObserver3;
 import com.ps.eachgold.net.NetClient;
-
 import com.ps.eachgold.net.headerRequset.RegisterCodeRequest;
-
 import com.ps.eachgold.net.headerRequset.RegisterRequest;
 import com.ps.eachgold.util.CodeCountDownTimer;
 import com.ps.eachgold.util.RSAUtil;

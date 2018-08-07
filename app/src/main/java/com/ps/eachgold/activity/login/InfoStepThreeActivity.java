@@ -23,7 +23,6 @@ import com.ps.eachgold.util.SPutils;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class InfoStepThreeActivity extends BaseActivity implements InfoStepThreeContract.View {

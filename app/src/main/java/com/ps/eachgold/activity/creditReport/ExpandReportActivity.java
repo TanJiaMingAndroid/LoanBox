@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ps.eachgold.R;
-
 import com.ps.eachgold.activity.BaseActivity;
 import com.ps.eachgold.bean.GroupBean;
 import com.ps.eachgold.contract.creditReport.ExpandReportContract;

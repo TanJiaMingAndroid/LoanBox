@@ -1,8 +1,6 @@
 package com.ps.eachgold.contract.loan;
 
 import com.ps.eachgold.bean.BankBean;
-import com.ps.eachgold.bean.BankCardBean;
-import com.ps.eachgold.bean.Header;
 import com.ps.eachgold.contract.ImpBasePresenter;
 import com.ps.eachgold.contract.ImpBaseView;
 

@@ -1,7 +1,5 @@
 package com.ps.eachgold.bean;
 
-import java.util.List;
-
 /**
  * Created by 8146 on 2018/1/19.
  * 银行 -模型类

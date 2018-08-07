@@ -4,14 +4,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
-
 import com.ps.eachgold.R;
-import com.ps.eachgold.gate.NewFragment;
 import com.ps.eachgold.contract.FragmentContract;
 import com.ps.eachgold.fragment.CreditFragment;
 import com.ps.eachgold.fragment.InsteadFragment;
 import com.ps.eachgold.fragment.LoanFragment;
 import com.ps.eachgold.fragment.PersonFragment;
+import com.ps.eachgold.gate.NewFragment;
 
 /**
  * Created by 8146 on 2017/1/12.

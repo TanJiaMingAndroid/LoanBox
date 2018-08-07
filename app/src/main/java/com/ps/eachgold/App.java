@@ -1,5 +1,6 @@
 package com.ps.eachgold;
 
+import android.app.Application;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -9,7 +10,9 @@ import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 import android.support.v7.app.AppCompatActivity;
 
-import com.squareup.leakcanary.LeakCanary;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
+import com.ps.eachgold.net.ApiAction;
 
 
 /**
@@ -17,7 +20,7 @@ import com.squareup.leakcanary.LeakCanary;
  * 承MultiDexApplication  java.lang.NoClassDefFoundError:retrofit2.Retrofit$Builder错误解决
  */
 
-public class App extends MultiDexApplication {
+public class App extends Application {
     public static App instance;
     private BroadcastReceiver mBroadcastReceiver;
     //刷新标志
@@ -37,6 +40,8 @@ public class App extends MultiDexApplication {
        // LeakCanary.install(this);
         instance = this;
         //instance.getResources().getSystem().flushLayoutCache();
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        AppEventsLogger.activateApp(this);
 
     }
 

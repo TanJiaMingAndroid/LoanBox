@@ -6,9 +6,7 @@ import android.widget.TextView;
 
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.ps.eachgold.R;
-import com.ps.eachgold.bean.LoanBean;
 import com.ps.eachgold.util.GlideApp;
-import com.ps.eachgold.util.SPutils;
 
 /**
  * Created by 8146 on 2018/2/9.

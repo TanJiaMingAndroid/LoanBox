@@ -5,18 +5,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.ps.eachgold.R;
 import com.ps.eachgold.bean.BankBean;
-import com.ps.eachgold.bean.BaseBean;
-import com.ps.eachgold.util.GlideApp;
 import com.ps.eachgold.util.SPutils;
-import com.ps.eachgold.util.T;
-
-import java.util.List;
 
 /**
  * Created by 8146 on 2018/1/17.

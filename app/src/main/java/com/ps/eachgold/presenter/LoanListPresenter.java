@@ -4,8 +4,8 @@ import android.content.Context;
 
 import com.alibaba.fastjson.JSON;
 import com.ps.eachgold.bean.Header;
-import com.ps.eachgold.bean.Page;
 import com.ps.eachgold.bean.LoanBean;
+import com.ps.eachgold.bean.Page;
 import com.ps.eachgold.contract.loan.LoanListContract;
 import com.ps.eachgold.net.ApiService;
 import com.ps.eachgold.net.MyObserver3;

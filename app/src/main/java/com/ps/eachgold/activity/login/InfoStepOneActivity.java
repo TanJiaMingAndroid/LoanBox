@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bigkoo.pickerview.OptionsPickerView;
 import com.ps.eachgold.R;
@@ -23,7 +22,6 @@ import com.ps.eachgold.bean.UserInfoBean;
 import com.ps.eachgold.contract.loan.InfoStepOneContract;
 import com.ps.eachgold.presenter.InfoStepOnePresenter;
 import com.ps.eachgold.util.IDCard;
-import com.ps.eachgold.util.RegexUtils;
 import com.ps.eachgold.util.SPutils;
 import com.ps.eachgold.util.T;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
@@ -33,7 +31,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class InfoStepOneActivity extends BaseActivity implements InfoStepOneContract.View {

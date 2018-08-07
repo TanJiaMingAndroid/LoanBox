@@ -19,7 +19,6 @@ import com.ps.eachgold.activity.credit.BankCreditListActivity;
 import com.ps.eachgold.bean.BankBean;
 import com.ps.eachgold.contract.loan.HandleCardContract;
 import com.ps.eachgold.presenter.HandleCardPresenter;
-import com.ps.eachgold.util.RSAUtil;
 import com.ps.eachgold.viewHold.FragmentCreditHeadViewHolder;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 

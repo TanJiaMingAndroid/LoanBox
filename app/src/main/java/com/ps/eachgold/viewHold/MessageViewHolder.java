@@ -7,7 +7,6 @@ import android.widget.TextView;
 
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.ps.eachgold.R;
-import com.ps.eachgold.bean.BaseBean;
 import com.ps.eachgold.bean.MessageBean;
 
 /**

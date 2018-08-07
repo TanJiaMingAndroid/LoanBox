@@ -9,15 +9,10 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.ps.eachgold.R;
 import com.ps.eachgold.activity.BaseActivity;
-import com.ps.eachgold.activity.login.LoginActivity;
-import com.ps.eachgold.bean.RxMsgBean;
 import com.ps.eachgold.fragment.CustomFragment;
-import com.ps.eachgold.util.RxBus;
-import com.ps.eachgold.util.SPutils;
 import com.ps.eachgold.viewHold.CustomVpAdapter;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 

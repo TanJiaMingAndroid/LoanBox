@@ -27,7 +27,6 @@ import com.ps.eachgold.presenter.LoanPresenter;
 import com.ps.eachgold.util.DpPxUtil;
 import com.ps.eachgold.util.SPutils;
 import com.ps.eachgold.viewHold.FragmentLoanViewHolder;
-
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
 import java.util.List;

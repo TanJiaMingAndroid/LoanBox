@@ -7,7 +7,6 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.ps.eachgold.activity.login.LoginActivity;
-import com.ps.eachgold.bean.BaseBean;
 import com.ps.eachgold.bean.BaseHeaderBean;
 import com.ps.eachgold.bean.Header;
 import com.ps.eachgold.bean.RxMsgBean;

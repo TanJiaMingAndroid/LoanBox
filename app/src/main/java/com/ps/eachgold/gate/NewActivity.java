@@ -4,7 +4,6 @@ package com.ps.eachgold.gate;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Html;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -13,10 +12,8 @@ import android.widget.TextView;
 import com.ps.eachgold.R;
 import com.ps.eachgold.activity.BaseActivity;
 import com.ps.eachgold.bean.Header;
-import com.ps.eachgold.util.T;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class NewActivity extends BaseActivity implements NewAcContract.View {

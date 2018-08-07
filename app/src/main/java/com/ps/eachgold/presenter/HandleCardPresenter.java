@@ -13,7 +13,6 @@ import com.ps.eachgold.net.headerRequset.BankListRequset;
 import com.ps.eachgold.net.headerRequset.CliclLogRequest;
 import com.ps.eachgold.util.SPutils;
 
-
 import java.util.List;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;

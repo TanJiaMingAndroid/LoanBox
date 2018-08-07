@@ -14,7 +14,6 @@ import com.ps.eachgold.contract.person.HelpContract;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * creat by tanjiaming at 2018/8/1

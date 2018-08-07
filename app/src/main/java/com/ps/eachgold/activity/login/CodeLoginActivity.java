@@ -8,7 +8,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.ps.eachgold.MyAppConfig;
 import com.ps.eachgold.R;
 import com.ps.eachgold.activity.BaseActivity;
 import com.ps.eachgold.activity.MainActivity;
@@ -17,10 +16,7 @@ import com.ps.eachgold.bean.LoginBean;
 import com.ps.eachgold.contract.login.CodeLoginContract;
 import com.ps.eachgold.presenter.CodeLoginPresenter;
 import com.ps.eachgold.util.SPutils;
-import com.ps.eachgold.util.T;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
-
-import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.OnClick;

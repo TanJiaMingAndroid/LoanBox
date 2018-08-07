@@ -53,9 +53,12 @@ public class BindTelActivity extends BaseActivity implements BindTelContract.Vie
     public int getLayout() {
         return R.layout.activity_bind_tel;
     }
-    @OnClick(R.id.iv_bind_tel_submit)
+    @OnClick({R.id.iv_bind_tel_submit,R.id.left_icon})
     public void onViewClicked(View view) {
         switch (view.getId()){
+            case R.id.left_icon:
+                finish();
+                break;
             case R.id.iv_bind_tel_submit:
                 //跳转到验证码页面
                 AutoCodeActivity.createActivity(this);
