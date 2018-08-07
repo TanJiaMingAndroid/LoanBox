@@ -8,8 +8,14 @@
     <string name="app_person">Akun saya</string><!--我的-->
     <!--登录-->
     <string name="login_title">Login</string>
+    <string name="login_content1">Ikat nomor telepon</string>
+    <string name="login_content2">Anda harus mengikat dan memverifikasi nomor</string>
+    <string name="login_content3">ponsel Anda untuk masuk.</string>
     <string name="login_facebook">Login dengan facebook</string><!--通过facebook登录-->
     <string name="login_agreement">Masuk untuk setuju  《***** Perjanjian Layanan》</string><!--同意协议-->
+
+    <string name="login_submit">Langkah selanjutnya</string>
+
     <!--绑定手机号-->
     <string name="login_bind_tel_content1">Ikat nomor telepon</string>
     <string name="login_bind_tel_content2">Anda harus mengikat dan memverifikasi nomor</string>

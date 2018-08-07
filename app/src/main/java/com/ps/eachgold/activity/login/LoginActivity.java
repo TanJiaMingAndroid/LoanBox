@@ -8,6 +8,7 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -51,10 +52,11 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     @BindView(R.id.tv_register)
     TextView tvRegister;*/
 
-    @BindView(R.id.iv_facebook_login)
-    ImageView ivFacebookLogin;
+
     @BindView(R.id.tv_login_agreement)
     TextView tvLoginAgreement;
+    @BindView(R.id.bt_facebook_login)
+    Button btFacebookLogin;
 
 
     private LoginPresenter mPresenter;
@@ -92,7 +94,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
         QMUIStatusBarHelper.translucent(this); // 沉浸式状态栏
         leftIcon.setVisibility(View.INVISIBLE);
-        title.setText(R.string.login_title);
+        title.setText(R.string.app_name);
         title.setTextColor(Color.parseColor("#FF000000"));
         SpannableString spannableString = new SpannableString("Masuk untuk setuju  《***** Perjanjian Layanan》");
         spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#FFFF7A3F")), 20, spannableString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -161,7 +163,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     }
 
     //点击事件
-    @OnClick({R.id.left_icon,R.id.iv_facebook_login,R.id.tv_login_agreement})
+    @OnClick({R.id.left_icon, R.id.bt_facebook_login, R.id.tv_login_agreement})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.left_icon:
@@ -169,7 +171,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
                 finish();
                 //overridePendingTransition(R.anim.slide_still, R.anim.slide_out_right);
                 break;
-            case R.id.iv_facebook_login:
+            case R.id.bt_facebook_login:
                 //请绑定手机号
                 BindTelActivity.createActivity(this);
                 break;

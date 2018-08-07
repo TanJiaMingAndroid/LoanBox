@@ -85,6 +85,7 @@
             app:sRightIconRes="@mipmap/icon_next_gray">
 
         </com.allen.library.SuperTextView>
+
         <com.allen.library.SuperTextView
             android:id="@+id/st_person_message"
             android:layout_width="match_parent"
@@ -95,6 +96,7 @@
             app:sRightIconRes="@mipmap/icon_next_gray">
 
         </com.allen.library.SuperTextView>
+
         <com.allen.library.SuperTextView
             android:id="@+id/st_person_help"
             android:layout_width="match_parent"
@@ -106,6 +108,7 @@
             app:sRightIconRes="@mipmap/icon_next_gray">
 
         </com.allen.library.SuperTextView>
+
         <com.allen.library.SuperTextView
             android:id="@+id/st_person_feedback"
             android:layout_width="match_parent"
@@ -116,6 +119,7 @@
             app:sRightIconRes="@mipmap/icon_next_gray">
 
         </com.allen.library.SuperTextView>
+
         <com.allen.library.SuperTextView
             android:id="@+id/st_person_setting"
             android:layout_width="match_parent"

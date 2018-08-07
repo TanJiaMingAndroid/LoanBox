@@ -130,7 +130,7 @@ public class CreditFragment extends BaseFragment implements CreditContract.View,
     protected void initView(Bundle savedInstanceState) {
         StatBarCpmpart.init(getActivity(), statusBar);
         leftIcon.setVisibility(View.GONE);
-        title.setText("信用卡");
+        title.setText("Pinjaman");
         //初始化列表
         initRecycler();
         //初始化头部银行列表
