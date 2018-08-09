@@ -105,7 +105,8 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
         btFacebookLogin.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                Log.e("userid", loginResult.getAccessToken().getUserId());
+                BindTelActivity.createActivity(getBaseContext());
+                /*Log.e("userid", loginResult.getAccessToken().getUserId());
                 Log.e("token", loginResult.getAccessToken().getToken());
                 Log.e("Application", loginResult.getAccessToken().getApplicationId());
                 Log.e("getDeclinedPermissions", loginResult.getAccessToken().getDeclinedPermissions().toString());
@@ -119,12 +120,14 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
                 final AccessToken token = loginResult.getAccessToken();
                 Log.e("accesstoken", loginResult.getAccessToken().toString());
                 Profile profile = Profile.getCurrentProfile();
-                profile.getName();
+                //profile.getName();
                 //Log.e("getname", profile.getName());
                 Log.e("getFirst", profile.getFirstName());
                 Log.e("getLast", profile.getLastName());
                 Log.e("getMiddle", profile.getMiddleName());
-                Log.e("getpic", String.valueOf(profile.getProfilePictureUri(50, 50)));
+                Log.e("getpic", String.valueOf(profile.getProfilePictureUri(50, 50)));*/
+
+
             }
 
             @Override
@@ -143,7 +146,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     protected void initView(Bundle savedInstanceState) {
         facebookLogin();
         QMUIStatusBarHelper.translucent(this); // 沉浸式状态栏
-        leftIcon.setVisibility(View.INVISIBLE);
+        //leftIcon.setVisibility(View.INVISIBLE);
         title.setText(R.string.app_name);
         title.setTextColor(Color.parseColor("#FF000000"));
         SpannableString spannableString = new SpannableString("Masuk untuk setuju  《***** Perjanjian Layanan》");
@@ -233,7 +236,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
                 break;
             case R.id.bt_login_tel:
                 if ((etLoginTel.getText()) != null && (etLoginTel.getText().length() == 11)) {
-                    BindTelActivity.createActivity(this);
+                    AutoCodeActivity.createActivity(this);
                 } else {
                     Toast.makeText(this, "手机号为空或者输入不正确", Toast.LENGTH_SHORT).show();
                 }

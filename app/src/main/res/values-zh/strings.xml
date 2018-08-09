@@ -90,7 +90,7 @@
     <string name="person_help_service_time_duration">每日8:00-17:00</string><!--每日8:00-17:00-->
     <string name="person_feedback_hint">请消息描述您的问题，我们能更快的为您解决</string><!--请消息描述您的问题，我们能更快的为您解决-->
     <string name="person_feedback_submit">提交反馈</string><!--提交反馈-->
-    <string name="person_feedback_upload_pic">提交反馈</string><!--提交反馈-->
+    <string name="person_feedback_upload_pic">上传图片(可选)</string><!--提交反馈-->
     <string name="person_setting_check_update">检查更新</string><!--检查更新-->
     <string name="person_setting_version">版本:</string><!--Version-->
     <string name="person_setting_logout">退出</string><!--Logout-->

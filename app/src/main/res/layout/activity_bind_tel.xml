@@ -62,11 +62,14 @@
         <EditText
             android:id="@+id/et_login_tel"
             android:layout_width="match_parent"
-            android:layout_height="100px"
+            android:layout_height="75px"
             android:layout_marginLeft="90px"
             android:layout_marginRight="90px"
             android:background="@drawable/editext_border"
-            android:layout_marginTop="96px"/>
+            android:layout_marginTop="96px"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:gravity="center"/>
 
     <ImageView
         android:id="@+id/iv_bind_tel_submit"

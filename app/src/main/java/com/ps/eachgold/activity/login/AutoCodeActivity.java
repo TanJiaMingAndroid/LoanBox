@@ -17,7 +17,7 @@ import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
+//tjm 接收验证码页面
 public class AutoCodeActivity extends BaseActivity {
 
     @BindView(R.id.left_icon)
@@ -55,13 +55,17 @@ public class AutoCodeActivity extends BaseActivity {
     public int getLayout() {
         return R.layout.activity_auto_code;
     }
-    @OnClick(R.id.bt_login_code_go)
+    @OnClick({R.id.bt_login_code_go,R.id.left_icon})
     public void onViewClicked(View view) {
         switch (view.getId()){
+            case R.id.left_icon:
+                finish();
+                break;
             case R.id.bt_login_code_go:
                 //跳转到验证码页面
                 MainActivity.createActivity(this,0);
                 break;
+
         }
     }
 

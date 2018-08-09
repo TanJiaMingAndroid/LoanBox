@@ -48,8 +48,9 @@
             android:layout_marginRight="90px"
             android:background="@drawable/editext_border"
             android:layout_marginTop="96px"
-
-            android:inputType="number"/>
+            android:maxLength="11"
+            android:inputType="phone"
+            android:gravity="center"/>
         <Button
             android:id="@+id/bt_login_tel"
             android:layout_width="wrap_content"

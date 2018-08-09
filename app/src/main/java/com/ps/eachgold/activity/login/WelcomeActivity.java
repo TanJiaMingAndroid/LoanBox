@@ -240,29 +240,9 @@ public class WelcomeActivity extends BaseActivity implements WelcomeContract.Vie
 
     }
 
-    //检测是否第一次登录（目前没有 引导页-故无第一次登录跳引导页的的判断）
+
     @Override
     public void checkFirst() {
-        //倒计时结束 如果广告图片不为空 则跳转广告页
-        //如果请求完 没获取到 超时  则等待
-        checkFlag = true;
-        if (imgUrlFlag) {
-            if (gate) {
-                Main2Activity.createActivity(this, 0);
-                checkFlag = false;
-            } else {
-                if (AdImgFlag) {
-                    AdActivity.createActivity(this, imgUrl, clickUrl, mbaseUrl);
-                    finish();
-                    checkFlag = false;
-                } else {
-                    MainActivity.createActivity(this, 0);
-                    checkFlag = false;
-                }
-            }
-
-        }
-        //  isFirst = (Boolean) SPutils.get(this, "First", true);
 
     }
 

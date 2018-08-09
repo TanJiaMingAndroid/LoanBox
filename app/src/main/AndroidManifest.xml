@@ -34,14 +34,14 @@
         <activity
             android:name=".activity.login.LoginActivity"
             android:theme="@style/BaseTheme" >
-
-        </activity>
-        <activity android:name=".activity.login.WelcomeActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".activity.login.WelcomeActivity" >
+
         </activity>
         <activity
             android:name=".activity.MainActivity"
