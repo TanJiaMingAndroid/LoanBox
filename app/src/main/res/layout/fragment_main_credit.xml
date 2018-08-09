@@ -2,7 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    app:ignore="NamespaceTypo">
     <LinearLayout
         android:id="@+id/status_bar"
         android:layout_width="match_parent"
@@ -13,6 +16,23 @@
     </LinearLayout>
 
     <include layout="@layout/activity_head" />
+
+    <!--tablayout-->
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/person_login"
+        app:tabBackground="null"
+        app:tabGravity="center"
+        tl:tabMode="scrollable"
+        tl:tabSelectedTextColor="@android:color/white"
+        app:tabTextColor="@android:color/darker_gray"/>
+
+
+
+    <!--tablayout-->
+
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_credit"
         android:layout_width="match_parent"

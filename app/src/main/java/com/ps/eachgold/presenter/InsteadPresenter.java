@@ -55,7 +55,6 @@ public class InsteadPresenter implements InsteadContract.Presenter {
 
         //获取Banner  1首页banner2信用卡banner3代还banner4启动页
         BannerRequset requset=new BannerRequset();
-        requset.setBannerType("3");
         String userStr = JSON.toJSONString(requset);
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"),userStr);
         mApiService.getBanner(requestBody)

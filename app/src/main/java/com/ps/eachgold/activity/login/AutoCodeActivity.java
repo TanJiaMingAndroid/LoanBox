@@ -12,6 +12,7 @@ import com.jyn.vcview.VerificationCodeView;
 import com.ps.eachgold.R;
 import com.ps.eachgold.activity.BaseActivity;
 import com.ps.eachgold.activity.MainActivity;
+import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -66,6 +67,7 @@ public class AutoCodeActivity extends BaseActivity {
 
     @Override
     protected void initView(Bundle savedInstanceState) {
+        QMUIStatusBarHelper.translucent(this); // 沉浸式状态栏
 
     }
 

@@ -19,6 +19,25 @@ public class FeedBackRequest extends BaseRequset{
     private String mobile;
     private String openId;
     private String content;
+    //add
+    private String userID;
+    private String pictureUrl;
+
+    public void setUserID(String userID) {
+        this.userID = userID;
+    }
+
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
 
     public String getMobile() {
         return mobile;

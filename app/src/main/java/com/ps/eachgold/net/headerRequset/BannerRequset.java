@@ -8,17 +8,6 @@ import com.ps.eachgold.net.ApiAction;
 
 public class BannerRequset extends BaseRequset{
 
-    private String bannerType;
-
-    public String getBannerType() {
-        return bannerType;
-    }
-
-    public void setBannerType(String bannerType) {
-        this.bannerType = bannerType;
-    }
-
-
     public BannerRequset() {
         createHeader();
     }

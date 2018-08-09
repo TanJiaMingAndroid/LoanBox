@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    tools:context="com.ps.eachgold.activity.login.AutoCodeActivity">
+    android:background="@color/login_bg"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
     <include layout="@layout/login_head"/>
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -57,5 +64,5 @@
 
 
 
-
+    </com.zhy.autolayout.AutoLinearLayout>
 </com.zhy.autolayout.AutoLinearLayout>

@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -193,7 +194,7 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
         tvHandleCard = viewHeader.findViewById(R.id.tv_handle_card); //我要办卡
         tvRepayCard = viewHeader.findViewById(R.id.tv_repay_card); //帮你换卡
 
-        ivOneBanner=viewHeader.findViewById(R.id.iv_one_banner);;
+        ivOneBanner=viewHeader.findViewById(R.id.iv_one_banner);
         adapter.addHeader(new RecyclerArrayAdapter.ItemView() {
             @Override
             public View onCreateView(ViewGroup parent) {
@@ -221,7 +222,7 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
             @Override
             public void updateUI(Context context, View view, int position, Integer data) {
                 GlideApp.with(context).load(data)
-                        .placeholder(R.mipmap.banner_glide)
+                        .placeholder(R.mipmap.banner_glide)//占位图
                         .error(R.mipmap.banner_glide)
                         .into((ImageView) view);
 
@@ -385,6 +386,10 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
     public void getBannerSuccess(List<BannerBean> list) {
         bannerlist.clear();
         bannerlist = list;
+        String aaa = bannerlist.get(0).getImgUrl();
+        String bbb = bannerlist.get(0).getImgUrl();
+        Log.e("aaa",aaa);
+        Log.e("bbb",bbb);
         if (list != null && list.size() > 0) {
             initBanner(list);
             if(list.size()==1){

@@ -3,6 +3,7 @@ package com.ps.eachgold.fragment;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -36,7 +37,6 @@ import com.ps.eachgold.contract.main.CreditContract;
 import com.ps.eachgold.popupWindow.WaittingProgressPop;
 import com.ps.eachgold.presenter.credit.CreditPresenter;
 import com.ps.eachgold.util.DpPxUtil;
-import com.ps.eachgold.util.GlideApp;
 import com.ps.eachgold.util.SPutils;
 import com.ps.eachgold.util.StatBarCpmpart;
 import com.ps.eachgold.viewHold.FragmentCreditHeadViewHolder;
@@ -47,10 +47,12 @@ import java.util.Calendar;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Created by 8146 on 2018/1/15.
- * 信用卡 Fragment
+ * daik Fragment
  */
 
 public class CreditFragment extends BaseFragment implements CreditContract.View, SwipeRefreshLayout.OnRefreshListener {
@@ -65,6 +67,9 @@ public class CreditFragment extends BaseFragment implements CreditContract.View,
     ImageView leftIcon;
     @BindView(R.id.title)
     TextView title;
+    @BindView(R.id.tabLayout)
+    TabLayout tabLayout;
+    Unbinder unbinder;
 
     //list适配器-卡片
     private RecyclerArrayAdapter<BankCardBean> creditAdapter;
@@ -107,7 +112,9 @@ public class CreditFragment extends BaseFragment implements CreditContract.View,
     // banner 的数据
     private List<BannerBean> bannerlist;
     //默认状态下 无banner 时 只显示一二
-    private ImageView  ivOneBanner;
+    private ImageView ivOneBanner;
+    String [] sort = {"Semua","Jumlah pinjaman tinggi","Suku bunga rendah","Waktu pinjaman panjang"};
+
     //
     public static CreditFragment newInstance() {
         CreditFragment fragment = new CreditFragment();
@@ -120,7 +127,7 @@ public class CreditFragment extends BaseFragment implements CreditContract.View,
         size = 3;
         bankList = new ArrayList<>();
         bankListSix = new ArrayList<>();
-        bannerlist=new ArrayList<>();
+        bannerlist = new ArrayList<>();
         baseImgUrl = (String) SPutils.get(getActivity(), "baseImgUrl", "");
     }
 
@@ -141,6 +148,14 @@ public class CreditFragment extends BaseFragment implements CreditContract.View,
         addFoot();
         //添加监听
         addListener();
+        for (int i = 0; i < sort.length; i++) {
+            TabLayout.Tab tab = tabLayout.newTab();
+            tab.setText(sort[i]);
+            // tab.setIcon(R.mipmap.ic_launcher);//icon会显示在文字上面
+            tabLayout.addTab(tab);
+        }
+
+
     }
 
     @Override
@@ -221,6 +236,7 @@ public class CreditFragment extends BaseFragment implements CreditContract.View,
             }
         });
     }
+
     private void initBanner2() {
         ArrayList<Integer> images = new ArrayList<>();
         images.add(R.mipmap.banner_glide);
@@ -271,10 +287,10 @@ public class CreditFragment extends BaseFragment implements CreditContract.View,
 
                 String baseUrl = (String) SPutils.get(getContext(), "baseImgUrl", "");
 
-                GlideApp.with(context).load("http:" + baseUrl + data)
+               /* GlideApp.with(context).load("http:" + baseUrl + data)
                         .placeholder(R.mipmap.banner_glide)
                         .error(R.mipmap.banner_glide)
-                        .into((ImageView) view);
+                        .into((ImageView) view);*/
             }
         }, images).startTurning(3000);
 
@@ -286,12 +302,12 @@ public class CreditFragment extends BaseFragment implements CreditContract.View,
         recyclerHead = viewHeader.findViewById(R.id.recycler_head);
         cardProgress = viewHeader.findViewById(R.id.rl_card_progress);//办卡进度
         linMore = viewHeader.findViewById(R.id.lin_more);//查看更多
-        ivOneBanner=viewHeader.findViewById(R.id.iv_one_banner);//只有一个banner时
+        ivOneBanner = viewHeader.findViewById(R.id.iv_one_banner);//只有一个banner时
         recyclerHead.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));
         recyclerHead.setAdapterWithProgress(bankAdapter = new RecyclerArrayAdapter<BankBean>(getActivity()) {
             @Override
             public BaseViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
-                return new FragmentCreditHeadViewHolder(parent,1);
+                return new FragmentCreditHeadViewHolder(parent, 1);
             }
         });
 
@@ -334,9 +350,9 @@ public class CreditFragment extends BaseFragment implements CreditContract.View,
                 if (currentTime - lastClickTime > MyAppConfig.MIN_CLICK_DELAY_TIME) {
                     //保存点击记录
                     lastClickTime = currentTime;
-                    String bankid= String.valueOf(bankAdapter.getAllData().get(position).getId());
-                    String type="bank";
-                    mPresenter.saveLog(type,bankid);
+                    String bankid = String.valueOf(bankAdapter.getAllData().get(position).getId());
+                    String type = "bank";
+                    mPresenter.saveLog(type, bankid);
                     //银行跳转
                     String name = bankAdapter.getAllData().get(position).getBank();
                     int id = bankAdapter.getAllData().get(position).getId();
@@ -373,9 +389,9 @@ public class CreditFragment extends BaseFragment implements CreditContract.View,
                 if (loginFlag) {
                     if (infoFlag) {
                         //保存点击记录
-                        String id= String.valueOf(creditAdapter.getAllData().get(position).getId());
-                        String type="Card";
-                        mPresenter.saveLog(type,id);
+                        String id = String.valueOf(creditAdapter.getAllData().get(position).getId());
+                        String type = "Card";
+                        mPresenter.saveLog(type, id);
                         //跳链接
                         String mUrl = creditAdapter.getAllData().get(position).getUrl();
                         H5Activity.createActivity(getActivity(), mUrl, "");
@@ -405,8 +421,8 @@ public class CreditFragment extends BaseFragment implements CreditContract.View,
             public void onPageClick(int position, String str) {
                 //position 轮播图的第几个项
                 //str 轮播图当前项对应的数据
-                if(bannerlist.get(position).getUrl()!=null&&!"".equals(bannerlist.get(position).getUrl())){
-                    H5Activity.createActivity(getActivity(),bannerlist.get(position).getUrl(),"");
+                if (bannerlist.get(position).getUrl() != null && !"".equals(bannerlist.get(position).getUrl())) {
+                    H5Activity.createActivity(getActivity(), bannerlist.get(position).getUrl(), "");
                 }
             }
         });
@@ -415,18 +431,18 @@ public class CreditFragment extends BaseFragment implements CreditContract.View,
     @Override
     public void getBannerSuccess(List<BannerBean> list) {
         bannerlist.clear();
-        bannerlist=list;
+        bannerlist = list;
         if (list != null && list.size() > 0) {
             initBanner(list);
-            if(list.size()==1){
+            if (list.size() == 1) {
                 ivOneBanner.setVisibility(View.VISIBLE);
                 banner.setVisibility(View.GONE);
                 String baseUrl = (String) SPutils.get(getContext(), "baseImgUrl", "");
-                GlideApp.with(getActivity()).load("http:" + baseUrl + list.get(0).getPic())
+                /*GlideApp.with(getActivity()).load("http:" + baseUrl + list.get(0).getPic())
                         .placeholder(R.mipmap.banner_glide)
                         .error(R.mipmap.banner_glide)
-                        .into(ivOneBanner);
-            }else {
+                        .into(ivOneBanner);*/
+            } else {
                 ivOneBanner.setVisibility(View.GONE);
                 banner.setVisibility(View.VISIBLE);
             }
@@ -476,6 +492,17 @@ public class CreditFragment extends BaseFragment implements CreditContract.View,
     }
 
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        unbinder = ButterKnife.bind(this, rootView);
+        return rootView;
+    }
 
-
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
+    }
 }

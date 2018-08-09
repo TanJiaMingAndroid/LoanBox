@@ -35,11 +35,11 @@
     <string name="loan_market_item_apply"></string><!--立即申请-->
 
     <!--贷款超市-->
-    <string name="loan_market_title"></string><!--贷款超市-->
-    <string name="loan_market_default"></string><!--默认-->
-    <string name="loan_market_limit"></string><!--额度高-->
-    <string name="loan_market_rate"></string><!--利率低-->
-    <string name="loan_market_duration"></string><!--期限长-->
+    <string name="loan_market_title">Pinjaman</string><!--贷款超市-->
+    <string name="loan_market_default">Semua</string><!--默认-->
+    <string name="loan_market_limit">Jumlah pinjaman tinggi</string><!--额度高-->
+    <string name="loan_market_rate">Suku bunga rendah</string><!--利率低-->
+    <string name="loan_market_duration"></string>Waktu pinjaman panjang<!--期限长-->
     <!--贷款超市详情页面-->
     <string name="loan_market_detail_loan_questions"></string><!--常见问题-->
     <string name="loan_market_detail_loan_collection"></string><!--点击收藏-->

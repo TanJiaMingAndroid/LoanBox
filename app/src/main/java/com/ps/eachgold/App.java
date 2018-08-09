@@ -30,7 +30,6 @@ public class App extends Application {
     public static AppCompatActivity mAppCompatActivity;
     private static App appContext;
 
-
     public static App getInstance() {
         return appContext;
     }
@@ -40,10 +39,10 @@ public class App extends Application {
        // LeakCanary.install(this);
         instance = this;
         //instance.getResources().getSystem().flushLayoutCache();
-        FacebookSdk.sdkInitialize(getApplicationContext());
-        AppEventsLogger.activateApp(this);
+            FacebookSdk.sdkInitialize(getApplicationContext());
+            AppEventsLogger.activateApp(this);
+        }
 
-    }
 
 
     private void initReceiver() {

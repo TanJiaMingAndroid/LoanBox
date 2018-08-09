@@ -20,10 +20,10 @@ public class NetClient {
     //超时时间
     private static final int TIME_OUT = 60 * 1000;
 
-  // public static final String BASE_URL = "http://10.0.16.23:10009";
+   public static final String BASE_URL = "http://172.17.0.1:11000";
 
    // public static final String BASE_URL = "http://192.168.20.113:10009";
-   public static final String BASE_URL = "http://api.sanjinxia.cn";
+   //public static final String BASE_URL = "http://api.sanjinxia.cn";
 
     private Retrofit mRetrofit;
 

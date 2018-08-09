@@ -60,7 +60,6 @@ public class CreditPresenter implements CreditContract.Presenter {
     public void getBanner() {
         //获取Banner  1首页banner2信用卡banner3代还banner4启动页
         BannerRequset requset=new BannerRequset();
-        requset.setBannerType("2");
         String userStr = JSON.toJSONString(requset);
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"),userStr);
         mApiService.getBanner(requestBody)

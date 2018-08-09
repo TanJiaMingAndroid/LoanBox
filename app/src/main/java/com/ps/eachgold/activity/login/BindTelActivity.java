@@ -12,6 +12,7 @@ import com.ps.eachgold.activity.BaseActivity;
 import com.ps.eachgold.bean.Header;
 import com.ps.eachgold.bean.LoginBean;
 import com.ps.eachgold.contract.login.BindTelContract;
+import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -67,6 +68,7 @@ public class BindTelActivity extends BaseActivity implements BindTelContract.Vie
     }
     @Override
     protected void initView(Bundle savedInstanceState) {
+        QMUIStatusBarHelper.translucent(this); // 沉浸式状态栏
 
     }
 

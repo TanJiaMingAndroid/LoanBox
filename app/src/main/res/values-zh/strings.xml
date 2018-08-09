@@ -1,0 +1,105 @@
+<resources>
+    <string name="title_activity_hot_loan">HotLoanActivity</string>
+    <!--app名称-->
+    <string name="app_name">Loan Box</string><!---->
+    <!--app模块-->
+    <string name="app_index">首页</string><!--首页-->
+    <string name="app_loan_market">贷款超市</string><!--贷款超市-->
+    <string name="app_person">我的</string><!--我的-->
+    <!--登录-->
+    <string name="login_title">Login</string>
+    <string name="login_content1">Ikat nomor telepon</string>
+    <string name="login_content2">Anda harus mengikat dan memverifikasi nomor</string>
+    <string name="login_content3">ponsel Anda untuk masuk.</string>
+    <string name="login_facebook">Login dengan facebook</string><!--通过facebook登录-->
+    <string name="login_agreement">Masuk untuk setuju  《***** Perjanjian Layanan》</string><!--同意协议-->
+
+    <string name="login_submit">Langkah selanjutnya</string>
+
+    <!--绑定手机号-->
+    <string name="login_bind_tel_content1">Ikat nomor telepon</string>
+    <string name="login_bind_tel_content2">Anda harus mengikat dan memverifikasi nomor</string>
+    <string name="login_bind_tel_content3">ponsel Anda untuk masuk.</string>
+    <!--获取验证码-->
+    <string name="login_bind_tel_code_content1">Masukkan kode verifikasi</string>
+    <string name="login_bind_tel_code_content2">Silakan masukkan kode verifikasi 4-digit yang</string>
+    <string name="login_bind_tel_code_content3">Anda terima di ponsel Anda.</string>
+    <string name="login_bind_tel_code_submit">Langkah selanjutnya</string>
+    <!--首页-->
+    <string name="index_recommend">Rekomendasi populer</string><!--产品推荐-->
+    <string name="index_more"></string>Lihat lebih banyak<!--查看更多-->
+    <!--item-->
+    <string name="loan_market_item_money">Rp</string><!---->
+    <string name="loan_market_item_dayRate"></string><!--日利率-->
+    <string name="loan_market_item_duration"></string><!--期限-->
+    <string name="loan_market_item_apply"></string><!--立即申请-->
+
+    <!--贷款超市-->
+    <string name="loan_market_title"></string><!--贷款超市-->
+    <string name="loan_market_default"></string><!--默认-->
+    <string name="loan_market_limit"></string><!--额度高-->
+    <string name="loan_market_rate"></string><!--利率低-->
+    <string name="loan_market_duration"></string><!--期限长-->
+    <!--贷款超市详情页面-->
+    <string name="loan_market_detail_loan_questions"></string><!--常见问题-->
+    <string name="loan_market_detail_loan_collection"></string><!--点击收藏-->
+    <string name="loan_market_detail_loan_sum"></string><!--借款金额(Rp)-->
+    <string name="loan_market_detail_loan_duration"></string><!--借款期限(天)-->
+    <string name="loan_market_detail_loan_sum_limit"></string><!--最高金额-->
+    <string name="loan_market_detail_loan_duration_limit"></string><!--最大期限-->
+    <string name="loan_market_detail_repay_sum"></string><!--应还金额-->
+    <string name="loan_market_detail_repay_interest"></string><!--利息-->
+    <string name="loan_market_detail_loan_condition"></string><!--申请条件-->
+    <string name="loan_market_detail_loan_flow"></string><!--申请流程-->
+    <string name="loan_market_detail_repay_way"></string><!--还款方式-->
+    <string name="loan_market_detail_loan_apply"></string><!--立即申请-->
+
+
+    <!--我的-->
+    <string name="person_title">个人中心</string><!--个人中心-->
+    <string name="person_ID">ID:</string><!--ID:-->
+    <string name="person_info_write">资料填写</string><!--资料填写-->
+    <string name="person_collection">我的收藏</string><!--我的收藏-->
+    <string name="person_message">消息中心</string><!--消息中心-->
+    <string name="person_help">帮助中心</string><!--帮助中心-->
+    <string name="person_feedback">意见反馈</string><!--意见反馈-->
+    <string name="person_setting">设置</string><!--设置-->
+    <!--我的 二级页面-->
+    <string name="person_login_info">我的资料</string><!--我的资料-->
+    <string name="person_login_name">姓名</string><!--姓名-->
+    <string name="person_login_name_hint">请输入姓名</string><!--请输入姓名-->
+    <string name="person_login_birthday">生日</string><!--生日-->
+    <string name="person_login_birthday_hint">请输入生日</string><!--请输入生日-->
+    <string name="person_login_sex">性别</string><!--性别-->
+    <string name="person_login_sex_hint">请输入性别</string><!--请输入性别-->
+    <string name="person_login_city">所在城市</string><!--所在城市-->
+    <string name="person_login_city_hint">请输入所在城市</string><!--请输入所在城市-->
+    <string name="person_login_education">文化程度</string><!--文化程度-->
+    <string name="person_login_education_hint">请输入文化程度</string><!--请输入文化程度-->
+    <string name="person_login_job">职业身份</string><!--职业身份-->
+    <string name="person_login_job_hint">请输入职业身份</string><!--请输入职业身份-->
+    <string name="person_login_income">月收入</string><!--月收入-->
+    <string name="person_login_income_hint">请输入月收入</string><!--请输入月收入-->
+    <string name="person_login_common">请选择</string><!--请选择-->
+    <string name="person_login_money_type">IDR</string><!--IDR-->
+    <string name="person_login_save">保存</string><!--保存-->
+
+    <string name="person_message_inform">消息通知</string><!---->
+    <string name="person_help_service_tel">平台客服电话:020-XXXXXX</string><!--平台客服电话:020-XXXXXX-->
+    <string name="person_help_service_time">服务时间: </string><!--服务时间:-->
+    <string name="person_help_service_time_duration">每日8:00-17:00</string><!--每日8:00-17:00-->
+    <string name="person_feedback_hint">请消息描述您的问题，我们能更快的为您解决</string><!--请消息描述您的问题，我们能更快的为您解决-->
+    <string name="person_feedback_submit">提交反馈</string><!--提交反馈-->
+    <string name="person_feedback_upload_pic">提交反馈</string><!--提交反馈-->
+    <string name="person_setting_check_update">检查更新</string><!--检查更新-->
+    <string name="person_setting_version">版本:</string><!--Version-->
+    <string name="person_setting_logout">退出</string><!--Logout-->
+
+
+
+    <!--facebook集成-->
+    <string name="facebook_app_id">1964375873582561</string>
+    <string name="fb_login_protocol_scheme">fb1964375873582561</string>
+
+
+</resources>

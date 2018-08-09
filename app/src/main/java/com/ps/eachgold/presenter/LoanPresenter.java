@@ -1,6 +1,7 @@
 package com.ps.eachgold.presenter;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.alibaba.fastjson.JSON;
 import com.ps.eachgold.bean.BannerBean;
@@ -48,7 +49,6 @@ public class LoanPresenter implements LoanContract.Presenter {
     public void getBanner() {
         //获取Banner  1首页banner2信用卡banner3代还banner4启动页
         BannerRequset requset=new BannerRequset();
-        requset.setBannerType("1");
         String userStr = JSON.toJSONString(requset);
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"),userStr);
         mApiService.getBanner(requestBody)
@@ -59,6 +59,7 @@ public class LoanPresenter implements LoanContract.Presenter {
                     public void onSuccess(List<BannerBean> list, Header header) {
                         if(mView != null){
                             mView.getBannerSuccess(list);
+                            Log.e("list",list.toString());
                         }
                     }
                 });
