@@ -23,11 +23,12 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/person_login"
-        app:tabBackground="null"
-        app:tabGravity="center"
+        tl:tabGravity="center"
         tl:tabMode="scrollable"
         tl:tabSelectedTextColor="@android:color/white"
-        app:tabTextColor="@android:color/darker_gray"/>
+        tl:tabTextColor="@color/gray1"
+        tl:tabTextAppearance="@style/TabLayoutTextStyle"
+        tl:tabIndicatorHeight="0dp"/>
 
 
 

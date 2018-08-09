@@ -6,6 +6,7 @@
     <string name="app_index">Home</string><!--首页-->
     <string name="app_loan_market">Pinjaman</string><!--贷款超市-->
     <string name="app_person">Akun saya</string><!--我的-->
+    <string name="welcom_skip">跳过</string>
     <!--登录-->
     <string name="login_title">Login</string>
     <string name="login_content1">Ikat nomor telepon</string>

@@ -39,7 +39,7 @@ public class WelcomePresenter implements WelcomeContract.Presenter {
     }
 
     @Override
-    public void getImgUrl() {
+    public void getImgUrl(int type) {
         //获取域名
 //        mApiService.getImgUrl()
 //                .subscribeOn(Schedulers.io())
@@ -54,6 +54,7 @@ public class WelcomePresenter implements WelcomeContract.Presenter {
         //获取域名
 
         BaseImgRequset requset=new BaseImgRequset();
+        requset.setBannerType(type);
         String str = JSON.toJSONString(requset);
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"),str);
         mApiService.getBaseImgUrl(requestBody)
@@ -62,11 +63,14 @@ public class WelcomePresenter implements WelcomeContract.Presenter {
                 .subscribe(new MyObserver3<String>(mContext, mView) {
                     @Override
                     public void onSuccess(String baseUrl, Header header) {
-
-                        mView.getImgUrlSuccess(baseUrl);
+                        if (mView!=null) {
+                            mView.getImgUrlSuccess(baseUrl);
+                        }
                     }
                 });
     }
+
+
 
     @Override
     public void getAdImg() {

@@ -14,7 +14,7 @@ public interface WelcomeContract {
     interface View extends ImpBaseView {
         //检测是否第一次
         void checkFirst();
-
+        int getType();
         //获取图片域名
         void getImgUrlSuccess(String baseUrl);
         //获取图片域名
@@ -27,7 +27,7 @@ public interface WelcomeContract {
 
     interface Presenter extends ImpBasePresenter {
 
-        void getImgUrl();
+        void getImgUrl(int type);
 
         void getAdImg();
 

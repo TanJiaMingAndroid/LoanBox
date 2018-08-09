@@ -76,4 +76,10 @@
         <item name="android:textSize">13sp</item>
         <item name="android:drawableLeft">@drawable/rb_step_select</item>
     </style>
+
+    <!--滚动tab改成小写-->
+    <style name="TabLayoutTextStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">13sp</item>
+        <item name="textAllCaps">false</item>
+    </style>
 </resources>

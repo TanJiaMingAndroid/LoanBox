@@ -8,6 +8,17 @@ import com.ps.eachgold.net.ApiAction;
 
 public class BaseImgRequset extends BaseRequset{
 
+    //广告类型 1 开屏广告 ，2 弹窗广告， 3 浮窗广告
+    private int bannerType;
+
+    public int getBannerType() {
+        return bannerType;
+    }
+
+    public void setBannerType(int bannerType) {
+        this.bannerType = bannerType;
+    }
+
     public BaseImgRequset() {
         createHeader();
     }
