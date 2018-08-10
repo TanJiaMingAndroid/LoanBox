@@ -37,33 +37,9 @@ public class FragmentInsteadViewHolder extends BaseViewHolder<LoanBean> {
     public void setData(LoanBean data) {
         super.setData(data);
 
-        String baseUrl = (String) SPutils.get(getContext(), "baseImgUrl", "");
 
-        GlideApp.with(getContext()).load("http:" + baseUrl + data.getPic())
-                .placeholder(R.mipmap.credit_glide)
-                .error(R.mipmap.credit_glide)
-                .into(ivImg);
 
-        tvName.setText(data.getName());
-        //最小值-最大值.
-        String min=String.valueOf(data.getMinMoney());
-        String max=String.valueOf(data.getMaxMoney());
-        if(min!=null&&!"".equals(min)){
-            if(min.length()>4){
-                min=min.substring(0,1)+"万";
-            }
-        }else {
-            min="";
-        }
-        if(max!=null&&!"".equals(max)){
-            if(max.length()>4){
-                max=max.substring(0,1)+"万";
-            }
-        }else {
-            max="";
-        }
-        tvAmount.setText(min + "-" + max);
-        tvContent.setText(data.getPresentation());
-        tvType.setText("可贷额度");
+
+
     }
 }

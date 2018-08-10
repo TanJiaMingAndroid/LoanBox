@@ -166,12 +166,12 @@ public class HotLoanActivity extends BaseActivity implements LoanContract.View, 
                 if (loginFlag) {
                     if (infoFlag) {
                         //保存点击记录
-                        String id= String.valueOf(adapter.getAllData().get(position).getId());
+                        //String id= String.valueOf(adapter.getAllData().get(position).getId());
                         String type="SuperMarket";
-                        mPresenter.saveLog(type,id);
+                        //mPresenter.saveLog(type,id);
                         //跳链接
-                        String mUrl = adapter.getAllData().get(position).getUrl();
-                        H5Activity.createActivity(HotLoanActivity.this, mUrl, "");
+                        //String mUrl = adapter.getAllData().get(position).getUrl();
+                        //H5Activity.createActivity(HotLoanActivity.this, mUrl, "");
                     } else {
                         //资料完善
                         InfoStepOneActivity.createActivity(HotLoanActivity.this);

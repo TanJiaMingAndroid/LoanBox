@@ -20,21 +20,14 @@ public class NetClient {
     //超时时间
     private static final int TIME_OUT = 60 * 1000;
 
-   public static final String BASE_URL = "http://172.17.0.1:11000";
+   public static final String BASE_URL = "http://sjx-api.sanjinxia.com";
+   //public static final String BASE_URL = "http://172.17.0.1:11000";
 
-   // public static final String BASE_URL = "http://192.168.20.113:10009";
-   //public static final String BASE_URL = "http://api.sanjinxia.cn";
 
     private Retrofit mRetrofit;
 
     private NetClient() {
-        //rxjava
-//        mRetrofit = new Retrofit.Builder()
-//                .baseUrl(BASE_URL)
-//                .client(getHttpClient())
-//                .addConverterFactory(MyGsonConverterFactory.create())
-//                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-//                .build();
+
 
         //rxjava2
         mRetrofit = new Retrofit.Builder()

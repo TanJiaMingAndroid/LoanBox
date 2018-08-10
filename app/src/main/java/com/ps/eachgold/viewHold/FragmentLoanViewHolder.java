@@ -41,7 +41,7 @@ public class FragmentLoanViewHolder extends BaseViewHolder<LoanBean> {
         String baseUrl = (String) SPutils.get(getContext(), "baseImgUrl", "");
 
 
-        GlideApp.with(getContext()).load("http:" + baseUrl + data.getPic())
+       /* GlideApp.with(getContext()).load("http:" + baseUrl + data.getPic())
                 .placeholder(R.mipmap.credit_glide)
                 .error(R.mipmap.credit_glide)
                 .into(ivImg);
@@ -67,6 +67,6 @@ public class FragmentLoanViewHolder extends BaseViewHolder<LoanBean> {
         }
         tvAmount.setText(min + "-" + max);
         tvContent.setText(data.getPresentation());
-        tvType.setText("可贷额度");
+        tvType.setText("可贷额度");*/
     }
 }

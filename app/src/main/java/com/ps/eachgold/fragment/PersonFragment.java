@@ -333,8 +333,8 @@ public class PersonFragment extends BaseFragment implements PersonContract.View 
            /* GlideApp.with(getContext()).load("http:" + baseUrl + list.get(0).getPic())
                     .into(ivExclusive1);
             tvExclusiveName1.setText(list.get(0).getName());*/
-            String min = String.valueOf(list.get(0).getMinMoney());
-            String max = String.valueOf(list.get(0).getMaxMoney());
+            /*String min = String.valueOf(list.get(0).getMinMoney());
+            String max = String.valueOf(list.get(0).getMaxMoney());*/
 
             // tvExclusiveMoney1.setText(getMinMax(MyUtil.formatToseparano0(min)) + "-" + getMinMax(MyUtil.formatToseparano0(max)));
 
@@ -345,8 +345,8 @@ public class PersonFragment extends BaseFragment implements PersonContract.View 
                     .into(ivExclusive2);
 
             tvExclusiveName2.setText(list.get(1).getName());*/
-            String min2 = String.valueOf(list.get(1).getMinMoney());
-            String max2 = String.valueOf(list.get(1).getMaxMoney());
+           /* String min2 = String.valueOf(list.get(1).getMinMoney());
+            String max2 = String.valueOf(list.get(1).getMaxMoney());*/
             //tvExclusiveMoney2.setText(getMinMax(MyUtil.formatToseparano0(min2)) + "-" + getMinMax(MyUtil.formatToseparano0(max2)));
             // clickUrl2 = list.get(1).getUrl();
 
@@ -359,9 +359,9 @@ public class PersonFragment extends BaseFragment implements PersonContract.View 
 
 
             //tvExclusiveName3.setText(list.get(2).getName());
-            String min3 = String.valueOf(list.get(2).getMinMoney());
+            /*String min3 = String.valueOf(list.get(2).getMinMoney());
             String max3 = String.valueOf(list.get(2).getMaxMoney());
-
+*/
             //tvExclusiveMoney3.setText(getMinMax(MyUtil.formatToseparano0(min3)) + "-" + getMinMax(MyUtil.formatToseparano0(max3)));
 
 

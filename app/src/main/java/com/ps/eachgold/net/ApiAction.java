@@ -7,6 +7,54 @@ package com.ps.eachgold.net;
 public class ApiAction {
 
     /**
+     * 首页-热门推荐
+     */
+    public final static String HOTLISt = "PROD0001";
+
+    /***********************************************************************/
+    /**
+     * 贷款超市-获取产品列表
+     */
+    public final static String LOANMARKETLIST = "PROD0002";
+    /**
+     *贷款超市-常见问题
+     */
+    public final static String COMMONQUESTIONSLIST = "QUESTION0004";
+    /**
+     * 贷款超市-收藏
+     */
+    public final static String LOANCOLLECTION = "PROD0003";
+    /**
+     * 贷款超市-立即申请
+     */
+    public final static String LOANAPPLY = "APPEVENT0001";
+    /***********************************************************************/
+    /**
+     * 我的-收藏
+     */
+    public final static String PERSONCOLLECTION = "APPU0005";
+    /**
+     * 我的-保存资料
+     */
+    public final static String PERSONSAVEINFO = "APPU0003";
+    /**
+     * 我的-生成消息通知
+     */
+    public final static String PERSONMESSAGESEND = "APPM0003";
+    /**
+     * 我的-获取用户消息列表
+     */
+    public final static String PERSONMESSAGEGETLIST = "APPM0004";
+    /**
+     * 我的-意见反馈
+     */
+    public final static String PERSONFEEDBACK = "APPU0006";
+    /***********************************************************************/
+
+
+
+
+    /**
      * 图片域名
      */
     public final static String BASEIMG = "IMGURL0001";
@@ -82,10 +130,7 @@ public class ApiAction {
      */
     public final static String FEEDBACK = "FEEDBACK0001";
 
-    /**
-     * 贷款代还
-     */
-    public final static String LOAN = "LOAN0001";
+
 
     /**
      * 专属 -3个贷款产品

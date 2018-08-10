@@ -8,15 +8,6 @@ import com.ps.eachgold.net.ApiAction;
 
 public class LoanListRequset extends BaseRequset{
 
-    private String reqType; //请求类型 ：额度高-high、利息低-low、放款快-fast hot-热门 代还-repay
-
-    public String getReqType() {
-        return reqType;
-    }
-
-    public void setReqType(String reqType) {
-        this.reqType = reqType;
-    }
 
     public LoanListRequset() {
         createHeader();
@@ -26,6 +17,6 @@ public class LoanListRequset extends BaseRequset{
     @Override
     public void createHeader() {
         super.createHeader();
-        header.setAction(ApiAction.LOAN);
+        header.setAction(ApiAction.HOTLISt);
     }
 }

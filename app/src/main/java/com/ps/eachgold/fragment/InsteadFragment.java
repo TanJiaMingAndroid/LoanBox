@@ -191,13 +191,7 @@ public class InsteadFragment extends BaseFragment implements InsteadContract.Vie
                 infoFlag = (boolean) SPutils.get(getActivity(), "info", false);
                 if (loginFlag) {
                     if (infoFlag) {
-                        //保存点击记录
-                        String id= String.valueOf(adapter.getAllData().get(position).getId());
-                        String type="Repayment  ";
-                        mPresenter.saveLog(type,id);
-                        //跳链接
-                        String mUrl = adapter.getAllData().get(position).getUrl();
-                        H5Activity.createActivity(getActivity(), mUrl, "");
+
                     } else {
                         //资料完善
                         InfoStepOneActivity.createActivity(getActivity());
@@ -214,8 +208,8 @@ public class InsteadFragment extends BaseFragment implements InsteadContract.Vie
             public void onPageClick(int position, String str) {
                 //position 轮播图的第几个项
                 //str 轮播图当前项对应的数据
-                if(bannerlist.get(position).getUrl()!=null&&!"".equals(bannerlist.get(position).getUrl())){
-                    H5Activity.createActivity(getActivity(),bannerlist.get(position).getUrl(),"");
+                if(bannerlist.get(position).getImgUrl()!=null&&!"".equals(bannerlist.get(position).getImgUrl())){
+                    H5Activity.createActivity(getActivity(),bannerlist.get(position).getImgUrl(),"");
                 }
             }
         });
@@ -232,7 +226,7 @@ public class InsteadFragment extends BaseFragment implements InsteadContract.Vie
                 ivOneBanner.setVisibility(View.VISIBLE);
                 banner.setVisibility(View.GONE);
                 String baseUrl = (String) SPutils.get(getContext(), "baseImgUrl", "");
-                GlideApp.with(getActivity()).load("http:" + baseUrl + list.get(0).getPic())
+                GlideApp.with(getActivity()).load("http:" + baseUrl + list.get(0).getImgUrl())
                         .placeholder(R.mipmap.banner_glide)
                         .error(R.mipmap.banner_glide)
                         .into(ivOneBanner);
@@ -320,7 +314,7 @@ public class InsteadFragment extends BaseFragment implements InsteadContract.Vie
 
         ArrayList<String> images = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
-            images.add(list.get(i).getPic());
+            images.add(list.get(i).getImgUrl());
         }
 
 

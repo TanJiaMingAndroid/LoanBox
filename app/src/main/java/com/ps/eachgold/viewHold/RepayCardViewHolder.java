@@ -56,52 +56,7 @@ public class RepayCardViewHolder extends BaseViewHolder<LoanBean> {
     public void setData(LoanBean data) {
         super.setData(data);
 
-        String baseUrl = (String) SPutils.get(getContext(), "baseImgUrl", "");
-
-        GlideApp.with(getContext()).load("http:"+baseUrl+data.getPic())
-                .placeholder(R.mipmap.credit_glide)
-                .error(R.mipmap.credit_glide)
-                .into(ivImage);
-        tvName.setText(data.getName());
-
-        String min = String.valueOf(data.getMinMoney());
-        String max = String.valueOf(data.getMaxMoney());
-        if (min != null && !"".equals(min)) {
-            if (min.length() > 4) {
-                min = min.substring(0, 1) + "万";
-            }
-        } else {
-            min = "";
-        }
-        if (max != null && !"".equals(max)) {
-            if (max.length() > 4) {
-                max = max.substring(0, 1) + "万";
-            }
-        } else {
-            max = "";
-        }
-        tvElementsMainValue.setText(min + "-" + max);
-        tvNameContent.setText(data.getPresentation());
-
-
-        String lendingTime=String.valueOf(data.getLendingTime());
-        if(data.getLendingTime()<1){
-            lendingTime= MyUtil.formatToseparano0(String.valueOf(data.getLendingTime()*60))+"分钟";
-        }else if(data.getLendingTime()>=1&&data.getLendingTime()<24){
-            lendingTime=MyUtil.formatToseparano0(String.valueOf(data.getLendingTime()))+"小时";
-        }else if(data.getLendingTime()>=24){
-            lendingTime=MyUtil.formatToseparano0(String.valueOf(data.getLendingTime()/24))+"小时";
-        }
-        tvElements1Value.setText(lendingTime);
-
-
-        String interest = "";
-        if (data.getMinInterest() == data.getMaxInterest()) {
-            interest = data.getMinInterest() + "%";
-        } else {
-            interest = data.getMinInterest() + "%-" + data.getMaxInterest() + "%";
-        }
-        tvElements2Value.setText(interest);
 
     }
+
 }

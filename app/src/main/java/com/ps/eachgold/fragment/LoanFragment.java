@@ -58,10 +58,7 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
     SwipeRefreshLayout swipeLoan;
     @BindView(R.id.status_bar)
     LinearLayout statusBar;
-    /*@BindView(R.id.left_icon)
-    ImageView leftIcon;
-    @BindView(R.id.title)
-    TextView title;*/
+
 
     //P层
     private LoanPresenter mPresenter;
@@ -71,16 +68,7 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
     private View viewHeader;
     //额度高
     private CustomBanner banner;
-    //额度高
-    private LinearLayout linHighAmount;
-    //利息低
-    private LinearLayout linLowInterest;
-    //放款快
-    private LinearLayout linFastLending;
-    //我要办卡
-    private TextView tvHandleCard;
-    //帮你换卡
-    private TextView tvRepayCard;
+
     //登录状态
     private Boolean loginFlag;
     //资料填写状态
@@ -188,11 +176,7 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
     public void addHead() {
         viewHeader = LayoutInflater.from(getActivity()).inflate(R.layout.head_fragment_main_loan, null);
         banner = viewHeader.findViewById(R.id.banner); //额度高
-        linHighAmount = viewHeader.findViewById(R.id.lin_high_amount); //额度高
-        linLowInterest = viewHeader.findViewById(R.id.lin_low_interest);//利息低
-        linFastLending = viewHeader.findViewById(R.id.lin_fast_lending); //放款快
-        tvHandleCard = viewHeader.findViewById(R.id.tv_handle_card); //我要办卡
-        tvRepayCard = viewHeader.findViewById(R.id.tv_repay_card); //帮你换卡
+
 
         ivOneBanner=viewHeader.findViewById(R.id.iv_one_banner);
         adapter.addHeader(new RecyclerArrayAdapter.ItemView() {
@@ -235,7 +219,7 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
 
         ArrayList<String> images = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
-            images.add(list.get(i).getPic());
+            images.add(list.get(i).getImgUrl());
         }
 
 
@@ -281,11 +265,7 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
     @Override
     public void addListener() {
         swipeLoan.setOnRefreshListener(this);
-        linHighAmount.setOnClickListener(this);
-        linLowInterest.setOnClickListener(this);
-        linFastLending.setOnClickListener(this);
-        tvHandleCard.setOnClickListener(this);
-        tvRepayCard.setOnClickListener(this);
+
         adapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
@@ -294,12 +274,12 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
                 if (loginFlag) {
                     if (infoFlag) {
                         //保存点击记录
-                        String id = String.valueOf(adapter.getAllData().get(position).getId());
+                        //String id = String.valueOf(adapter.getAllData().get(position).getId());
                         String type = "SuperMarket";
-                        mPresenter.saveLog(type, id);
+                        //mPresenter.saveLog(type, id);
                         //跳链接
-                        String mUrl = adapter.getAllData().get(position).getUrl();
-                        H5Activity.createActivity(getActivity(), mUrl, "");
+                        //String mUrl = adapter.getAllData().get(position).getUrl();
+                        //H5Activity.createActivity(getActivity(), mUrl, "");
                     } else {
                         //资料完善
                         InfoStepOneActivity.createActivity(getActivity());
@@ -324,8 +304,8 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
             public void onPageClick(int position, String str) {
                 //position 轮播图的第几个项
                 //str 轮播图当前项对应的数据
-                if(bannerlist.get(position).getUrl()!=null&&!"".equals(bannerlist.get(position).getUrl())){
-                    H5Activity.createActivity(getActivity(), bannerlist.get(position).getUrl(), "");
+                if(bannerlist.get(position).getImgUrl()!=null&&!"".equals(bannerlist.get(position).getImgUrl())){
+                    H5Activity.createActivity(getActivity(), bannerlist.get(position).getImgUrl(), "");
                 }
             }
         });
@@ -333,54 +313,6 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
        // recyclerLoan.getEmptyView().findViewById();
     }
 
-    //点击事件
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-
-            case R.id.lin_high_amount://额度高
-                long  currentTime1 = Calendar.getInstance().getTimeInMillis();
-                if (currentTime1 - lastClickTime > MyAppConfig.MIN_CLICK_DELAY_TIME) {
-                    //保存点击记录
-                    lastClickTime = currentTime1;
-                    LoanListActivity.createActivity(getActivity(), "额度高");
-                }
-
-                break;
-            case R.id.lin_low_interest://利息低
-                long currentTime2 = Calendar.getInstance().getTimeInMillis();
-                if (currentTime2 - lastClickTime > MyAppConfig.MIN_CLICK_DELAY_TIME) {
-                    //保存点击记录
-                    lastClickTime = currentTime2;
-                    LoanListActivity.createActivity(getActivity(), "利息低");
-                }
-                break;
-            case R.id.lin_fast_lending://放款快
-                long currentTime3 = Calendar.getInstance().getTimeInMillis();
-                if (currentTime3 - lastClickTime > MyAppConfig.MIN_CLICK_DELAY_TIME) {
-                    //保存点击记录
-                    lastClickTime = currentTime3;
-                    LoanListActivity.createActivity(getActivity(), "放款快");
-                }
-                break;
-            case R.id.tv_handle_card://我要办卡
-                long  currentTime4 = Calendar.getInstance().getTimeInMillis();
-                if (currentTime4 - lastClickTime > MyAppConfig.MIN_CLICK_DELAY_TIME) {
-                    //保存点击记录
-                    lastClickTime = currentTime4;
-                    HandleCardActivity.createActivity(getActivity());
-                }
-                break;
-            case R.id.tv_repay_card://帮你还卡
-                long  currentTime5 = Calendar.getInstance().getTimeInMillis();
-                if (currentTime5 - lastClickTime > MyAppConfig.MIN_CLICK_DELAY_TIME) {
-                    //保存点击记录
-                    lastClickTime = currentTime5;
-                    RepayCardActivity.createActivity(getActivity());
-                }
-                break;
-        }
-    }
 
     @Override
     public void getBannerSuccess(List<BannerBean> list) {
@@ -396,7 +328,7 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
                 ivOneBanner.setVisibility(View.VISIBLE);
                 banner.setVisibility(View.GONE);
                 String baseUrl = (String) SPutils.get(getContext(), "baseImgUrl", "");
-                GlideApp.with(getActivity()).load("http:" + baseUrl + list.get(0).getPic())
+                GlideApp.with(getActivity()).load("http:" + baseUrl + list.get(0).getImgUrl())
                         .placeholder(R.mipmap.banner_glide)
                         .error(R.mipmap.banner_glide)
                         .into(ivOneBanner);
@@ -436,4 +368,8 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
     }
 
 
+    @Override
+    public void onClick(View view) {
+
+    }
 }

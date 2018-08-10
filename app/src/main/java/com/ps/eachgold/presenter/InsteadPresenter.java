@@ -75,7 +75,7 @@ public class InsteadPresenter implements InsteadContract.Presenter {
 
         //  额度高-high、利息低-low、放款快-fast hot-热门、代还-repay
         LoanListRequset requset=new LoanListRequset();
-        requset.setReqType("repay");
+        //requset.setReqType("repay");
         Page mPage=new Page();
         mPage.setIndex(page);
         mPage.setSize(size);

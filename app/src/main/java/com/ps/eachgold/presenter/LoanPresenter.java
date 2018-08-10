@@ -68,9 +68,7 @@ public class LoanPresenter implements LoanContract.Presenter {
 
     @Override
     public void getList(int page, int size) {
-      //  额度高-high、利息低-low、放款快-fast hot-热门、代还-repay
         LoanListRequset requset=new LoanListRequset();
-        requset.setReqType("hot");
         Page mPage=new Page();
         mPage.setIndex(page);
         mPage.setSize(size);

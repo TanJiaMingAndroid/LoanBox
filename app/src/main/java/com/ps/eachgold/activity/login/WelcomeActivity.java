@@ -275,10 +275,10 @@ public class WelcomeActivity extends BaseActivity implements WelcomeContract.Vie
     public void getAdImgSuccess(List<BannerBean> list) {
         if (list.size() > 0) {
             AdImgFlag = true;
-            if (list.get(0).getPic() != null)
+            /*if (list.get(0).getPic() != null)
                 imgUrl = list.get(0).getPic();
             if (list.get(0).getUrl() != null)
-                clickUrl = list.get(0).getUrl();
+                clickUrl = list.get(0).getUrl();*/
         }
     }
 

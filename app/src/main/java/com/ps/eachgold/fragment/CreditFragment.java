@@ -265,7 +265,7 @@ public class CreditFragment extends BaseFragment implements CreditContract.View,
     private void initBanner(List<BannerBean> list) {
         ArrayList<String> images = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
-            images.add(list.get(i).getPic());
+           // images.add(list.get(i).getPic());
         }
 
         banner.setPages(new CustomBanner.ViewCreator<String>() {
@@ -421,8 +421,8 @@ public class CreditFragment extends BaseFragment implements CreditContract.View,
             public void onPageClick(int position, String str) {
                 //position 轮播图的第几个项
                 //str 轮播图当前项对应的数据
-                if (bannerlist.get(position).getUrl() != null && !"".equals(bannerlist.get(position).getUrl())) {
-                    H5Activity.createActivity(getActivity(), bannerlist.get(position).getUrl(), "");
+                if (bannerlist.get(position).getImgUrl() != null && !"".equals(bannerlist.get(position).getImgUrl())) {
+                    H5Activity.createActivity(getActivity(), bannerlist.get(position).getImgUrl(), "");
                 }
             }
         });

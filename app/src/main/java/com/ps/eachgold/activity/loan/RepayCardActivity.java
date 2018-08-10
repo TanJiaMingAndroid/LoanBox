@@ -157,12 +157,12 @@ public class  RepayCardActivity extends BaseActivity implements RepayCardContrac
                 if (loginFlag) {
                     if(infoFlag){
                         //保存点击记录
-                        String id= String.valueOf(adapter.getAllData().get(position).getId());
+                        //String id= String.valueOf(adapter.getAllData().get(position).getId());
                         String type="Repayment";
-                        mPresenter.saveLog(type,id);
+                        //mPresenter.saveLog(type,id);
                         //跳链接
-                        String mUrl=adapter.getAllData().get(position).getUrl();
-                        H5Activity.createActivity(RepayCardActivity.this,mUrl,"");
+                        //String mUrl=adapter.getAllData().get(position).getUrl();
+                       // H5Activity.createActivity(RepayCardActivity.this,mUrl,"");
 
                     }else {
                         //资料完善

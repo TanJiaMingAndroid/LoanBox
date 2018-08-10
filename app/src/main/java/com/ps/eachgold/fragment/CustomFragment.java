@@ -169,50 +169,7 @@ public class CustomFragment extends BaseFragment implements CustomContract.View,
     @Override
     public void addListener() {
         swipeCustom.setOnRefreshListener(this);
-        switch (type) {
-            case "贷款产品":
-                loanAdapter.setNoMore(R.layout.view_nomore);
-                loanAdapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(int position) {
-                        //保存点击记录
-                        String id = String.valueOf(loanAdapter.getAllData().get(position).getId());
-                        mPresenter.saveLog(laberName, id);
-                        //跳链接
-                        String mUrl = loanAdapter.getAllData().get(position).getUrl();
-                        H5Activity.createActivity(getActivity(), mUrl, "");
-                    }
-                });
-                break;
-            case "信用卡代还":
-                loanAdapter.setNoMore(R.layout.view_nomore);
-                loanAdapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(int position) {
-                        //保存点击记录
-                        String id = String.valueOf(loanAdapter.getAllData().get(position).getId());
-                        mPresenter.saveLog(laberName, id);
-                        //跳链接
-                        String mUrl = loanAdapter.getAllData().get(position).getUrl();
-                        H5Activity.createActivity(getActivity(), mUrl, "");
-                    }
-                });
-                break;
-            case "信用卡产品":
-                bankCardadapter.setNoMore(R.layout.view_nomore);
-                bankCardadapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(int position) {
-                        //保存点击记录
-                        String id = String.valueOf(bankCardadapter.getAllData().get(position).getId());
-                        mPresenter.saveLog(laberName, id);
-                        //跳链接
-                        String mUrl = bankCardadapter.getAllData().get(position).getUrl();
-                        H5Activity.createActivity(getActivity(), mUrl, "");
-                    }
-                });
-                break;
-        }
+
 
 
     }
