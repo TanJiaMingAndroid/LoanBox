@@ -7,6 +7,16 @@ package com.ps.eachgold.net;
 public class ApiAction {
 
     /**
+     * FB登录
+     */
+    public final static String FB_LOGIN = "APPU0001";
+    /**
+     * Tel登录
+     */
+    public final static String TEL_LOGIN = "APPM0001";
+/***********************************************************************/
+
+    /**
      * 首页-热门推荐
      */
     public final static String HOTLISt = "PROD0001";
@@ -70,10 +80,6 @@ public class ApiAction {
      */
     public final static String REGISTER = "U0001";
 
-    /**
-     * 登录
-     */
-    public final static String LOGIN = "U0002";
 
 
     /**
@@ -121,14 +127,10 @@ public class ApiAction {
     public final static String BANNER = "BANNER0001";
 
     /**
-     * 银行卡列表
+     * 贷款超市产品列表
      */
-    public final static String BANK_CARD_LIST = "CREDITCARD0001";
+    public final static String MARKET_PRODUCT_LIST = "PROD0002";
 
-    /**
-     * 意见反馈
-     */
-    public final static String FEEDBACK = "FEEDBACK0001";
 
 
 

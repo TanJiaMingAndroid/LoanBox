@@ -7,84 +7,81 @@ import com.ps.eachgold.net.ApiAction;
  */
 
 public class LoginRequest extends BaseRequset {
-    /**
-     * imei false string 手机imei值（android，ios必填）
-     * password false string  密码RSA加密值（app密码登录时必填）
-     * phone true string 手机号
-     * openId false string 微信openid（wx必填）
-     * valCode true string 验证码（app验证码登录时必填）
-     */
 
 
-    private String phone; //
+    private Long facebookId;
+
+    private String facebookUser;
+
+    private String regChannel;
+
+    private String appName;
+
+    private String appPackage;
+
 
     private String imei;
-
-    private String password;
-
-    private String openId;
-
-    private String valCode;
-
-
     private String termType;
 
-    public String getPhone() {
-        return phone;
+    public void setFacebookId(Long facebookId) {
+        this.facebookId = facebookId;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setFacebookUser(String facebookUser) {
+        this.facebookUser = facebookUser;
     }
 
-    public String getImei() {
-        return imei;
+    public void setRegChannel(String regChannel) {
+        this.regChannel = regChannel;
+    }
+
+    public void setAppName(String appName) {
+        this.appName = appName;
+    }
+
+    public void setAppPackage(String appPackage) {
+        this.appPackage = appPackage;
     }
 
     public void setImei(String imei) {
         this.imei = imei;
     }
 
-    public String getPassword() {
-        return password;
+    public void setTermType(String termType) {
+        this.termType = termType;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public Long getFacebookId() {
+        return facebookId;
     }
 
-    public String getOpenId() {
-        return openId;
+    public String getFacebookUser() {
+        return facebookUser;
     }
 
-    public void setOpenId(String openId) {
-        this.openId = openId;
+    public String getRegChannel() {
+        return regChannel;
     }
 
-    public String getValCode() {
-        return valCode;
+    public String getAppName() {
+        return appName;
     }
 
-    public void setValCode(String valCode) {
-        this.valCode = valCode;
+    public String getAppPackage() {
+        return appPackage;
+    }
+
+    public String getImei() {
+        return imei;
     }
 
     public String getTermType() {
         return termType;
     }
 
-    public void setTermType(String termType) {
-        this.termType = termType;
-    }
-
-    public LoginRequest() {
-        createHeader();
-
-    }
-
     @Override
     public void createHeader() {
         super.createHeader();
-        header.setAction(ApiAction.LOGIN);
+        header.setAction(ApiAction.FB_LOGIN);
     }
 }

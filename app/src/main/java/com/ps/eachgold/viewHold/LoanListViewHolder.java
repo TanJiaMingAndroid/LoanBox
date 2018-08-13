@@ -46,19 +46,17 @@ public class LoanListViewHolder extends BaseViewHolder<LoanBean> {
     @Override
     public void setData(LoanBean data) {
         super.setData(data);
-        //图片
-        String baseUrl = (String) SPutils.get(getContext(), "baseImgUrl", "");
 
 
-        GlideApp.with(getContext()).load("http:" + baseUrl + data.getLogoUrl())
+
+       /* GlideApp.with(getContext()).load(data.getLogoUrl())
                 .placeholder(R.mipmap.ic_launcher)
                 .error(R.mipmap.ic_launcher)
                 .into(ivImage);
-
+*/
         //名字
-        tvName.setText(data.getProductName());
-        //内容
-        String mortgage = "无";
+        tvName.setText(data.getName());
+        tvSlogan.setText(data.getDescription());
 
 
 

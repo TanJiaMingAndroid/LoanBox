@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
@@ -31,8 +32,6 @@ public class  MainActivity extends BaseActivity implements MainContract.View, Ra
     RadioButton rbLoan;
     @BindView(R.id.rb_credit)
     RadioButton rbCredit;
-//    @BindView(R.id.rb_instead)
-//    RadioButton rbInstead;
     @BindView(R.id.rb_person)
     RadioButton rbPerson;
     @BindView(R.id.rg_main)
@@ -43,6 +42,8 @@ public class  MainActivity extends BaseActivity implements MainContract.View, Ra
     private int pagePos;
     //再按一次退出 功能记录时间
     long lastTime;
+
+
     //跳转
     public static void createActivity(Context context, int pagePos) {
         Intent intent = new Intent(context, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);;
@@ -71,6 +72,8 @@ public class  MainActivity extends BaseActivity implements MainContract.View, Ra
         pagePos=getIntent().getIntExtra("pagePos",0);
         //默认显示  贷款
         mPresenter.showCurrenterFragment("FRAGMENT_LOAN");
+
+
         //底部监听
         rgMain.setOnCheckedChangeListener(this);
     }
@@ -99,15 +102,22 @@ public class  MainActivity extends BaseActivity implements MainContract.View, Ra
         return getSupportFragmentManager();
     }
 
+
+
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
+
         switch (checkedId) {
             case R.id.rb_loan:
                 pagePos = 0;
                 mPresenter.showCurrenterFragment("FRAGMENT_LOAN");
+                //transaction.replace(R.id.mainFragmentLayout,indexFragment);
+                //transaction.commit();
                 break;
             case R.id.rb_credit:
                 pagePos = 1;
+//                transaction.remove(indexFragment);
+//                transaction.commit();
                 mPresenter.showCurrenterFragment("FRAGMENT_CREDIT");
                 break;
             /*case R.id.rb_instead:
@@ -116,6 +126,8 @@ public class  MainActivity extends BaseActivity implements MainContract.View, Ra
                 break;*/
             case R.id.rb_person:
                 pagePos = 3;
+//                transaction.remove(indexFragment);
+//                transaction.commit();
                 mPresenter.showCurrenterFragment("FRAGMENT_PERSON");
                 break;
         }

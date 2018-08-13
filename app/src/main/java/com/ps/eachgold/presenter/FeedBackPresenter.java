@@ -40,15 +40,13 @@ public class FeedBackPresenter implements FeedBackContract.Presenter {
             T.showShort("请勿提交空信息!");
             return;
         }
-        String phone= (String) SPutils.get(mContext,"phone","");
 
         FeedBackRequest requset=new FeedBackRequest();
         requset.setContent(text);
-        requset.setMobile(phone);
-        requset.setOpenId("");
+        requset.setPictureUrl(null);
+        requset.setUserId(null);
         String id = (String) SPutils.get(mContext, "sessionid", "");
         requset.getHeader().setSessionid(id);
-
         String str = JSON.toJSONString(requset);
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"),str);
 

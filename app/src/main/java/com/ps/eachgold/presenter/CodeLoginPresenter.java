@@ -1,5 +1,6 @@
 package com.ps.eachgold.presenter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.telephony.TelephonyManager;
 
@@ -94,13 +95,12 @@ public class CodeLoginPresenter implements CodeLoginContract.Presenter {
                 return;
             }
             //IMEI
-            String imei = ((TelephonyManager) mContext.getSystemService(TELEPHONY_SERVICE))
+            @SuppressLint("MissingPermission") String imei = ((TelephonyManager) mContext.getSystemService(TELEPHONY_SERVICE))
                     .getDeviceId();
 
             LoginRequest requset = new LoginRequest();
-            requset.setPhone(phone);
+
             requset.setImei(imei);
-            requset.setValCode(code); //需加密
             requset.setTermType(android.os.Build.MODEL);
 
             String userStr = JSON.toJSONString(requset);

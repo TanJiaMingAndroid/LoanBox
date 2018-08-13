@@ -56,6 +56,11 @@
     <color name="index_product_hot">#FFFF5144</color>
     <!--登录-->
     <color name="login_bg">#FFF6F6F6</color>
+    <!--灰色的线-->
+    <color name="gray_line">#FFC3C3C3</color>
+    <!--灰色的字-->
+    <color name="gray_text">#FFA6A6A6</color>
+    <color name="orange_text">#FFFF7A3F</color>
 
 
 

@@ -18,6 +18,15 @@ public class BannerBean {
     private String imgUrl;//图片地址
     private String beginTime;//广告开始时间
     private String endTime;//广告结束时间
+    private String strPicUrl;
+
+    public String getStrPicUrl() {
+        return strPicUrl;
+    }
+
+    public void setStrPicUrl(String strPicUrl) {
+        this.strPicUrl = strPicUrl;
+    }
 
     public int getProductId() {
         return productId;

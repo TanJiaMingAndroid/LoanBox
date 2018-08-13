@@ -8,6 +8,15 @@ import com.ps.eachgold.net.ApiAction;
 
 public class LoanListRequset extends BaseRequset{
 
+    String status;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public LoanListRequset() {
         createHeader();

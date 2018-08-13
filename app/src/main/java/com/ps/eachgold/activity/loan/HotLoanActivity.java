@@ -178,7 +178,7 @@ public class HotLoanActivity extends BaseActivity implements LoanContract.View, 
                     }
                 } else {
                     //登录
-                    LoginActivity.createActivity(HotLoanActivity.this, "");
+                    LoginActivity.createActivity(HotLoanActivity.this);
                 }
 
             }

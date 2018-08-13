@@ -1,11 +1,17 @@
 package com.ps.eachgold.activity.login;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.telephony.TelephonyManager;
 import android.text.SpannableString;
 import android.text.Spanned;
+import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.View;
@@ -15,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alibaba.fastjson.JSON;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -30,6 +37,10 @@ import com.ps.eachgold.activity.MainActivity;
 import com.ps.eachgold.bean.Header;
 import com.ps.eachgold.bean.LoginBean;
 import com.ps.eachgold.contract.login.LoginContract;
+import com.ps.eachgold.net.ApiService;
+import com.ps.eachgold.net.MyObserver3;
+import com.ps.eachgold.net.headerRequset.LoginRequest;
+import com.ps.eachgold.net.headerRequset.TelLoginRequest;
 import com.ps.eachgold.presenter.LoginPresenter;
 import com.ps.eachgold.util.SPutils;
 import com.ps.eachgold.util.T;
@@ -42,6 +53,10 @@ import java.util.Arrays;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
 
 
 /**
@@ -50,6 +65,7 @@ import butterknife.OnClick;
  */
 
 public class LoginActivity extends BaseActivity implements LoginContract.View {
+    private Context mContext;
 
     @BindView(R.id.left_icon)
     ImageView leftIcon;
@@ -66,16 +82,18 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
 
     private LoginPresenter mPresenter;
+    private ApiService mApiService;
 
 
     private String phone;
     private CallbackManager callbackManager;
     //private LoginButton btFacebookLogin;
+    private LoginContract.View mView;
 
     //跳转
-    public static void createActivity(Context context, String phone) {
+    public static void createActivity(Context context) {
         Intent intent = new Intent(context, LoginActivity.class);
-        intent.putExtra("phoneNumber", phone);
+        //intent.putExtra("phoneNumber", phone);
         context.startActivity(intent);
 
 
@@ -84,9 +102,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     @Override
     protected void initVariables() {
         Intent intent = getIntent();
-        if (intent != null) {
-            phone = intent.getStringExtra("phoneNumber");
-        }
+
     }
 
     @Override
@@ -105,29 +121,32 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
         btFacebookLogin.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                BindTelActivity.createActivity(getBaseContext());
-                /*Log.e("userid", loginResult.getAccessToken().getUserId());
-                Log.e("token", loginResult.getAccessToken().getToken());
-                Log.e("Application", loginResult.getAccessToken().getApplicationId());
-                Log.e("getDeclinedPermissions", loginResult.getAccessToken().getDeclinedPermissions().toString());
-                Log.e("getExpires", loginResult.getAccessToken().getExpires().toString());
-                Log.e("getPermissions", loginResult.getAccessToken().getPermissions().toString());
-                Log.e("getSource", loginResult.getAccessToken().getSource().toString());
-
-                Log.e("RecentlyDenied", loginResult.getRecentlyDeniedPermissions().toString());
-                Log.e("getRecentlyGranted", loginResult.getRecentlyGrantedPermissions().toString());
-
-                final AccessToken token = loginResult.getAccessToken();
-                Log.e("accesstoken", loginResult.getAccessToken().toString());
-                Profile profile = Profile.getCurrentProfile();
-                //profile.getName();
-                //Log.e("getname", profile.getName());
-                Log.e("getFirst", profile.getFirstName());
-                Log.e("getLast", profile.getLastName());
-                Log.e("getMiddle", profile.getMiddleName());
-                Log.e("getpic", String.valueOf(profile.getProfilePictureUri(50, 50)));*/
-
-
+                String facebookId = loginResult.getAccessToken().getUserId();
+                String facebookUser = Profile.getCurrentProfile().getName();
+                @SuppressLint("MissingPermission")
+                String  imei = ((TelephonyManager) getApplicationContext().getSystemService(TELEPHONY_SERVICE)).getDeviceId();
+                LoginRequest requset = new LoginRequest();
+                requset.setImei(imei);
+                requset.setTermType(android.os.Build.MODEL);
+                requset.setAppName("LoanBox");
+                requset.setAppPackage(getPackageName());
+                requset.setFacebookId(Long.parseLong(facebookId));
+                requset.setFacebookUser(facebookUser);
+                requset.setRegChannel("facebook");
+                String userStr = JSON.toJSONString(requset);
+                Log.e("111",userStr);
+                RequestBody requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), userStr);
+                mApiService.login(requestBody)
+                        .subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(new MyObserver3<LoginBean>(mContext, mView) {
+                            @Override
+                            public void onSuccess(LoginBean result, Header header) {
+                                Log.e("111",result.getSessionid());
+                                //mView.fbloginSuccess(result,header);
+                                BindTelActivity.createActivity(mContext);
+                            }
+                        });
             }
 
             @Override
@@ -180,23 +199,17 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 
     }
 
+
     @Override
     public String getPhone() {
-        return null;
-        //return etPhone.getText().toString().trim();
+        return etLoginTel.getText().toString().trim();
+
     }
 
     @Override
-    public String getPsw() {
-        return null;
-        //return etPsw.getText().toString().trim();
-    }
-
-    @Override
-    public void loginSuccess(LoginBean bean, Header header) {
+    public void fbloginSuccess(LoginBean bean, Header header) {
         //本地保存 -登录状态 ；手机号； ID ； 是否有登录密码（验证码注册登录无设置密码情况情况）；完善信息情况
         SPutils.put(this, "login", true);
-        SPutils.put(this, "phone", getPhone());
         SPutils.put(this, "sessionid", bean.getSessionid());
         String psw = bean.getUserinfo().getPasswordSign();
         if (psw != null && !"".equals(psw)) {
@@ -216,6 +229,12 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
         }
     }
 
+    @Override
+    public void telloginSuccess(Header header) {
+
+    }
+
+
     //点击事件
     @OnClick({R.id.left_icon, R.id.tv_login_agreement, R.id.bt_login_tel})
     public void onViewClicked(View view) {
@@ -225,17 +244,17 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
                 finish();
                 //overridePendingTransition(R.anim.slide_still, R.anim.slide_out_right);
                 break;
-            /*case R.id.bt_facebook_login:
-                //请绑定手机号
-                //BindTelActivity.createActivity(this);
+            case R.id.bt_facebook_login:
+
                 facebookLogin();
-                break;*/
+                break;
             case R.id.tv_login_agreement:
                 //show agreement
-                T.showShort("agreement");
                 break;
             case R.id.bt_login_tel:
-                if ((etLoginTel.getText()) != null && (etLoginTel.getText().length() == 11)) {
+                if (!TextUtils.isEmpty(getPhone())) {
+                    mPresenter.telLogin();
+                    //跳转到验证码界面
                     AutoCodeActivity.createActivity(this);
                 } else {
                     Toast.makeText(this, "手机号为空或者输入不正确", Toast.LENGTH_SHORT).show();

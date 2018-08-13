@@ -3,15 +3,19 @@ package com.ps.eachgold.activity.person;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ps.eachgold.R;
 import com.ps.eachgold.activity.BaseActivity;
+import com.ps.eachgold.activity.login.LoginActivity;
+import com.ps.eachgold.util.T;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import io.reactivex.disposables.Disposable;
 
 
@@ -99,7 +103,7 @@ public class SettingActivity extends BaseActivity {
         return false;
     }
 
-    /*@OnClick({R.id.left_icon, R.id.tv_change_psw, R.id.tv_exit})
+    @OnClick({R.id.left_icon, R.id.tv_change_psw, R.id.tv_exit})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.left_icon:
@@ -107,20 +111,12 @@ public class SettingActivity extends BaseActivity {
                 finish();
                 overridePendingTransition(R.anim.slide_still, R.anim.slide_out_right);
                 break;
-            *//*case R.id.tv_change_psw:
-                //密码修改 1/密码设置0
-                mtype = (int) SPutils.get(this, "havePsw", 1);
-                ChangePswActivity.createActivity(this, mtype);
-                break;*//*
-
             case R.id.tv_exit:
-                //退出
-                SPutils.deleteButPhone(this);
-                T.showShort("退出成功");
-                MainActivity.createActivity(this, 0);
+
+                LoginActivity.createActivity(this);
                 break;
         }
-    }*/
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

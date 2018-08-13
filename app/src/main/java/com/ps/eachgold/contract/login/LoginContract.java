@@ -13,12 +13,12 @@ import com.ps.eachgold.contract.ImpBaseView;
 public interface LoginContract {
     interface View extends ImpBaseView {
         String getPhone();
-        String getPsw();
-        void loginSuccess(LoginBean bean, Header header);
+        void fbloginSuccess(LoginBean bean, Header header);
+        void telloginSuccess(Header header);
     }
 
     interface Presenter extends ImpBasePresenter {
-
-        void login();
+        void fbLogin();
+        void telLogin();
     }
 }

@@ -5,6 +5,7 @@ import android.content.Context;
 import com.alibaba.fastjson.JSON;
 import com.ps.eachgold.bean.BankCardBean;
 import com.ps.eachgold.bean.Header;
+import com.ps.eachgold.bean.LoanBean;
 import com.ps.eachgold.bean.Page;
 import com.ps.eachgold.contract.credit.BankCreditListContract;
 import com.ps.eachgold.net.ApiService;
@@ -42,9 +43,8 @@ public class BankCreditListPresenter implements BankCreditListContract.Presenter
     public void getList(String bankId, int page, int size) {
 
         //获取银行卡列表  //请求类型 bank（表示 银行下的信用卡），hot(表示 热门的信用卡)
-        BankCardlistRequest requset=new BankCardlistRequest();
-        requset.setReqType("bank");
-        requset.setBankId(bankId);
+        /*BankCardlistRequest requset=new BankCardlistRequest();
+
         Page mPage=new Page();
         mPage.setIndex(page);
         mPage.setSize(size);
@@ -52,15 +52,15 @@ public class BankCreditListPresenter implements BankCreditListContract.Presenter
         String userStr = JSON.toJSONString(requset);
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"),userStr);
 
-        mApiService.getBankCardist(requestBody)
+        mApiService.getMarketProductList(requestBody)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new MyObserver3<List<BankCardBean>>(mContext, mView) {
+                .subscribe(new MyObserver3<List<LoanBean>>(mContext, mView) {
                     @Override
-                    public void onSuccess(List<BankCardBean> bankBeans, Header header) {
-                        mView.getBankCardListSuccess(bankBeans,header);
+                    public void onSuccess(List<LoanBean> list, Header header) {
+                        mView.getBankCardListSuccess(list,header);
                     }
-                });
+                });*/
     }
 
     @Override

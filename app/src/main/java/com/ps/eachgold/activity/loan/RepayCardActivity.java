@@ -170,7 +170,7 @@ public class  RepayCardActivity extends BaseActivity implements RepayCardContrac
                     }
                 } else {
                     //登录
-                    LoginActivity.createActivity(RepayCardActivity.this, "");
+                    LoginActivity.createActivity(RepayCardActivity.this);
                 }
             }
         });

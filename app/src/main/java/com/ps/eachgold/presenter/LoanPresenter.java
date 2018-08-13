@@ -50,6 +50,7 @@ public class LoanPresenter implements LoanContract.Presenter {
         //获取Banner  1首页banner2信用卡banner3代还banner4启动页
         BannerRequset requset=new BannerRequset();
         String userStr = JSON.toJSONString(requset);
+        Log.e("userstr",userStr.toString());
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"),userStr);
         mApiService.getBanner(requestBody)
                 .subscribeOn(Schedulers.io())
@@ -59,7 +60,7 @@ public class LoanPresenter implements LoanContract.Presenter {
                     public void onSuccess(List<BannerBean> list, Header header) {
                         if(mView != null){
                             mView.getBannerSuccess(list);
-                            Log.e("list",list.toString());
+                            //Log.e("list",list.get(1).getStrPicUrl());
                         }
                     }
                 });
@@ -73,7 +74,7 @@ public class LoanPresenter implements LoanContract.Presenter {
         mPage.setIndex(page);
         mPage.setSize(size);
         requset.getHeader().setPage(mPage);
-
+        requset.setStatus("2");
         String userStr = JSON.toJSONString(requset);
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"),userStr);
         mApiService.getLoanList(requestBody)

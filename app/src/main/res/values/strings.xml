@@ -6,7 +6,7 @@
     <string name="app_index">Home</string><!--首页-->
     <string name="app_loan_market">Pinjaman</string><!--贷款超市-->
     <string name="app_person">Akun saya</string><!--我的-->
-    <string name="welcom_skip">跳过</string>
+    <string name="welcom_skip">skip</string>
     <!--登录-->
     <string name="login_title">Login</string>
     <string name="login_content1">Ikat nomor telepon</string>
@@ -26,6 +26,7 @@
     <string name="login_bind_tel_code_content2">Silakan masukkan kode verifikasi 4-digit yang</string>
     <string name="login_bind_tel_code_content3">Anda terima di ponsel Anda.</string>
     <string name="login_bind_tel_code_submit">Langkah selanjutnya</string>
+    <string name="login_bind_tel_send_code">Kirim ulang</string>
     <!--首页-->
     <string name="index_recommend">Rekomendasi populer</string><!--产品推荐-->
     <string name="index_more"></string>Lihat lebih banyak<!--查看更多-->
@@ -53,7 +54,7 @@
     <string name="loan_market_detail_loan_condition"></string><!--申请条件-->
     <string name="loan_market_detail_loan_flow"></string><!--申请流程-->
     <string name="loan_market_detail_repay_way"></string><!--还款方式-->
-    <string name="loan_market_detail_loan_apply"></string><!--立即申请-->
+    <string name="loan_market_detail_loan_apply">Daftar sekarang</string><!--立即申请-->
 
 
     <!--我的-->
@@ -71,19 +72,23 @@
     <string name="person_login_name_hint">Silakan masukkan nama</string><!--请输入姓名-->
     <string name="person_login_birthday">Ulang tahun</string><!--生日-->
     <string name="person_login_birthday_hint">Harap pilih tanggal lahir</string><!--请输入生日-->
-    <string name="person_login_sex"></string><!--性别-->
-    <string name="person_login_sex_hint"></string><!--请输入性别-->
-    <string name="person_login_city"></string><!--所在城市-->
-    <string name="person_login_city_hint"></string><!--请输入所在城市-->
-    <string name="person_login_education"></string><!--文化程度-->
-    <string name="person_login_education_hint"></string><!--请输入文化程度-->
-    <string name="person_login_job"></string><!--职业身份-->
-    <string name="person_login_job_hint"></string><!--请输入职业身份-->
-    <string name="person_login_income"></string><!--月收入-->
-    <string name="person_login_income_hint"></string><!--请输入月收入-->
+    <string name="person_login_sex">Gender</string><!--性别-->
+    <string name="person_login_sex_hint">Silakan pilih jenis kelamin</string><!--请输入性别-->
+    <string name="person_login_city">City</string><!--所在城市-->
+    <string name="person_login_city_hint">Silakan pilih kota Anda</string><!--请输入所在城市-->
+    <string name="person_login_education">Tingkat pendidikan</string><!--文化程度-->
+    <string name="person_login_education_hint">Pendidikan terakhir</string><!--请输入文化程度-->
+    <string name="person_login_job">Identitas profesional</string><!--职业身份-->
+    <string name="person_login_job_hint">Pekerjaan</string><!--请输入职业身份-->
+    <string name="person_login_income">Penghasilan bulanan</string><!--月收入-->
+    <string name="person_login_income_hint">IDR</string><!--请输入月收入-->
     <string name="person_login_common">select</string><!--请选择-->
     <string name="person_login_money_type">IDR</string><!--IDR-->
     <string name="person_login_save">Selesai</string><!--保存-->
+    <!--person info show-->
+    <string name="person_info_show_job">Karir</string>
+    <!--person info -->
+    <string name="person_info_show_education">Pendidikan</string>
 
     <string name="person_message_inform">消息通知</string><!---->
     <string name="person_help_service_tel">Telepon layanan pelanggan platform:</string><!--平台客服电话:020-XXXXXX-->
@@ -97,10 +102,16 @@
     <string name="person_setting_logout">Logout</string><!--Logout-->
 
 
-
     <!--facebook集成-->
     <string name="facebook_app_id">1964375873582561</string>
     <string name="fb_login_protocol_scheme">fb1964375873582561</string>
+
+
+    <string name="camera">takePhoto</string>
+    <string name="phone">Gallery</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

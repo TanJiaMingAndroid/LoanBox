@@ -39,10 +39,10 @@ public class NewViewHolder extends BaseViewHolder<NewBean> {
 
 //        String baseUrl = (String) SPutils.get(getContext(), "baseImgUrl", "");
 //
-        GlideApp.with(getContext()).load(data.getImgUrl())
+       /* GlideApp.with(getContext()).load(data.getImgUrl())
                 .placeholder(R.mipmap.credit_glide)
                 .error(R.mipmap.credit_glide)
-                .into(ivImg);
+                .into(ivImg);*/
 
         tvName.setText(data.getTitle());
         tvContent.setText(data.getSource());

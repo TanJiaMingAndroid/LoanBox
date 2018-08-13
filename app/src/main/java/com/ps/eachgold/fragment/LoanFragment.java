@@ -1,6 +1,7 @@
 package com.ps.eachgold.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -21,6 +22,7 @@ import com.jude.easyrecyclerview.decoration.DividerDecoration;
 import com.ps.eachgold.MyAppConfig;
 import com.ps.eachgold.R;
 import com.ps.eachgold.activity.H5Activity;
+import com.ps.eachgold.activity.credit.ProductDetailActivity;
 import com.ps.eachgold.activity.loan.HandleCardActivity;
 import com.ps.eachgold.activity.loan.HotLoanActivity;
 import com.ps.eachgold.activity.loan.LoanListActivity;
@@ -86,9 +88,8 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
 
     private List<BannerBean> bannerlist;
 
-    private long lastClickTime = 0;//点击的时间
 
-    private ImageView  ivOneBanner;
+
 
     public static LoanFragment newInstance() {
         LoanFragment fragment = new LoanFragment();
@@ -105,9 +106,6 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
     protected void initView(Bundle savedInstanceState) {
         // ViewPager+Fragment沉浸式状态栏
         StatBarCpmpart.init(getActivity(), statusBar);
-        /*leftIcon.setVisibility(View.GONE);
-        title.setText("index");*/
-        //初始化列表
         initRecycler();
         //添加头部
         addHead();
@@ -142,7 +140,6 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
     @Override
     public void getError(Throwable e) {
         swipeLoan.setRefreshing(false);
-        initBanner2();
     }
 
     @Override
@@ -155,7 +152,7 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
 
     }
 
-
+    //recycle列表
     @Override
     public void initRecycler() {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
@@ -175,10 +172,7 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
     @Override
     public void addHead() {
         viewHeader = LayoutInflater.from(getActivity()).inflate(R.layout.head_fragment_main_loan, null);
-        banner = viewHeader.findViewById(R.id.banner); //额度高
-
-
-        ivOneBanner=viewHeader.findViewById(R.id.iv_one_banner);
+        banner = viewHeader.findViewById(R.id.banner);//banner
         adapter.addHeader(new RecyclerArrayAdapter.ItemView() {
             @Override
             public View onCreateView(ViewGroup parent) {
@@ -192,34 +186,13 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
         });
     }
 
-    private void initBanner2() {
-        ArrayList<Integer> images = new ArrayList<>();
-        images.add(R.mipmap.banner_glide);
-        banner.setPages(new CustomBanner.ViewCreator<Integer>() {
-            @Override
-            public View createView(Context context, int position) {
-                ImageView imageView = new ImageView(context);
-                imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-                return imageView;
-            }
 
-            @Override
-            public void updateUI(Context context, View view, int position, Integer data) {
-                GlideApp.with(context).load(data)
-                        .placeholder(R.mipmap.banner_glide)//占位图
-                        .error(R.mipmap.banner_glide)
-                        .into((ImageView) view);
-
-            }
-        }, images).startTurning(3000);
-
-    }
 
     private void initBanner(List<BannerBean> list) {
 
         ArrayList<String> images = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
-            images.add(list.get(i).getImgUrl());
+            images.add(list.get(i).getStrPicUrl());
         }
 
 
@@ -233,8 +206,8 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
 
             @Override
             public void updateUI(Context context, View view, int position, String data) {
-                String baseUrl = (String) SPutils.get(getContext(), "baseImgUrl", "");
-                GlideApp.with(context).load("http:" + baseUrl + data)
+                //String baseUrl = (String) SPutils.get(getContext(), "baseImgUrl", "");
+                GlideApp.with(context).load(data)//data 轮播图当前项对应的数据
                         .placeholder(R.mipmap.banner_glide)
                         .error(R.mipmap.banner_glide)
                         .into((ImageView) view);
@@ -246,7 +219,7 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
 
     @Override
     public void addFoot() {
-        viewFooter = LayoutInflater.from(getActivity()).inflate(R.layout.foot_fragment_credit, recyclerLoan, false);
+       /* viewFooter = LayoutInflater.from(getActivity()).inflate(R.layout.foot_fragment_credit, recyclerLoan, false);
         tvMore = viewFooter.findViewById(R.id.tv_credit_more); //查看更多
 
         adapter.addFooter(new RecyclerArrayAdapter.ItemView() {
@@ -259,7 +232,7 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
             public void onBindView(View footerView) {
 
             }
-        });
+        });*/
     }
 
     @Override
@@ -269,7 +242,10 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
         adapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                loginFlag = (boolean) SPutils.get(getActivity(), "login", false);
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), ProductDetailActivity.class);
+                startActivity(intent);
+                /*loginFlag = (boolean) SPutils.get(getActivity(), "login", false);
                 infoFlag = (boolean) SPutils.get(getActivity(), "info", false);
                 if (loginFlag) {
                     if (infoFlag) {
@@ -286,19 +262,19 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
                     }
                 } else {
                     //登录
-                    LoginActivity.createActivity(getActivity(), "");
-                }
+                    LoginActivity.createActivity(getActivity());
+                }*/
 
             }
         });
-        tvMore.setOnClickListener(new View.OnClickListener() {
+        /*tvMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //底部查看更多跳转
                 //热门推荐
                 HotLoanActivity.createActivity(getActivity());
             }
-        });
+        });*/
         banner.setOnPageClickListener(new CustomBanner.OnPageClickListener<String>() {
             @Override
             public void onPageClick(int position, String str) {
@@ -316,28 +292,16 @@ public class LoanFragment extends BaseFragment implements LoanContract.View, Vie
 
     @Override
     public void getBannerSuccess(List<BannerBean> list) {
-        bannerlist.clear();
         bannerlist = list;
-        String aaa = bannerlist.get(0).getImgUrl();
-        String bbb = bannerlist.get(0).getImgUrl();
-        Log.e("aaa",aaa);
-        Log.e("bbb",bbb);
         if (list != null && list.size() > 0) {
             initBanner(list);
             if(list.size()==1){
-                ivOneBanner.setVisibility(View.VISIBLE);
                 banner.setVisibility(View.GONE);
                 String baseUrl = (String) SPutils.get(getContext(), "baseImgUrl", "");
-                GlideApp.with(getActivity()).load("http:" + baseUrl + list.get(0).getImgUrl())
-                        .placeholder(R.mipmap.banner_glide)
-                        .error(R.mipmap.banner_glide)
-                        .into(ivOneBanner);
+
             }else {
-                ivOneBanner.setVisibility(View.GONE);
                 banner.setVisibility(View.VISIBLE);
             }
-        } else {
-            initBanner2();
         }
 
     }

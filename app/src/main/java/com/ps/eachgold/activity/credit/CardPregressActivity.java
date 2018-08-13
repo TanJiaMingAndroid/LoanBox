@@ -161,7 +161,7 @@ public class CardPregressActivity extends BaseActivity implements CardProgressCo
                     }
                 } else {
                     //登录
-                    LoginActivity.createActivity(CardPregressActivity.this, "");
+                    LoginActivity.createActivity(CardPregressActivity.this);
                 }
             }
         });

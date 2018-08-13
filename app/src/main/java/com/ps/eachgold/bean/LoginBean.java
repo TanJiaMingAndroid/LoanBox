@@ -11,9 +11,18 @@ public class LoginBean {
      * sessionid : 2516ba7600cb4f609ab3938354345c90
      * userinfo : {"createdAt":"2018-02-01 18:56:53","id":7,"imei":"123123123","isAuth":-1,"isDel":1,"isFrom":4,"lastTime":"2018-02-01 19:29:53","name":"","openId":"11111111111111111","password":"","passwordSign":"","phone":"15990006398","termType":"","updatedAt":"2018-02-01 19:29:53","uuid":"9e045d80-1236-4802-9c30-5b049b5d7195"}
      */
-
+    //是否需要绑定手机 1：需要 0：不需要
+    private int isNewUser;
     private String sessionid;
     private UserinfoBean userinfo;
+
+    public void setIsNewUser(int isNewUser) {
+        this.isNewUser = isNewUser;
+    }
+
+    public int getIsNewUser() {
+        return isNewUser;
+    }
 
     public String getSessionid() {
         return sessionid;
@@ -32,23 +41,7 @@ public class LoginBean {
     }
 
     public static class UserinfoBean {
-        /**
-         * createdAt : 2018-02-01 18:56:53
-         * id : 7
-         * imei : 123123123
-         * isAuth : -1
-         * isDel : 1
-         * isFrom : 4
-         * lastTime : 2018-02-01 19:29:53
-         * name :
-         * openId : 11111111111111111
-         * password :
-         * passwordSign :
-         * phone : 15990006398
-         * termType :
-         * updatedAt : 2018-02-01 19:29:53
-         * uuid : 9e045d80-1236-4802-9c30-5b049b5d7195
-         */
+
 
         private String createdAt;
         private int id;

@@ -104,7 +104,7 @@ public class SetPswActivity extends BaseActivity implements SetPswContract.View 
     public void sureSuccess() {
         //回到登录
         //清除 其他页面
-        LoginActivity.createActivity(this,"");
+        LoginActivity.createActivity(this);
         finish();
         ForgotPswActivity.instance.finish();
     }

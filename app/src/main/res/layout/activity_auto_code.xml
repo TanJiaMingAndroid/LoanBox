@@ -62,7 +62,15 @@
         android:text="@string/login_bind_tel_code_submit"
         android:textColor="@color/white"/>
 
-
+        <Button
+            android:id="@+id/bt_login_send_code"
+            android:layout_width="424px"
+            android:layout_height="86px"
+            android:layout_gravity="center"
+            android:layout_marginTop="46px"
+            android:background="@drawable/icon_confirm"
+            android:text="Kirim ulang"
+            android:textColor="@color/white"/>
 
     </com.zhy.autolayout.AutoLinearLayout>
 </com.zhy.autolayout.AutoLinearLayout>

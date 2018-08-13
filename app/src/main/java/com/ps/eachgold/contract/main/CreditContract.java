@@ -4,6 +4,7 @@ import com.ps.eachgold.bean.BankBean;
 import com.ps.eachgold.bean.BankCardBean;
 import com.ps.eachgold.bean.BannerBean;
 import com.ps.eachgold.bean.Header;
+import com.ps.eachgold.bean.LoanBean;
 import com.ps.eachgold.contract.ImpBasePresenter;
 import com.ps.eachgold.contract.ImpBaseView;
 
@@ -23,18 +24,14 @@ public interface CreditContract {
         void addFoot();
         //添加监听
         void addListener();
-        //Banner
-        void getBannerSuccess(List<BannerBean> list);
-        //银行
-        void getBankListSuccess(List<BankBean> list);
-        //银行卡
-        void getBankCardListSuccess(List<BankCardBean> list, Header header);
+        //getList
+        void getProductListSuccess(List<LoanBean> list, Header header);
+
     }
 
     interface Presenter extends ImpBasePresenter {
-        void getBanner();
-        void getBankList();
-        void getCardList(int page,int size);
+
+        void getProductList(int page,int size,int sort);
         void saveLog(String prodType,String prodId);
     }
 }

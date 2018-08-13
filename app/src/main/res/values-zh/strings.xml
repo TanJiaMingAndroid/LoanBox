@@ -52,7 +52,7 @@
     <string name="loan_market_detail_loan_condition"></string><!--申请条件-->
     <string name="loan_market_detail_loan_flow"></string><!--申请流程-->
     <string name="loan_market_detail_repay_way"></string><!--还款方式-->
-    <string name="loan_market_detail_loan_apply"></string><!--立即申请-->
+    <string name="loan_market_detail_loan_apply">立即申请</string><!--立即申请-->
 
 
     <!--我的-->

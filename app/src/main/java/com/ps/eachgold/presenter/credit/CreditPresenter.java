@@ -1,12 +1,14 @@
 package com.ps.eachgold.presenter.credit;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.alibaba.fastjson.JSON;
 import com.ps.eachgold.bean.BankBean;
 import com.ps.eachgold.bean.BankCardBean;
 import com.ps.eachgold.bean.BannerBean;
 import com.ps.eachgold.bean.Header;
+import com.ps.eachgold.bean.LoanBean;
 import com.ps.eachgold.bean.Page;
 import com.ps.eachgold.contract.main.CreditContract;
 import com.ps.eachgold.net.ApiService;
@@ -56,66 +58,36 @@ public class CreditPresenter implements CreditContract.Presenter {
         }
     }
 
-    @Override
-    public void getBanner() {
-        //获取Banner  1首页banner2信用卡banner3代还banner4启动页
-        BannerRequset requset=new BannerRequset();
-        String userStr = JSON.toJSONString(requset);
-        RequestBody requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"),userStr);
-        mApiService.getBanner(requestBody)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new MyObserver3<List<BannerBean>>(mContext, mView) {
-                    @Override
-                    public void onSuccess(List<BannerBean> list, Header header) {
-                        if(mView != null){
-                            mView.getBannerSuccess(list);
-                        }
-                    }
-                });
-    }
+
+
+
 
     @Override
-    public void getBankList() {
-        BankListRequset requset=new BankListRequset();
-        String userStr = JSON.toJSONString(requset);
-        RequestBody requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"),userStr);
-
-        mApiService.getBanklist(requestBody)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new MyObserver3<List<BankBean>>(mContext, mView) {
-
-                    @Override
-                    public void onSuccess(List<BankBean> bankBeans, Header header) {
-                        mView.getBankListSuccess(bankBeans);
-                    }
-                });
-
-    }
-
-    @Override
-    public void getCardList(int page, int size) {
+    public void getProductList(int page, int size,int sort) {
         BankCardlistRequest requset=new BankCardlistRequest();
-        requset.setReqType("hot");
-        requset.setBankId("0");
+        requset.setSort(sort);
+        requset.setStatus(2);
         Page mPage=new Page();
         mPage.setIndex(page);
         mPage.setSize(size);
         requset.getHeader().setPage(mPage);
         String userStr = JSON.toJSONString(requset);
+        Log.e("creditPPP",userStr);
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"),userStr);
-
-        mApiService.getBankCardist(requestBody)
+        mApiService.getMarketProductList(requestBody)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new MyObserver3<List<BankCardBean>>(mContext, mView) {
+                .subscribe(new MyObserver3<List<LoanBean>>(mContext, mView) {
                     @Override
-                    public void onSuccess(List<BankCardBean> bankBeans, Header header) {
-                        mView.getBankCardListSuccess(bankBeans,header);
+                    public void onSuccess(List<LoanBean> list, Header header) {
+                        if(mView != null){
+                            mView.getProductListSuccess(list,header);
+                        }
                     }
                 });
     }
+
+
 
     @Override
     public void saveLog(String prodType, String prodId) {

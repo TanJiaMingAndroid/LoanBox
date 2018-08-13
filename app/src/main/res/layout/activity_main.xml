@@ -45,13 +45,7 @@
             android:textColor="@drawable/rb_bottom_text_select"
             android:drawableTop="@drawable/rb_person_select" />
     </RadioGroup>
-    <FrameLayout
-        android:id="@+id/mainFragmentLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/line"
-        android:layout_weight="1">
-    </FrameLayout>
+
 
     <View
         android:id="@+id/line"
@@ -60,5 +54,12 @@
         android:layout_height="1px"
         android:background="@color/line_gray"
         />
+    <FrameLayout
+        android:id="@+id/mainFragmentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/line"
+        android:layout_weight="1">
+    </FrameLayout>
 </RelativeLayout>
 

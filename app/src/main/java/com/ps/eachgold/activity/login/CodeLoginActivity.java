@@ -182,7 +182,7 @@ public class CodeLoginActivity extends BaseActivity implements CodeLoginContract
                 break;
             case R.id.tv_psw_login:
                 //跳转密码登录
-                LoginActivity.createActivity(this, getPhone());
+                //LoginActivity.createActivity(this, getPhone());
                 finish();
                 break;
             case R.id.tv_register:

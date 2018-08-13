@@ -1,10 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/line_gray"
+    tools:context="com.ps.eachgold.fragment.IndexFragment"
     android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/login_gradient"
+        android:orientation="vertical"
+        android:visibility="gone">
+    </LinearLayout>
+    <include layout="@layout/login_head"/>
 
     <com.donkingliang.banner.CustomBanner
         android:id="@+id/banner"
@@ -35,13 +44,12 @@
             android:layout_height="match_parent"
             android:layout_weight="9"
             android:gravity="center_vertical"
-            android:text="177****3302 buy licai chanpin $5000"
+            android:text="177****3303 buy licai chanpin $5000"
             android:textColor="@color/index_tip_message"
             android:textSize="@dimen/text_size_26" />
 
     </com.zhy.autolayout.AutoLinearLayout>
     <com.zhy.autolayout.AutoLinearLayout
-        android:id="@+id/al_index_more"
         android:layout_width="match_parent"
         android:layout_height="90px"
         android:orientation="horizontal"
@@ -78,19 +86,13 @@
             android:src="@drawable/icon_more"/>
 
     </com.zhy.autolayout.AutoLinearLayout>
-    <View
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rc_index"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#FFCCCCCC"/>
+        android:layout_height="match_parent">
 
+    </android.support.v7.widget.RecyclerView>
 
-
-
-
-
-
-
-
-
-
-</com.zhy.autolayout.AutoLinearLayout>
+</LinearLayout>

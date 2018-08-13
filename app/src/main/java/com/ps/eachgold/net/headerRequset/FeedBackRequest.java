@@ -16,60 +16,38 @@ public class FeedBackRequest extends BaseRequset{
      * content : 13777777777
      */
 
-    private String mobile;
-    private String openId;
     private String content;
-    //add
-    private String userID;
+    private String userId;
     private String pictureUrl;
 
-    public void setUserID(String userID) {
-        this.userID = userID;
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public void setPictureUrl(String pictureUrl) {
         this.pictureUrl = pictureUrl;
     }
 
-    public String getUserID() {
-        return userID;
+    public String getContent() {
+        return content;
+    }
+
+    public String getUserId() {
+        return userId;
     }
 
     public String getPictureUrl() {
         return pictureUrl;
     }
 
-    public String getMobile() {
-        return mobile;
-    }
-
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
-    }
-
-    public String getOpenId() {
-        return openId;
-    }
-
-    public void setOpenId(String openId) {
-        this.openId = openId;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public FeedBackRequest() {
-        createHeader();
-    }
     @Override
     public void createHeader() {
         super.createHeader();
-        header.setAction(ApiAction.FEEDBACK);
+        header.setAction(ApiAction.PERSONFEEDBACK);
     }
 
 }

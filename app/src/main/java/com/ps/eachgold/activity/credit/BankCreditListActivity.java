@@ -205,7 +205,7 @@ public class BankCreditListActivity extends BaseActivity implements BankCreditLi
                     }
                 } else {
                     //登录
-                    LoginActivity.createActivity(BankCreditListActivity.this, "");
+                    LoginActivity.createActivity(BankCreditListActivity.this);
                 }
             }
         });

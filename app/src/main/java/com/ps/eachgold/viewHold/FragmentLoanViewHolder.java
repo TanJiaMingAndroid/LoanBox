@@ -1,5 +1,6 @@
 package com.ps.eachgold.viewHold;
 
+import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,27 +19,40 @@ import com.ps.eachgold.util.SPutils;
 public class FragmentLoanViewHolder extends BaseViewHolder<LoanBean> {
 
 
-    private ImageView ivImg;
-    private TextView tvName;
-    private TextView tvAmount;
-    private TextView tvContent;
-    private TextView tvType;
+    ImageView ivImage;
+
+    TextView tvName;
+
+    TextView tvSum;
+
+    TextView tvSlogan;
+
+    TextView tvLilv;
+
+    TextView tvLixi;
+
 
     public FragmentLoanViewHolder(ViewGroup parent) {
-        super(parent, R.layout.viewholder_fragment_loan);
+        super(parent, R.layout.viewholder_loan_list);
 
-        ivImg = $(R.id.iv_img);
+        ivImage = $(R.id.iv_image);
         tvName = $(R.id.tv_name);
-        tvAmount = $(R.id.tv_amount);
-        tvContent = $(R.id.tv_content);
-        tvType = $(R.id.tv_type);
+        tvSum = $(R.id.tv_sum);
+        tvSlogan = $(R.id.tv_product_slogan);
+        tvLilv = $(R.id.tv_lilv);
+        tvLixi = $(R.id.tv_lixi);
     }
 
     @Override
     public void setData(LoanBean data) {
         super.setData(data);
 
-        String baseUrl = (String) SPutils.get(getContext(), "baseImgUrl", "");
+        Log.e("hotdata",data.getName());
+
+        tvName.setText(data.getName());
+        tvSlogan.setText(data.getDescription());
+
+        //String baseUrl = (String) SPutils.get(getContext(), "baseImgUrl", "");
 
 
        /* GlideApp.with(getContext()).load("http:" + baseUrl + data.getPic())

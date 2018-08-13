@@ -40,7 +40,7 @@ public class BankHotListPresenter implements BankHotListContract.Presenter {
 
     @Override
     public void getCardList(int page, int size) {
-        BankCardlistRequest requset=new BankCardlistRequest();
+        /*BankCardlistRequest requset=new BankCardlistRequest();
         requset.setReqType("hot");
         requset.setBankId("0");
         Page mPage=new Page();
@@ -59,7 +59,7 @@ public class BankHotListPresenter implements BankHotListContract.Presenter {
                         mView.getBankCardListSuccess(bankBeans,header);
                     }
                 });
-
+*/
     }
 
     @Override

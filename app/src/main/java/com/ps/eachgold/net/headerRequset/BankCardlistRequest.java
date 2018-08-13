@@ -7,48 +7,25 @@ import com.ps.eachgold.net.ApiAction;
  */
 
 public class BankCardlistRequest extends BaseRequset {
-    /**
-     * "reqType":"bank",//请求类型  bank（表示 银行下的信用卡），hot(表示 热门的信用卡)
-     * "bankId":"1",//银行编号,如果是请求类型为热门，此处可以为0
-     * "page":"0",//页数 ，如为0表示 全部
-     * "size":"0"//页展示行数  如为0表示 全部
-     */
-    private String reqType;
-    private String bankId;
-//    private String page;
-//    private String size;
 
-    public String getReqType() {
-        return reqType;
+    private int sort;
+    private int  status;
+
+    public int getSort() {
+        return sort;
     }
 
-    public void setReqType(String reqType) {
-        this.reqType = reqType;
+    public void setSort(int sort) {
+        this.sort = sort;
     }
 
-    public String getBankId() {
-        return bankId;
+    public int getStatus() {
+        return status;
     }
 
-    public void setBankId(String bankId) {
-        this.bankId = bankId;
+    public void setStatus(int status) {
+        this.status = status;
     }
-
-//    public String getPage() {
-//        return page;
-//    }
-//
-//    public void setPage(String page) {
-//        this.page = page;
-//    }
-//
-//    public String getSize() {
-//        return size;
-//    }
-//
-//    public void setSize(String size) {
-//        this.size = size;
-//    }
 
     public BankCardlistRequest() {
         createHeader();
@@ -58,6 +35,6 @@ public class BankCardlistRequest extends BaseRequset {
     @Override
     public void createHeader() {
         super.createHeader();
-        header.setAction(ApiAction.BANK_CARD_LIST);
+        header.setAction(ApiAction.MARKET_PRODUCT_LIST);
     }
 }

@@ -190,7 +190,7 @@ public class LoanListActivity extends BaseActivity implements LoanListContract.V
                     }
                 } else {
                     //登录
-                    LoginActivity.createActivity(LoanListActivity.this, "");
+                    LoginActivity.createActivity(LoanListActivity.this);
                 }
 
             }

@@ -9,67 +9,101 @@ import java.util.List;
 
 public class LoanBean {
 
-
-
-    private int productId;
-    private String productName;
-    private int status;
-    private int position;
+    private String applyCondition;
+    private String applyProcess;
+    private String description;
+    private int id;
     private String logoUrl;
+    private String name;
+    private int position;
+    private String repayInfo;
+    private int status;
     private List<ProductData> productData;
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public String getApplyCondition() {
+        return applyCondition;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setApplyCondition(String applyCondition) {
+        this.applyCondition = applyCondition;
     }
 
-    public void setStatus(int status) {
-        this.status = status;
+    public String getApplyProcess() {
+        return applyProcess;
     }
 
-    public void setPosition(int position) {
-        this.position = position;
+    public void setApplyProcess(String applyProcess) {
+        this.applyProcess = applyProcess;
     }
 
-    public void setLogoUrl(String logoUrl) {
-        this.logoUrl = logoUrl;
+    public String getDescription() {
+        return description;
     }
 
-    public void setProductData(List<ProductData> productData) {
-        this.productData = productData;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public int getProductId() {
-        return productId;
+    public int getId() {
+        return id;
     }
 
-    public String getProductName() {
-        return productName;
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public int getPosition() {
-        return position;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getLogoUrl() {
         return logoUrl;
     }
 
+    public void setLogoUrl(String logoUrl) {
+        this.logoUrl = logoUrl;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
+    public String getRepayInfo() {
+        return repayInfo;
+    }
+
+    public void setRepayInfo(String repayInfo) {
+        this.repayInfo = repayInfo;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
     public List<ProductData> getProductData() {
         return productData;
+    }
+
+    public void setProductData(List<ProductData> productData) {
+        this.productData = productData;
     }
 
     class ProductData{
         String borrowAmount;
         String borrowPeriod;
-        int dayRate;
+        double dayRate;
 
         public void setBorrowAmount(String borrowAmount) {
             this.borrowAmount = borrowAmount;
@@ -91,7 +125,7 @@ public class LoanBean {
             return borrowPeriod;
         }
 
-        public int getDayRate() {
+        public double getDayRate() {
             return dayRate;
         }
     }

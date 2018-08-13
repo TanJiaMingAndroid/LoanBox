@@ -39,11 +39,11 @@ public class CustomViewHolder extends BaseViewHolder<CustomBean> {
 
         String baseUrl = (String) SPutils.get(getContext(), "baseImgUrl", "");
 
-        GlideApp.with(getContext()).load("http:"+baseUrl+data.getPic())
+       /*        GlideApp.with(getContext()).load("http:"+baseUrl+data.getPic())
                 .placeholder(R.mipmap.credit_glide)
                 .error(R.mipmap.credit_glide)
                 .into(ivImg);
-
+*/
         tvName.setText(data.getName());
 
         String min = String.valueOf(data.getMinMoney());

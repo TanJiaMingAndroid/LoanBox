@@ -198,7 +198,7 @@ public class InsteadFragment extends BaseFragment implements InsteadContract.Vie
                     }
                 } else {
                     //登录
-                    LoginActivity.createActivity(getActivity(), "");
+                    LoginActivity.createActivity(getActivity());
                 }
 
             }
@@ -226,10 +226,10 @@ public class InsteadFragment extends BaseFragment implements InsteadContract.Vie
                 ivOneBanner.setVisibility(View.VISIBLE);
                 banner.setVisibility(View.GONE);
                 String baseUrl = (String) SPutils.get(getContext(), "baseImgUrl", "");
-                GlideApp.with(getActivity()).load("http:" + baseUrl + list.get(0).getImgUrl())
+                /*GlideApp.with(getActivity()).load("http:" + baseUrl + list.get(0).getImgUrl())
                         .placeholder(R.mipmap.banner_glide)
                         .error(R.mipmap.banner_glide)
-                        .into(ivOneBanner);
+                        .into(ivOneBanner);*/
             }else {
                 ivOneBanner.setVisibility(View.GONE);
                 banner.setVisibility(View.VISIBLE);
@@ -300,10 +300,10 @@ public class InsteadFragment extends BaseFragment implements InsteadContract.Vie
                 //view 轮播图当前项的布局 它是createView方法的返回值
                 //data 轮播图当前项对应的数据
 
-                GlideApp.with(context).load(data)
+               /* GlideApp.with(context).load(data)
                         .placeholder(R.mipmap.banner_glide)
                         .error(R.mipmap.banner_glide)
-                        .into((ImageView) view);
+                        .into((ImageView) view);*/
 
             }
         }, images).startTurning(3000);
@@ -336,10 +336,10 @@ public class InsteadFragment extends BaseFragment implements InsteadContract.Vie
                 //data 轮播图当前项对应的数
                 String baseUrl = (String) SPutils.get(getContext(), "baseImgUrl", "");
 
-                GlideApp.with(context).load("http:" + baseUrl + data)
+               /* GlideApp.with(context).load("http:" + baseUrl + data)
                         .placeholder(R.mipmap.banner_glide)
                         .error(R.mipmap.banner_glide)
-                        .into((ImageView) view);
+                        .into((ImageView) view);*/
             }
         }, images).startTurning(3000);
 

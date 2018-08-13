@@ -180,7 +180,7 @@ public class BankHotListActivity extends BaseActivity implements BankHotListCont
                     }
                 } else {
                     //登录
-                    LoginActivity.createActivity(BankHotListActivity.this, "");
+                    LoginActivity.createActivity(BankHotListActivity.this);
                 }
             }
         });

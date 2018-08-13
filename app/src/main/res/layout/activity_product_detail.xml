@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/login_bg">
     <include layout="@layout/activity_head"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3">
+        android:layout_weight="3.5"
+        android:background="@color/white">
 
         <ImageView
             android:id="@+id/im_product_detail_pic"
-            android:layout_width="150px"
-            android:layout_height="150px"
-            android:background="@color/blue2"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_marginTop="30px"
+            android:background="@drawable/detail_logo"
             android:layout_marginLeft="50px"/>
+
         <TextView
             android:id="@+id/tv_product_detail_name"
-            android:layout_toRightOf="@id/im_product_detail_pic"
-            android:layout_marginTop="50px"
-            android:layout_marginLeft="35px"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="产品名称"/>
+            android:layout_alignTop="@+id/im_product_detail_pic"
+            android:layout_marginStart="19dp"
+            android:layout_toEndOf="@+id/im_product_detail_pic"
+            android:text="Go Dana"
+            android:textSize="15sp"/>
         <TextView
             android:id="@+id/tv_product_detail_slogan"
             android:layout_below="@id/tv_product_detail_name"
@@ -32,182 +35,254 @@
             android:layout_marginTop="30px"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="产品特色口号，额度高审核快！"
-            android:textSize="12sp"/>
+            android:maxLength="20"
+            android:lines="3"
+            android:text="Butuh pinjaman dana darurat? Pinjam saja di Go Duit, tidak perlu jaminan"
+            android:textSize="13sp"/>
 
 
-        <ImageButton
+        <ImageView
             android:id="@+id/ib_product_detail_collectionPic"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_above="@+id/tv_product_detail_slogan"
             android:layout_alignParentEnd="true"
-            android:layout_width="100px"
-            android:layout_height="100px"
-            tools:ignore="RtlCompat"
-            android:layout_marginTop="30px"
-            android:layout_marginRight="20px"
-            />
+            android:layout_marginEnd="40dp"
+            android:src="@drawable/no_collect" />
+
         <TextView
-            android:layout_below="@id/ib_product_detail_collectionPic"
-            android:layout_alignLeft="@id/ib_product_detail_collectionPic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="点击收藏"/>
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/tv_product_detail_slogan"
+            android:layout_marginEnd="28dp"
+            android:text="Koleksi"
+            android:textColor="#FFFFB82F" />
 
     </RelativeLayout>
-    <view
-        android:layout_width="match_parent"
-        android:layout_height="1px"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
-        android:orientation="horizontal">
-        <LinearLayout
-            android:layout_width="0px"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center"
-            >
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_weight="2"
-                android:text="@string/loan_market_detail_loan_sum"
-                android:gravity="center"/>
-            <org.angmarch.views.NiceSpinner
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_weight="5"
-                android:gravity="center"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_weight="2"
-                android:text="@string/loan_market_detail_loan_sum_limit"
-                android:gravity="center"
-                android:textColor="@color/gray"
-                android:textSize="10sp"/>
 
 
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="0px"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_weight="2"
-                android:text="@string/loan_market_detail_loan_duration"
-                android:gravity="center"/>
-            <org.angmarch.views.NiceSpinner
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_weight="5"
-                android:gravity="center"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_weight="2"
-                android:gravity="center"
-                android:textColor="@color/gray"
-                android:textSize="10sp"
-                android:text="@string/loan_market_detail_loan_duration_limit"/>
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-    <view
-        android:layout_width="match_parent"
-        android:layout_height="1px"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-        <TextView
-            android:layout_width="0px"
-            android:layout_weight="2"
-            android:layout_height="match_parent"
-            android:text="@string/loan_market_detail_repay_sum"
-            android:gravity="right|center_vertical"
-
-            />
-        <TextView
-            android:layout_width="0px"
-            android:layout_weight="2"
-            android:layout_height="match_parent"
-            android:text="12323.00"
-            android:textColor="@color/red"
-            android:gravity="center"/>
-        <TextView
-            android:layout_width="0px"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:text="Rp"
-            android:gravity="left|center_vertical"/>
-        <TextView
-            android:layout_width="0px"
-            android:layout_weight="2"
-            android:layout_height="match_parent"
-            android:text="@string/loan_market_detail_repay_interest"
-            android:gravity="right|center_vertical"/>
-        <TextView
-            android:layout_width="0px"
-            android:layout_weight="2"
-            android:layout_height="match_parent"
-            android:text="897656.00"
-            android:textColor="@color/red"
-            android:gravity="center"/>
-        <TextView
-            android:layout_width="0px"
-            android:layout_weight="0.5"
-            android:layout_height="match_parent"
-            android:text="Rp"
-            android:gravity="center"/>
-        <ImageView
-            android:layout_width="0px"
-            android:layout_weight="1"
-            android:src="@mipmap/icon_cahxunpinci"
-            android:layout_height="match_parent"
-            android:gravity="left|center_vertical"/>
-
-
-    </LinearLayout>
-    <view
-        android:layout_width="match_parent"
-        android:layout_height="1px"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="7">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="申请条件：
-            1. 年龄18-48周岁
-            2. 有稳定的工作
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_weight="1.5"
+        android:layout_marginTop="10dp"
+        android:background="@color/white">
 
-申请流程：
-            1.注册
-            2.身份认证
-            3.工作认证
-            4.填写工作信息
-还款方式：
-            1.银行卡还款
-            2.其他方式还款"/>
+        <ImageView
+            android:id="@+id/iv_product_detail_coin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/tv_product_detail_sum"
+            android:layout_marginStart="19dp"
+            android:background="@drawable/coin" />
+
+        <TextView
+            android:id="@+id/tv_product_detail_name1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView"
+            android:layout_marginStart="13dp"
+            android:layout_toEndOf="@+id/iv_product_detail_coin"
+            android:text="askjdflajs" />
+
+        <TextView
+            android:id="@+id/tv_product_detail_sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="53dp"
+            android:layout_toStartOf="@+id/imageView"
+            android:text="300.000" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="13dp"
+            android:background="@drawable/orange_down" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/tv_product_detail_name1"
+            android:layout_marginStart="12dp"
+            android:text="2222" />
+
 
     </RelativeLayout>
-    <Button
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1.5"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        >
+
+        <ImageView
+            android:id="@+id/iv_product_detail_coin2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView2"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="21dp"
+            android:background="@drawable/time" />
+
+        <TextView
+            android:id="@+id/tv_product_detail_name2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/iv_product_detail_coin2"
+            android:layout_marginStart="11dp"
+            android:layout_toEndOf="@+id/iv_product_detail_coin2"
+            android:text="askjdflajs" />
+
+        <TextView
+            android:id="@+id/tv_product_detail_sum2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="53dp"
+            android:layout_toStartOf="@+id/imageView2"
+            android:text="300.000" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="13dp"
+            android:background="@drawable/orange_down"
+            android:id="@+id/imageView2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/tv_product_detail_name2"
+            android:layout_marginStart="12dp"
+            android:text="2222"
+            android:id="@+id/textView2" />
+
+
+    </RelativeLayout>
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"/>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1.8"
+            android:text="Haruskah total"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray1"
+            android:gravity="center"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="0.2"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="Rp"
+            android:gravity="right|center_vertical"
+            android:textColor="#FFFF7A3F"/>
+
+        <TextView
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="12323.00"
+            android:textColor="#FFFF7A3F"
+            android:gravity="center_vertical"/>
+
+    </LinearLayout>
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+        android:background="@color/white">
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="1.8"
+        android:text="Haruskah total"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray1"
+        android:gravity="center"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="0.2"
+            android:layout_height="wrap_content"
+            android:src="@drawable/orange_question"/>
+    <TextView
+        android:layout_width="0px"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:text="Rp"
+        android:textColor="#FFFF7A3F"
+        android:gravity="right|center_vertical"/>
+
+    <TextView
+        android:layout_width="0px"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:text="12323.00"
+        android:textColor="#FFFF7A3F"
+        android:gravity="center_vertical"/>
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:background="@color/white"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_cube"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12123"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray"/>
+
+
+    </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="1.5"
-        android:background="#03d485"
+        android:background="@drawable/bt_apply"
         android:textColor="@color/white"
+        android:layout_gravity="center"
         android:text="@string/loan_market_detail_loan_apply"/>
 
 </com.zhy.autolayout.AutoLinearLayout>
