@@ -1,16 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/login_gradient"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
     <include layout="@layout/activity_head" />
-    <com.zhy.autolayout.AutoLinearLayout
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_message"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white">
+        >
 
-    </com.zhy.autolayout.AutoLinearLayout>
-</com.zhy.autolayout.AutoLinearLayout>
+        <com.jude.easyrecyclerview.EasyRecyclerView
+            android:id="@+id/recycler_message"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ECEDF0"
+            app:layout_empty="@layout/view_empty"
+            app:layout_progress="@layout/view_progress" />
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+    <LinearLayout
+        android:id="@+id/lin_no_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/white"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/no_data_glide"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="暂时没有你的收藏"
+            android:textColor="#DDDDDD" />
+
+    </LinearLayout>
+</LinearLayout>

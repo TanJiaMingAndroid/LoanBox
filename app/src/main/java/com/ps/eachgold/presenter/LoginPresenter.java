@@ -79,7 +79,7 @@ public class LoginPresenter implements LoginContract.Presenter {
                 .subscribe(new MyObserver3<String>(mContext, mView) {
                     @Override
                     public void onSuccess(String s, Header header) {
-                            Log.e("s",s);
+                            //Log.e("s",s);
                     }
 
 

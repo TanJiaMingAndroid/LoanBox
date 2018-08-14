@@ -14,6 +14,7 @@ import com.ps.eachgold.contract.person.HelpContract;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * creat by tanjiaming at 2018/8/1
@@ -30,6 +31,11 @@ public class HelpActivity extends BaseActivity implements HelpContract.View {
     public static void createActivity(Context context) {
         Intent intent = new Intent(context, HelpActivity.class);
         context.startActivity(intent);
+    }
+    @OnClick(R.id.left_icon)
+    public void onViewClicked() {
+        finish();
+        overridePendingTransition(R.anim.slide_still, R.anim.slide_out_right);
     }
 
 

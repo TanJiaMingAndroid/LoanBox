@@ -6,19 +6,13 @@ import android.widget.TextView;
 
 import com.ps.eachgold.R;
 import com.ps.eachgold.activity.BaseActivity;
-import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ProductDetailActivity extends BaseActivity {
 
-    @BindView(R.id.left_icon)
-    ImageView leftIcon;
-    @BindView(R.id.title)
-    TextView title;
-    @BindView(R.id.right_icon)
-    ImageView rightIcon;
+
     @BindView(R.id.im_product_detail_pic)
     ImageView imProductDetailPic;
     @BindView(R.id.tv_product_detail_name)
@@ -47,6 +41,12 @@ public class ProductDetailActivity extends BaseActivity {
     ImageView imageView2;
     @BindView(R.id.textView2)
     TextView textView2;
+    @BindView(R.id.left_icon)
+    ImageView leftIcon;
+    @BindView(R.id.title)
+    TextView title;
+    @BindView(R.id.right_icon)
+    ImageView rightIcon;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -73,9 +73,9 @@ public class ProductDetailActivity extends BaseActivity {
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-        QMUIStatusBarHelper.translucent(this); // 沉浸式状态栏
+        //QMUIStatusBarHelper.translucent(this); // 沉浸式状态栏
         //标题
-        title.setText("产品详情");
+        //title.setText("Pinjaman");
 
     }
 

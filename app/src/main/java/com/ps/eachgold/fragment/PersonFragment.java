@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.allen.library.SuperTextView;
 import com.ps.eachgold.R;
+import com.ps.eachgold.activity.login.LoginActivity;
 import com.ps.eachgold.activity.person.CollectionActivity;
 import com.ps.eachgold.activity.person.FeedBackActivity;
 import com.ps.eachgold.activity.person.HelpActivity;
@@ -67,6 +68,10 @@ public class PersonFragment extends BaseFragment implements PersonContract.View 
     Unbinder unbinder1;
     @BindView(R.id.tv_person_info_show)
     TextView tvPersonInfoShow;
+    @BindView(R.id.tv_person_id_num)
+    TextView tvPersonIdNum;
+    @BindView(R.id.tv_person_please_login)
+    TextView tvPersonPleaseLogin;
 
     //
     private String phone;
@@ -107,6 +112,10 @@ public class PersonFragment extends BaseFragment implements PersonContract.View 
         title.setText(R.string.person_title);
         //设置右ICON
         rightIcon.setVisibility(View.GONE);
+        //未登录 隐藏id和info按钮
+        /*tvPersonId.setVisibility(View.INVISIBLE);
+        tvPersonIdNum.setVisibility(View.INVISIBLE);*/
+
         //登录
         loginFlag = (boolean) SPutils.get(getActivity(), "login", false);
         //资料完善状态
@@ -202,9 +211,12 @@ public class PersonFragment extends BaseFragment implements PersonContract.View 
     }
 
 
-    @OnClick({R.id.tv_person_info_show,R.id.right_icon, R.id.iv_person_head, R.id.st_person_collection, R.id.st_person_message, R.id.st_person_help, R.id.st_person_feedback, R.id.st_person_setting})
+    @OnClick({R.id.tv_person_info_show, R.id.right_icon, R.id.iv_person_head, R.id.st_person_collection, R.id.st_person_message, R.id.st_person_help, R.id.st_person_feedback, R.id.st_person_setting,R.id.tv_person_please_login})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            case R.id.tv_person_please_login:
+                LoginActivity.createActivity(getActivity());
+                break;
             case R.id.iv_person_head:
                 //头像
                 break;
