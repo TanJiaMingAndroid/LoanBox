@@ -13,7 +13,6 @@
         app:indicatorStyle="ORDINARY"
         app:indicatorGravity="CENTER"
         app:indicatorInterval="5dp"
-        android:background="@drawable/banner"
         app:indicatorSelectRes="@drawable/banner_tips_select"
         app:indicatorUnSelectRes="@drawable/banner_tips_unselect"/>
     <com.zhy.autolayout.AutoLinearLayout
@@ -35,7 +34,7 @@
             android:layout_height="match_parent"
             android:layout_weight="9"
             android:gravity="center_vertical"
-            android:text="177****3302 buy licai chanpin $5000"
+            android:text="User 816*****889 berhasil mengajukan pinjaman sebesar Rp 1000.000"
             android:textColor="@color/index_tip_message"
             android:textSize="@dimen/text_size_26" />
 
@@ -46,33 +45,33 @@
         android:layout_height="90px"
         android:orientation="horizontal"
         android:layout_marginTop="20px"
+        android:paddingRight="10dp"
         android:background="@color/white">
+
         <ImageView
-            android:layout_width="0px"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
             android:layout_height="40px"
             android:layout_gravity="right|center"
-            android:src="@drawable/recomm"
-            android:layout_marginLeft="10px"/>
+            android:layout_marginLeft="31px"
+            android:src="@drawable/recomm" />
         <TextView
+            android:layout_marginLeft="10dp"
             android:layout_width="0px"
-            android:layout_weight="3"
-            android:layout_height="35px"
+            android:layout_height="wrap_content"
             android:layout_gravity="left|center_vertical"
-            android:text="@string/index_recommend"
+            android:layout_weight="1"
             android:gravity="left"
-            android:textColor="@color/index_product_hot"/>
+            android:text="Rekomendasi produk"
+            android:textColor="@color/index_product_hot" />
         <TextView
-            android:layout_width="0px"
-            android:layout_weight="5"
+            android:layout_width="wrap_content"
             android:layout_height="35px"
             android:layout_gravity="right|center_vertical"
             android:gravity="right"
-            android:text="Lihat lebih banyak"
+            android:text="@string/index_more"
             />
         <ImageView
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
             android:layout_height="26px"
             android:layout_gravity="center"
             android:src="@drawable/icon_more"/>

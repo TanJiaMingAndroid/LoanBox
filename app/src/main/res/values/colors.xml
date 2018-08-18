@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#4681FF</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#FF7A3F</color>
+    <color name="colorPrimaryDark">#FF7A3F</color>
+    <color name="colorAccent">#FF7A3F</color>
 
     //透明
     <color name="transparent">#00000000</color>
@@ -61,6 +61,7 @@
     <!--灰色的字-->
     <color name="gray_text">#FFA6A6A6</color>
     <color name="orange_text">#FFFF7A3F</color>
+    <color name="black1">#545454</color>
 
 
 

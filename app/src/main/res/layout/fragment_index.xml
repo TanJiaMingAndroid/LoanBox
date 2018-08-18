@@ -43,7 +43,7 @@
             android:layout_height="match_parent"
             android:layout_weight="9"
             android:gravity="center_vertical"
-            android:text="177****3303 buy licai chanpin $5000"
+            android:text="177****3303 buy licai chanpin $5000   废弃"
             android:textColor="@color/index_tip_message"
             android:textSize="@dimen/text_size_26" />
 
@@ -75,8 +75,7 @@
             android:layout_height="35px"
             android:layout_gravity="right|center_vertical"
             android:gravity="right"
-            android:text="Lihat lebih banyak"
-            />
+            android:text="@string/index_more" />
         <ImageView
             android:layout_width="0dp"
             android:layout_weight="1"

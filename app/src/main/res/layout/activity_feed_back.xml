@@ -22,7 +22,7 @@
             android:layout_marginLeft="1dp"
             android:layout_marginRight="1dp"
             android:gravity="top"
-            android:hint="@string/person_feedback_hint"
+            android:hint="Jelaskan masalah anda secara detail sehingga dapat segera kami atasi"
             android:inputType="textMultiLine"
             android:minLines="8"
             android:maxLines="10"
@@ -41,7 +41,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/person_feedback_upload_pic"
+                android:text="Unggah gambar (optional)"
                 android:textSize="@dimen/text_size_28"
                 android:textColor="#FF6C6C6C"/>
 
@@ -64,7 +64,6 @@
                     android:layout_height="40dp"
                     android:visibility="invisible">
                     <ImageView
-
                         android:layout_gravity="right"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -76,23 +75,16 @@
             </FrameLayout>
         </com.zhy.autolayout.AutoLinearLayout>
 
+
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50px"
-            android:text="@string/person_help_service_tel"
-            android:textColor="@color/gray"
-            android:gravity="center"
-            android:textSize="24px"
-            android:background="#F3F3F7"
-            android:layout_marginTop="100px"/>
-        <TextView
+            android:layout_marginTop="50dp"
             android:id="@+id/tv_sure"
             android:layout_width="match_parent"
             android:layout_height="80px"
             android:layout_gravity="bottom"
-            android:background="@drawable/login_button"
+            android:background="@drawable/bt_submit"
             android:gravity="center"
-            android:text="@string/person_feedback_submit"
+            android:text="Ajukan"
             android:textColor="@color/white"
             android:textSize="15sp"
             android:layout_marginBottom="3dp"

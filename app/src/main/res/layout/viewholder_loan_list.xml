@@ -1,34 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="140dp"
-    android:background="@color/line_gray"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
     android:orientation="vertical">
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="@color/white"
+        android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:layout_marginTop="10dp">
-
+        android:layout_marginTop="10dp"
+        >
         <ImageView
             android:id="@+id/iv_image"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:src="@mipmap/ic_launcher_round" />
+            android:src="@drawable/detail_logo" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
-
-
-
                 <TextView
                     android:id="@+id/tv_name"
                     android:layout_width="wrap_content"
@@ -37,10 +32,6 @@
                     android:text="现金白卡"
                     android:textColor="#555555"
                     android:textSize="15sp" />
-
-
-
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -51,13 +42,15 @@
                     android:id="@+id/tv_elements_main"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textStyle="bold"
                     android:layout_marginRight="5dp"
                     android:text="Rp"
-                    android:textColor="#999999"
+                    android:textColor="@color/count_1"
                     android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/tv_sum"
+                    android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1000-8000"
@@ -86,13 +79,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/red_yuan_shape"
+                android:background="@drawable/icon_apply"
                 android:paddingBottom="2dp"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:paddingTop="2dp"
-                android:text="立即申请"
-                android:textColor="@color/red3" />
+                android:text="Segera ajukan"
+                android:textColor="@color/white"
+                android:gravity="center"
+                />
 
         </RelativeLayout>
 
@@ -103,50 +98,60 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="0.5dp"
+        android:layout_marginLeft="10dp"
         android:background="@color/white"
+        android:orientation="horizontal"
         android:gravity="center_vertical">
-
-        <TextView
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="7dp"
-            android:text="利率:"
-            android:gravity="center"
-            android:textColor="#999999"
-            android:textSize="12sp" />
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:text="Suku bunga harian"
+                android:gravity="center"
+                android:textColor="#999999"
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/tv_lilv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="6dp"
+                android:text="1%"
+                android:textColor="#555555"
+                android:textSize="12sp" />
 
-        <TextView
-            android:id="@+id/tv_lilv"
+
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="6dp"
-            android:text="1%"
-            android:textColor="#555555"
-            android:textSize="12sp" />
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_elements_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Batas waktu"
+                android:textColor="#999999"
+                android:gravity="center"
+                android:textSize="12sp" />
 
-        <TextView
-            android:id="@+id/tv_elements_1"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="利息:"
-            android:textColor="#999999"
-            android:gravity="center"
-            android:textSize="12sp" />
+            <TextView
+                android:id="@+id/tv_lixi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="7-14hair"
+                android:textColor="#555555"
+                android:textSize="12sp"
+                android:gravity="center"/>
 
-        <TextView
-            android:id="@+id/tv_lixi"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="6dp"
-            android:text="7-14%"
-            android:textColor="#555555"
-            android:textSize="12sp" />
+
+
+        </LinearLayout>
 
 
     </LinearLayout>

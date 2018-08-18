@@ -1,66 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/login_bg"
-    android:fitsSystemWindows="true"
-    android:orientation="vertical">
+                                     xmlns:app="http://schemas.android.com/apk/res-auto"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="match_parent"
+                                     android:background="@color/login_bg"
+                                     android:fitsSystemWindows="true"
+                                     android:orientation="vertical">
     <include layout="@layout/login_head"/>
+
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/white">
+        android:background="@color/white"
+        android:orientation="vertical">
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/login_bind_tel_code_content1"
-        android:gravity="center"
-        android:textSize="@dimen/text_size_60"
-        android:textColor="@color/login_bind_tel_code_content1"
-        android:layout_marginTop="@dimen/margin_150"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/login_bind_tel_code_content2"
-        android:gravity="center"
-        android:textSize="@dimen/text_size_30"
-        android:textColor="@color/login_bind_tel_code_content2"
-        android:layout_marginTop="@dimen/text_size_40"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/login_bind_tel_code_content3"
-        android:gravity="center"
-        android:textSize="@dimen/text_size_30"
-        android:textColor="@color/login_bind_tel_code_content2"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_150"
+            android:gravity="center"
+            android:text="Masukan no OTP"
+            android:textColor="@color/login_bind_tel_code_content1"
+            android:textSize="@dimen/text_size_60"/>
 
-    <com.jyn.vcview.VerificationCodeView
-        android:id="@+id/verificationcodeview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:vcv_et_bg="@drawable/et_login_code"
-        app:vcv_et_cursor="@drawable/et_cursor"
-        app:vcv_et_inputType="number"
-        app:vcv_et_number="4"
-        app:vcv_et_text_color="@android:color/black"
-        app:vcv_et_text_size="6sp"
-        />
-    <Button
-        android:id="@+id/bt_login_code_go"
-        android:layout_width="424px"
-        android:layout_height="86px"
-        android:layout_gravity="center"
-        android:layout_marginTop="86px"
-        android:background="@drawable/icon_confirm"
-        android:text="@string/login_bind_tel_code_submit"
-        android:textColor="@color/white"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_size_40"
+            android:gravity="center"
+            android:text="Silakan masukan no OTP dari HP anda"
+            android:textColor="@color/login_bind_tel_code_content2"
+            android:textSize="@dimen/text_size_30"/>
+
+
+        <com.tuo.customview.VerificationCodeView
+            android:id="@+id/icv"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="26dp"
+            app:icv_et_bg_focus="@drawable/shape_icv_et_bg_focus"
+            app:icv_et_bg_normal="@drawable/shape_icv_et_bg_normal"
+            app:icv_et_divider_drawable="@drawable/shape_divider_identifying"
+            app:icv_et_number="4"
+            app:icv_et_pwd="false"
+            app:icv_et_pwd_radius="10dp"
+            app:icv_et_text_color="#000000"
+            app:icv_et_width="40dp" />
+
+        <TextView
+            android:id="@+id/tv_resend_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="60s"
+            android:textColor="#FF888888"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/bt_login_code_go"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="86px"
+            android:background="@drawable/bt_logout"
+            android:text="Masuk"
+            android:textAllCaps="false"
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/bt_login_send_code"
@@ -70,7 +80,7 @@
             android:layout_marginTop="46px"
             android:background="@drawable/icon_confirm"
             android:text="Kirim ulang"
-            android:textColor="@color/white"/>
-
+            android:textColor="@color/white"
+            android:visibility="gone"/>
     </com.zhy.autolayout.AutoLinearLayout>
 </com.zhy.autolayout.AutoLinearLayout>

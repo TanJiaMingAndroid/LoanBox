@@ -3,9 +3,9 @@
     <!--app名称-->
     <string name="app_name">Loan Box</string><!---->
     <!--app模块-->
-    <string name="app_index">Home</string><!--首页-->
-    <string name="app_loan_market">Pinjaman</string><!--贷款超市-->
-    <string name="app_person">Akun saya</string><!--我的-->
+    <string name="app_index">Beranda</string><!--首页-->
+    <string name="app_loan_market">Loan Supermarket</string><!--贷款超市-->
+    <string name="app_person">Punyaku</string><!--我的-->
     <string name="welcom_skip">skip</string>
     <!--登录-->
     <string name="login_title">Login</string>
@@ -86,11 +86,11 @@
     <string name="person_login_money_type">IDR</string><!--IDR-->
     <string name="person_login_save">Selesai</string><!--保存-->
     <!--person info show-->
-    <string name="person_info_show_job">Karir</string>
+    <string name="person_info_show_job">Karir</string><!--工作-->
     <!--person info -->
-    <string name="person_info_show_education">Pendidikan</string>
+    <string name="person_info_show_education">Pendidikan</string><!--教育程度-->
 
-    <string name="person_message_inform">消息通知</string><!---->
+    <string name="person_message_inform">Pusat pesan</string><!--消息通知-->
     <string name="person_help_service_tel">Telepon layanan pelanggan platform:</string><!--平台客服电话:020-XXXXXX-->
     <string name="person_help_service_time">Jam layanan: </string><!--服务时间:-->
     <string name="person_help_service_time_duration">8:00-17:00 setiap hari</string><!--每日8:00-17:00-->

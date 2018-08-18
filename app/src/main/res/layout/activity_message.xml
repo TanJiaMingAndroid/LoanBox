@@ -6,7 +6,6 @@
     android:background="@drawable/login_gradient"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
-
     <include layout="@layout/activity_head" />
 
     <android.support.v4.widget.SwipeRefreshLayout
@@ -43,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="暂时没有你的消息"
+            android:text=""
             android:textColor="#DDDDDD" />
 
     </LinearLayout>

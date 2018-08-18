@@ -5,9 +5,6 @@
     android:background="@drawable/login_gradient"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
-
-
-
     <include layout="@layout/activity_head" />
 
 
@@ -24,21 +21,20 @@
             >
             <TextView
                 android:id="@+id/tv_change_psw"
-                android:layout_width="0dp"
-                android:layout_weight="8"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="left|center_vertical"
-                android:text="@string/person_setting_check_update"
+                android:text="Periksa pembaharuan"
                 android:textSize="@dimen/text_size_30"
                 android:layout_marginLeft="53px"/>
             <TextView
-                android:layout_width="0dp"
-                android:layout_weight="3"
+                android:id="@+id/tv_clien_verson"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="1.0.0"
                 android:textColor="@color/gray"
                 android:textSize="@dimen/text_size_30"
-                android:gravity="center"/>
+                android:paddingRight="20dp"
+                android:gravity="right|center_vertical"/>
 
 
         </com.zhy.autolayout.AutoLinearLayout>
@@ -51,7 +47,7 @@
             android:layout_weight="1"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:background="@drawable/login_button"
+            android:background="@drawable/bt_logout"
             android:gravity="center"
             android:text="@string/person_setting_logout"
             android:layout_alignParentBottom="true"

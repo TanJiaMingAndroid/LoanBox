@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.ps.eachgold">
+    package="com.ps.loanbox">
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 获取设备信息 -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- 网络通信 -->
@@ -15,13 +15,13 @@
 
     <!-- 获取日志 -->
     <application
-        android:name="android.support.multidex.MultiDexApplication"
+        android:name="com.ps.loanbox.App"
         android:allowBackup="true"
-        android:icon="@mipmap/logo"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppThemeQmNoBar">
+        android:theme="@style/AppTheme">
 
         <!-- 标明设计稿的尺寸 假设768*1280 -->
         <meta-data
@@ -32,70 +32,73 @@
             android:value="1280" />
 
         <activity
-            android:name=".activity.login.LoginActivity"
+            android:name="com.ps.loanbox.activity.login.LoginActivity"
             android:theme="@style/BaseTheme"></activity>
-        <activity android:name=".activity.login.WelcomeActivity"></activity>
         <activity
-            android:name=".activity.MainActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden">
+            android:name="com.ps.loanbox.activity.login.WelcomeActivity"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.login.CodeLoginActivity"
+            android:name="com.ps.loanbox.activity.MainActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden">
+
+        </activity>
+        <activity
+            android:name="com.ps.loanbox.activity.login.CodeLoginActivity"
             android:configChanges="orientation|keyboardHidden"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" />
         <activity
-            android:name=".activity.login.RegisterActivity"
+            android:name="com.ps.loanbox.activity.login.RegisterActivity"
             android:configChanges="orientation|keyboardHidden"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" />
         <activity
-            android:name=".activity.login.ForgotPswActivity"
+            android:name="com.ps.loanbox.activity.login.ForgotPswActivity"
             android:configChanges="orientation|keyboardHidden"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" />
         <activity
-            android:name=".activity.login.SetPswActivity"
+            android:name="com.ps.loanbox.activity.login.SetPswActivity"
             android:configChanges="orientation|keyboardHidden"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" />
-        <activity android:name=".activity.person.SettingActivity" />
-        <activity android:name=".activity.person.ChangePswActivity" />
-        <activity android:name=".activity.person.FeedBackActivity" />
-        <activity android:name=".activity.person.MessageActivity" />
-        <activity android:name=".activity.person.MoreCustomActivity" />
-        <activity android:name=".activity.creditReport.CreditReportActivity" />
-        <activity android:name=".activity.creditReport.ExpandReportActivity" />
-        <activity android:name=".activity.creditReport.DefaultRecordActivity" />
-        <activity android:name=".activity.credit.BankCreditListActivity" />
-        <activity android:name=".activity.credit.BankHotListActivity" />
-        <activity android:name=".activity.loan.LoanListActivity" />
-        <activity android:name=".activity.loan.HandleCardActivity" />
-        <activity android:name=".activity.loan.RepayCardActivity" />
+        <activity android:name="com.ps.loanbox.activity.person.SettingActivity" />
+        <activity android:name="com.ps.loanbox.activity.person.ChangePswActivity" />
+        <activity android:name="com.ps.loanbox.activity.person.FeedBackActivity" />
+        <activity android:name="com.ps.loanbox.activity.person.MessageActivity" />
+        <activity android:name="com.ps.loanbox.activity.person.MoreCustomActivity" />
+        <activity android:name="com.ps.loanbox.activity.creditReport.CreditReportActivity" />
+        <activity android:name="com.ps.loanbox.activity.creditReport.ExpandReportActivity" />
+        <activity android:name="com.ps.loanbox.activity.creditReport.DefaultRecordActivity" />
+        <activity android:name="com.ps.loanbox.activity.credit.BankCreditListActivity" />
+        <activity android:name="com.ps.loanbox.activity.credit.BankHotListActivity" />
+        <activity android:name="com.ps.loanbox.activity.loan.LoanListActivity" />
+        <activity android:name="com.ps.loanbox.activity.loan.HandleCardActivity" />
+        <activity android:name="com.ps.loanbox.activity.loan.RepayCardActivity" />
         <activity
-            android:name=".activity.login.InfoStepOneActivity"
+            android:name="com.ps.loanbox.activity.login.InfoStepOneActivity"
             android:configChanges="orientation|keyboardHidden"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" />
         <activity
-            android:name=".activity.login.InfoStepTwoActivity"
+            android:name="com.ps.loanbox.activity.login.InfoStepTwoActivity"
             android:configChanges="orientation|keyboardHidden"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" />
-        <activity android:name=".activity.login.InfoStepThreeActivity" />
-        <activity android:name=".activity.credit.CardPregressActivity" />
+        <activity android:name="com.ps.loanbox.activity.login.InfoStepThreeActivity" />
+        <activity android:name="com.ps.loanbox.activity.credit.CardPregressActivity" />
         <activity
-            android:name=".activity.loan.HotLoanActivity"
+            android:name="com.ps.loanbox.activity.loan.HotLoanActivity"
             android:label="@string/title_activity_hot_loan" />
-        <activity android:name=".activity.login.GudieActivity" />
-        <activity android:name=".activity.login.AdActivity" />
-        <activity android:name=".activity.H5Activity" />
-        <activity android:name=".gate.Main2Activity" />
-        <activity android:name=".gate.NewActivity" />
-        <activity android:name=".activity.person.HelpActivity" />
-        <activity android:name=".activity.person.CollectionActivity" />
-        <activity android:name=".activity.login.BindTelActivity" />
-        <activity android:name=".activity.login.AutoCodeActivity" />
+        <activity android:name="com.ps.loanbox.activity.login.GudieActivity" />
+        <activity android:name="com.ps.loanbox.activity.login.AdActivity" />
+        <activity android:name="com.ps.loanbox.activity.H5Activity" />
+        <activity android:name="com.ps.loanbox.gate.Main2Activity" />
+        <activity android:name="com.ps.loanbox.gate.NewActivity" />
+        <activity android:name="com.ps.loanbox.activity.person.HelpActivity" />
+        <activity android:name="com.ps.loanbox.activity.person.CollectionActivity" />
+        <activity android:name="com.ps.loanbox.activity.login.BindTelActivity" />
+        <activity android:name="com.ps.loanbox.activity.login.AutoCodeActivity" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -119,7 +122,7 @@
                     tools:ignore="ManifestResource" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.credit.ProductDetailActivity"></activity>
+        <activity android:name="com.ps.loanbox.activity.credit.ProductDetailActivity"></activity>
     </application>
 
 </manifest>

@@ -4,18 +4,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
-
-    <com.zhy.autolayout.AutoLinearLayout
-        android:id="@+id/status_bar"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@drawable/login_gradient"
-        android:orientation="vertical"
-        android:visibility="gone">
-    </com.zhy.autolayout.AutoLinearLayout>
-
-    <include layout="@layout/activity_head" />
-
+    <include layout="@layout/activity_head"
+        />
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -32,9 +22,10 @@
                 android:id="@+id/iv_person_head"
                 android:layout_width="120px"
                 android:layout_height="120px"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
                 android:layout_gravity="center"
-                android:layout_marginLeft="32px"
-                android:layout_marginTop="80px"
+                android:layout_marginStart="15dp"
                 android:src="@drawable/head" />
 
             <TextView
@@ -59,14 +50,13 @@
                 android:layout_alignBaseline="@id/tv_person_id"
                 android:layout_below="@id/tv_person_id"
                 android:layout_toRightOf="@id/tv_person_id"
-                android:text="17710853333"
                 android:textColor="@color/white"
                 android:visibility="invisible"/>
             <TextView
                 android:id="@+id/tv_person_please_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="请登录"
+                android:text="Daftar"
                 android:textSize="15sp"
                 android:textColor="@color/white"
                 android:layout_below="@id/tv_person_id_num"
@@ -88,6 +78,7 @@
         </com.zhy.autolayout.AutoRelativeLayout>
 
         <com.allen.library.SuperTextView
+            android:visibility="gone"
             android:id="@+id/st_person_collection"
             android:layout_width="match_parent"
             android:layout_height="90px"
@@ -105,7 +96,7 @@
             android:layout_height="90px"
             app:sLeftTextColor="#454545"
             app:sLeftIconRes="@drawable/news"
-            app:sLeftTextString="@string/person_message"
+            app:sLeftTextString="Notifikasi"
             app:sRightIconRes="@mipmap/icon_next_gray">
 
         </com.allen.library.SuperTextView>
@@ -117,7 +108,7 @@
             android:layout_marginTop="20px"
             app:sLeftTextColor="#454545"
             app:sLeftIconRes="@drawable/questioncenter"
-            app:sLeftTextString="@string/person_help"
+            app:sLeftTextString="Pusat Bantu"
             app:sRightIconRes="@mipmap/icon_next_gray">
 
         </com.allen.library.SuperTextView>
@@ -128,7 +119,7 @@
             android:layout_height="90px"
             app:sLeftTextColor="#454545"
             app:sLeftIconRes="@drawable/advise"
-            app:sLeftTextString="@string/person_feedback"
+            app:sLeftTextString="Feedback"
             app:sRightIconRes="@mipmap/icon_next_gray">
 
         </com.allen.library.SuperTextView>
@@ -139,7 +130,7 @@
             android:layout_height="90px"
             app:sLeftTextColor="#454545"
             app:sLeftIconRes="@drawable/set"
-            app:sLeftTextString="@string/person_setting"
+            app:sLeftTextString="Pengaturan"
             app:sRightIconRes="@mipmap/icon_next_gray">
 
         </com.allen.library.SuperTextView>

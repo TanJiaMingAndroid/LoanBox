@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zhy.autolayout.AutoLinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -13,12 +14,91 @@
         android:orientation="vertical"
         android:visibility="gone">
     </LinearLayout>
-
-
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_loan"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+      <com.zhy.autolayout.AutoLinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical"
+          >
+        <com.donkingliang.banner.CustomBanner
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="400px"
+            app:indicatorStyle="ORDINARY"
+            app:indicatorGravity="CENTER"
+            app:indicatorInterval="5dp"
+            app:indicatorSelectRes="@drawable/banner_tips_select"
+            app:indicatorUnSelectRes="@drawable/banner_tips_unselect"/>
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="72px"
+            android:orientation="horizontal"
+            android:background="@color/white">
+
+            <ImageView
+                android:layout_width="0px"
+                android:layout_height="37px"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10px"
+                android:layout_weight="1"
+                android:src="@drawable/bell" />
+
+            <TextView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="9"
+                android:gravity="center_vertical"
+                android:text="User 816*****889 berhasil mengajukan pinjaman sebesar Rp 1000.000"
+                android:textColor="@color/index_tip_message"
+                android:textSize="@dimen/text_size_26" />
+
+        </com.zhy.autolayout.AutoLinearLayout>
+        <com.zhy.autolayout.AutoLinearLayout
+            android:id="@+id/al_index_more"
+            android:layout_width="match_parent"
+            android:layout_height="90px"
+            android:orientation="horizontal"
+            android:layout_marginTop="20px"
+            android:paddingRight="10dp"
+            android:background="@color/white">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="40px"
+                android:layout_gravity="right|center"
+                android:layout_marginLeft="31px"
+                android:src="@drawable/recomm" />
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="Rekomendasi produk"
+                android:textColor="@color/index_product_hot" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="35px"
+                android:layout_gravity="right|center_vertical"
+                android:gravity="right"
+                android:text="Lihat selengkapnya"
+                />
+            <ImageView
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/icon_more"/>
+
+        </com.zhy.autolayout.AutoLinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#FFCCCCCC"/>
 
         <com.jude.easyrecyclerview.EasyRecyclerView
             android:id="@+id/recycler_loan"
@@ -31,7 +111,7 @@
 
 
         </com.jude.easyrecyclerview.EasyRecyclerView>
-
+      </com.zhy.autolayout.AutoLinearLayout>
     </android.support.v4.widget.SwipeRefreshLayout>
 
 </com.zhy.autolayout.AutoLinearLayout>

@@ -14,9 +14,8 @@
         android:orientation="vertical"
         android:visibility="gone">
     </LinearLayout>
-
-    <include layout="@layout/activity_head" />
-
+    <include layout="@layout/activity_head"
+        />
     <!--tablayout-->
     <android.support.design.widget.TabLayout
         android:id="@+id/tabLayout"
@@ -26,11 +25,9 @@
         tl:tabGravity="center"
         tl:tabMode="scrollable"
         tl:tabSelectedTextColor="@android:color/white"
-        tl:tabTextColor="@color/gray1"
+        tl:tabTextColor="#99ffffff"
         tl:tabTextAppearance="@style/TabLayoutTextStyle"
         tl:tabIndicatorHeight="0dp"/>
-
-
 
     <!--tablayout-->
 
